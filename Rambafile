@@ -1,0 +1,20 @@
+### Headers settings
+company: gpower
+
+### Xcode project settings
+project_name: sportprogramm
+xcodeproj_path: sportprogramm.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: sportprogramm
+
+# The file path for new modules
+project_file_path: sportprogramm
+
+### Templates
+catalogs:
+- 'https://github.com/alfa-laboratory/YARCH-Template'
+
+templates:
+- {name: yarch}
