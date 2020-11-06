@@ -7,43 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		025AFCE59506FF8036640AED /* RegistrationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8ABF39C76996261D477B7A /* RegistrationProvider.swift */; };
 		0666A80B854D22B59886D17D /* AuthenticationModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A651260C897C2FEBF263A6AE /* AuthenticationModuleService.swift */; };
+		0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */; };
 		0AC8AF45C6BA486DA1A797D0 /* TrainerModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC6304C95BA261942A085 /* TrainerModuleInteractor.swift */; };
 		0B80000420D53FDE3FDFFA53 /* UserModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */; };
 		12429ED90F04596E564F9207 /* UserModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EB632B445864AC56064D0 /* UserModulePresenter.swift */; };
 		18062C233C834147FB1AB9F9 /* AuthenticationModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */; };
+		1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BAFF617AAA7FF9B0F983A /* PasswordRecoveryDataStore.swift */; };
+		2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43D0C15774DF5AF39E26590 /* RegistrationView.swift */; };
 		2F45CC83E74DE7242A461C04 /* UserModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E8CD3993D7C97427A498CE /* UserModuleModel.swift */; };
 		359208B0595AC5099D0487E9 /* AuthenticationModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */; };
 		35C8CDAB544E5AAA1819F043 /* TrainerModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947A8AA8909A35C74B5C2E7 /* TrainerModuleDataStore.swift */; };
+		38CB51413B7D2A206EBD2427 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD467A11AD6A5CC40DF08D3C /* RegistrationInteractor.swift */; };
+		3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F32D3892DC7937BF2B290 /* PasswordRecoveryService.swift */; };
 		3B316A51C7AF4C4FE9BD5822 /* TrainerModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F3D98211648AEA1F722BC /* TrainerModuleModel.swift */; };
 		3D1EC614C0F2335C3B9EA0C6 /* AuthenticationModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */; };
 		41616779C423B637A064C19B /* Pods_sportprogrammTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F5528899C8FA092635342E /* Pods_sportprogrammTests.framework */; };
 		41A6D4CEDAEFB8CEC0A08BF0 /* Pods_sportprogramm_sportprogrammUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E7E5F857952679329BE143 /* Pods_sportprogramm_sportprogrammUITests.framework */; };
+		50895E881714F33D6DC92FF7 /* PasswordRecoveryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */; };
 		526DC687D0BC420391581571 /* Pods_sportprogramm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A19B4FA09C64F149868282 /* Pods_sportprogramm.framework */; };
+		53A7870CA46A235F83A40C90 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2096C23491E088C861670B /* RegistrationPresenter.swift */; };
 		69A7E1642C276163AD6C983F /* TrainerModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CABB74D1DFA3B88B0C093E /* TrainerModuleProvider.swift */; };
+		739C3232A0389339D54C4D78 /* RegistrationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */; };
 		7409EC69C150BC198C6908FE /* TrainerModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8F33C6D1C486E702F4870 /* TrainerModulePresenter.swift */; };
+		7736B82A817177105DB31236 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */; };
+		79E9B8B4C9C0D4BD01A85D8B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546412060AD3A73FF6403F24 /* RegistrationViewController.swift */; };
 		7AAD55BFFB5A30063476DDBC /* TrainerModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDCDEFA61D134B003F9B38B /* TrainerModuleViewController.swift */; };
 		7CECF9474B765300F4B8972D /* AuthenticationModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE5509DA3DDAE9FE3571E8 /* AuthenticationModuleView.swift */; };
+		84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */; };
 		850F5652FDC2C4FA7F71FEFF /* UserModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995DB96135E7A859458C679 /* UserModuleService.swift */; };
 		97889C8FE0E12B3EFA0EAC21 /* AuthenticationModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A4EEA138BB13990F01C614 /* AuthenticationModuleDataStore.swift */; };
 		99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD2369D9638EB30236E00 /* TrainerModuleService.swift */; };
+		A337C1B9EC4E2FB68A96FC37 /* PasswordRecoveryDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55A69365605289FF21D9C1 /* PasswordRecoveryDataFlow.swift */; };
+		A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A556A30049AE495A3F1B /* PasswordRecoveryProvider.swift */; };
 		ADB6F6879CA5F959BC24352E /* TrainerModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E770051843B932686F480 /* TrainerModuleDataFlow.swift */; };
 		AE12D23474862A95A5A29A70 /* AuthenticationModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C981F6AC5C217271AE8F4156 /* AuthenticationModuleViewController.swift */; };
+		B3E05778EFEBE26DDC8EF54D /* PasswordRecoveryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */; };
 		B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5315C1557F2DB20A39FFF /* TrainerModuleView.swift */; };
+		BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90AFABA39DAF669F71BF4A3 /* PasswordRecoveryView.swift */; };
 		BCDD7A6AFB84E1AEAF20B1C2 /* UserModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D9D046500CA7FFA4F5D8A /* UserModuleProvider.swift */; };
 		C7C969AFA1483A8F6CC83763 /* TrainerModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74A19C0B2E4913A3F5B8FC0 /* TrainerModuleBuilder.swift */; };
 		CA5E73F07730455F4D710A72 /* UserModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */; };
 		CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */; };
 		CCAD73305D3903D2E49CBA17 /* UserModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DA3662E0D55993EDD2B /* UserModuleDataStore.swift */; };
 		D5D0A427DE737068EE51DD3A /* AuthenticationModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */; };
-		D66861A52548888800FC8219 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861A42548888800FC8219 /* LoginView.swift */; };
 		D66861AD255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861AE255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861AF255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861B3255052A400FC8219 /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861B2255052A400FC8219 /* Tables.swift */; };
+		D66861B625555C4400FC8219 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */; };
+		D66861B825555C9D00FC8219 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */; };
 		D6FEB94A253B7048003085F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB949253B7048003085F9 /* AppDelegate.swift */; };
 		D6FEB94C253B7048003085F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB94B253B7048003085F9 /* SceneDelegate.swift */; };
-		D6FEB94E253B7048003085F9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB94D253B7048003085F9 /* ViewController.swift */; };
 		D6FEB953253B704A003085F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FEB952253B704A003085F9 /* Assets.xcassets */; };
 		D6FEB956253B704A003085F9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6FEB954253B704A003085F9 /* LaunchScreen.storyboard */; };
 		D6FEB961253B704B003085F9 /* sportprogrammTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB960253B704B003085F9 /* sportprogrammTests.swift */; };
@@ -58,7 +74,11 @@
 		D6FEB999253B7B10003085F9 /* SF-Compact-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D6FEB990253B7B10003085F9 /* SF-Compact-Rounded-Medium.otf */; };
 		D6FEB99A253B7B10003085F9 /* SF-Compact-Rounded-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D6FEB991253B7B10003085F9 /* SF-Compact-Rounded-Regular.otf */; };
 		E5D28048EC9ED277534F3745 /* UserModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F45E151A7018E4EC2A3B8E /* UserModuleViewController.swift */; };
+		E68562833B1C3D32B29531DF /* PasswordRecoveryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC99010D20F127FEF5545FB4 /* PasswordRecoveryInteractor.swift */; };
+		E6D3052965286F9841638A7E /* PasswordRecoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174B2037C70170DBA4320D79 /* PasswordRecoveryViewController.swift */; };
+		EB78341B56457785F062297E /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647205C82370E7D49252F2CD /* RegistrationService.swift */; };
 		ED79E34D390FFF52C43E799B /* UserModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6259D01F238583683EDE1D /* UserModuleDataFlow.swift */; };
+		F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C1DC484750A673891FEF0 /* RegistrationModel.swift */; };
 		F594AF763EED4B93EE5F3088 /* UserModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE377D61C9183E1099AD15 /* UserModuleBuilder.swift */; };
 		F822108DC65ADEC71CD5C1F3 /* AuthenticationModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14E7D9C23823F0C8F8D430 /* AuthenticationModuleProvider.swift */; };
 /* End PBXBuildFile section */
@@ -83,8 +103,15 @@
 /* Begin PBXFileReference section */
 		025BD2369D9638EB30236E00 /* TrainerModuleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleService.swift; sourceTree = "<group>"; };
 		070E770051843B932686F480 /* TrainerModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleDataFlow.swift; sourceTree = "<group>"; };
+		0C2096C23491E088C861670B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryModel.swift; sourceTree = "<group>"; };
+		15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationBuilder.swift; sourceTree = "<group>"; };
+		174B2037C70170DBA4320D79 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
+		17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryBuilder.swift; sourceTree = "<group>"; };
 		17CABB74D1DFA3B88B0C093E /* TrainerModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleProvider.swift; sourceTree = "<group>"; };
+		2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		2995DB96135E7A859458C679 /* UserModuleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleService.swift; sourceTree = "<group>"; };
+		2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataStore.swift; sourceTree = "<group>"; };
 		2CDCDEFA61D134B003F9B38B /* TrainerModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleViewController.swift; sourceTree = "<group>"; };
 		2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleBuilder.swift; sourceTree = "<group>"; };
 		35A19B4FA09C64F149868282 /* Pods_sportprogramm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogramm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,9 +121,15 @@
 		4947A8AA8909A35C74B5C2E7 /* TrainerModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleDataStore.swift; sourceTree = "<group>"; };
 		49F45E151A7018E4EC2A3B8E /* UserModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleViewController.swift; sourceTree = "<group>"; };
 		4C30005749C2673EA69F4FC4 /* Pods-sportprogramm-sportprogrammUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm-sportprogrammUITests.release.xcconfig"; path = "Target Support Files/Pods-sportprogramm-sportprogrammUITests/Pods-sportprogramm-sportprogrammUITests.release.xcconfig"; sourceTree = "<group>"; };
+		546412060AD3A73FF6403F24 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		5A38A556A30049AE495A3F1B /* PasswordRecoveryProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryProvider.swift; sourceTree = "<group>"; };
+		5D55A69365605289FF21D9C1 /* PasswordRecoveryDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryDataFlow.swift; sourceTree = "<group>"; };
 		610F3D98211648AEA1F722BC /* TrainerModuleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleModel.swift; sourceTree = "<group>"; };
+		647205C82370E7D49252F2CD /* RegistrationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		65A4EEA138BB13990F01C614 /* AuthenticationModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleDataStore.swift; sourceTree = "<group>"; };
 		6DD66BC5FA1240536C99FC6E /* Pods-sportprogrammTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogrammTests.debug.xcconfig"; path = "Target Support Files/Pods-sportprogrammTests/Pods-sportprogrammTests.debug.xcconfig"; sourceTree = "<group>"; };
+		710C1DC484750A673891FEF0 /* RegistrationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
+		755BAFF617AAA7FF9B0F983A /* PasswordRecoveryDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryDataStore.swift; sourceTree = "<group>"; };
 		78E746DAE90DC17290945CBF /* Pods-sportprogramm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm.release.xcconfig"; path = "Target Support Files/Pods-sportprogramm/Pods-sportprogramm.release.xcconfig"; sourceTree = "<group>"; };
 		862DC6304C95BA261942A085 /* TrainerModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleInteractor.swift; sourceTree = "<group>"; };
 		8CC5315C1557F2DB20A39FFF /* TrainerModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleView.swift; sourceTree = "<group>"; };
@@ -108,19 +141,21 @@
 		AAFE377D61C9183E1099AD15 /* UserModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleBuilder.swift; sourceTree = "<group>"; };
 		ABFE5509DA3DDAE9FE3571E8 /* AuthenticationModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleView.swift; sourceTree = "<group>"; };
 		AE6259D01F238583683EDE1D /* UserModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleDataFlow.swift; sourceTree = "<group>"; };
+		B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataFlow.swift; sourceTree = "<group>"; };
 		B192B5781A5571A6AB6458CA /* Pods-sportprogrammTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogrammTests.release.xcconfig"; path = "Target Support Files/Pods-sportprogrammTests/Pods-sportprogrammTests.release.xcconfig"; sourceTree = "<group>"; };
 		B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleInteractor.swift; sourceTree = "<group>"; };
+		BB7F32D3892DC7937BF2B290 /* PasswordRecoveryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryService.swift; sourceTree = "<group>"; };
 		C41D9D046500CA7FFA4F5D8A /* UserModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleProvider.swift; sourceTree = "<group>"; };
 		C981F6AC5C217271AE8F4156 /* AuthenticationModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleViewController.swift; sourceTree = "<group>"; };
 		CBE8F33C6D1C486E702F4870 /* TrainerModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModulePresenter.swift; sourceTree = "<group>"; };
 		CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleView.swift; sourceTree = "<group>"; };
-		D66861A42548888800FC8219 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D66861AC255009A000FC8219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D66861B2255052A400FC8219 /* Tables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
+		D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../Downloads/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
+		D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../Downloads/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		D6FEB946253B7048003085F9 /* sportprogramm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportprogramm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FEB949253B7048003085F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FEB94B253B7048003085F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D6FEB94D253B7048003085F9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D6FEB952253B704A003085F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6FEB955253B704A003085F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6FEB957253B704A003085F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,9 +177,14 @@
 		D74A19C0B2E4913A3F5B8FC0 /* TrainerModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleBuilder.swift; sourceTree = "<group>"; };
 		D77209554CBC633403953558 /* Pods-sportprogramm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm.debug.xcconfig"; path = "Target Support Files/Pods-sportprogramm/Pods-sportprogramm.debug.xcconfig"; sourceTree = "<group>"; };
 		DD14E7D9C23823F0C8F8D430 /* AuthenticationModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleProvider.swift; sourceTree = "<group>"; };
+		DE8ABF39C76996261D477B7A /* RegistrationProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationProvider.swift; sourceTree = "<group>"; };
 		E19EB632B445864AC56064D0 /* UserModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModulePresenter.swift; sourceTree = "<group>"; };
+		E43D0C15774DF5AF39E26590 /* RegistrationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		E90AFABA39DAF669F71BF4A3 /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
 		EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleInteractor.swift; sourceTree = "<group>"; };
 		F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModulePresenter.swift; sourceTree = "<group>"; };
+		FC99010D20F127FEF5545FB4 /* PasswordRecoveryInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractor.swift; sourceTree = "<group>"; };
+		FD467A11AD6A5CC40DF08D3C /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +271,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		360D4517C2D275DD3A155A5E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E90AFABA39DAF669F71BF4A3 /* PasswordRecoveryView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E1485F24F219B3ACA0F0AA7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				710C1DC484750A673891FEF0 /* RegistrationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		62A629ABBDE359B37191F1F6 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +318,47 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		96E012759811DCC56BFC1770 /* PasswordRecovery */ = {
+			isa = PBXGroup;
+			children = (
+				17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */,
+				174B2037C70170DBA4320D79 /* PasswordRecoveryViewController.swift */,
+				FC99010D20F127FEF5545FB4 /* PasswordRecoveryInteractor.swift */,
+				2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */,
+				5D55A69365605289FF21D9C1 /* PasswordRecoveryDataFlow.swift */,
+				9BA18D4B8449ED5A007775EA /* Model */,
+				F159D5EF856860F428DE9682 /* Provider */,
+				360D4517C2D275DD3A155A5E /* View */,
+			);
+			path = PasswordRecovery;
+			sourceTree = "<group>";
+		};
+		99A49EEE5DF0ECF171918465 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E43D0C15774DF5AF39E26590 /* RegistrationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AB5D200CEF7ADBD37C9451D /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				DE8ABF39C76996261D477B7A /* RegistrationProvider.swift */,
+				2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */,
+				647205C82370E7D49252F2CD /* RegistrationService.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		9BA18D4B8449ED5A007775EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9BE5ED040DB41D4B99E48CD2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,14 +370,9 @@
 		9DAD8EED30B9596AEEAE63F0 /* AuthenticationModule */ = {
 			isa = PBXGroup;
 			children = (
-				2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */,
-				C981F6AC5C217271AE8F4156 /* AuthenticationModuleViewController.swift */,
-				EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */,
-				F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */,
-				380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */,
-				7721EE238117E8DBCC4D5B94 /* Model */,
-				1ED5A643B8ACCDAA364AEC1B /* Provider */,
-				9BE5ED040DB41D4B99E48CD2 /* View */,
+				96E012759811DCC56BFC1770 /* PasswordRecovery */,
+				D4080EDAFF613BCA39BD3420 /* Registration */,
+				D66861B4255550A500FC8219 /* Entry */,
 			);
 			path = AuthenticationModule;
 			sourceTree = "<group>";
@@ -296,6 +388,21 @@
 				B192B5781A5571A6AB6458CA /* Pods-sportprogrammTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D4080EDAFF613BCA39BD3420 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */,
+				546412060AD3A73FF6403F24 /* RegistrationViewController.swift */,
+				FD467A11AD6A5CC40DF08D3C /* RegistrationInteractor.swift */,
+				0C2096C23491E088C861670B /* RegistrationPresenter.swift */,
+				B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */,
+				3E1485F24F219B3ACA0F0AA7 /* Model */,
+				9AB5D200CEF7ADBD37C9451D /* Provider */,
+				99A49EEE5DF0ECF171918465 /* View */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 		D66861A925488BA100FC8219 /* TrainerModule */ = {
@@ -327,6 +434,21 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		D66861B4255550A500FC8219 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */,
+				C981F6AC5C217271AE8F4156 /* AuthenticationModuleViewController.swift */,
+				EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */,
+				F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */,
+				380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */,
+				7721EE238117E8DBCC4D5B94 /* Model */,
+				1ED5A643B8ACCDAA364AEC1B /* Provider */,
+				9BE5ED040DB41D4B99E48CD2 /* View */,
+			);
+			path = Entry;
+			sourceTree = "<group>";
+		};
 		D6FEB93D253B7048003085F9 = {
 			isa = PBXGroup;
 			children = (
@@ -355,8 +477,6 @@
 			children = (
 				D66861AB254891D200FC8219 /* Sources */,
 				D66861A925488BA100FC8219 /* TrainerModule */,
-				D6FEB94D253B7048003085F9 /* ViewController.swift */,
-				D66861A42548888800FC8219 /* LoginView.swift */,
 				9DAD8EED30B9596AEEAE63F0 /* AuthenticationModule */,
 				62A629ABBDE359B37191F1F6 /* UserModule */,
 			);
@@ -384,6 +504,8 @@
 		D6FEB986253B7AB8003085F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */,
+				D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */,
 				D6FEB98C253B7B0F003085F9 /* SF-Compact-Rounded-Black.otf */,
 				D6FEB98E253B7B0F003085F9 /* SF-Compact-Rounded-Bold.otf */,
 				D6FEB98F253B7B10003085F9 /* SF-Compact-Rounded-Heavy.otf */,
@@ -403,6 +525,16 @@
 				A8E8CD3993D7C97427A498CE /* UserModuleModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F159D5EF856860F428DE9682 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5A38A556A30049AE495A3F1B /* PasswordRecoveryProvider.swift */,
+				755BAFF617AAA7FF9B0F983A /* PasswordRecoveryDataStore.swift */,
+				BB7F32D3892DC7937BF2B290 /* PasswordRecoveryService.swift */,
+			);
+			path = Provider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,7 +652,9 @@
 				D6FEB995253B7B10003085F9 /* SF-Compact-Rounded-Black.otf in Resources */,
 				D6FEB999253B7B10003085F9 /* SF-Compact-Rounded-Medium.otf in Resources */,
 				D66861AD255009A000FC8219 /* GoogleService-Info.plist in Resources */,
+				D66861B825555C9D00FC8219 /* SF-Pro-Text-Regular.otf in Resources */,
 				D6FEB997253B7B10003085F9 /* SF-Compact-Rounded-Bold.otf in Resources */,
+				D66861B625555C4400FC8219 /* SF-Pro-Display-Bold.otf in Resources */,
 				D6FEB994253B7B10003085F9 /* SF-Compact-Rounded-Thin.otf in Resources */,
 				D6FEB996253B7B10003085F9 /* SF-Compact-Rounded-Light.otf in Resources */,
 				D6FEB998253B7B10003085F9 /* SF-Compact-Rounded-Heavy.otf in Resources */,
@@ -655,9 +789,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6FEB94E253B7048003085F9 /* ViewController.swift in Sources */,
 				D6FEB94A253B7048003085F9 /* AppDelegate.swift in Sources */,
-				D66861A52548888800FC8219 /* LoginView.swift in Sources */,
 				D6FEB94C253B7048003085F9 /* SceneDelegate.swift in Sources */,
 				CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */,
 				AE12D23474862A95A5A29A70 /* AuthenticationModuleViewController.swift in Sources */,
@@ -690,6 +822,26 @@
 				35C8CDAB544E5AAA1819F043 /* TrainerModuleDataStore.swift in Sources */,
 				99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */,
 				B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */,
+				0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */,
+				79E9B8B4C9C0D4BD01A85D8B /* RegistrationViewController.swift in Sources */,
+				38CB51413B7D2A206EBD2427 /* RegistrationInteractor.swift in Sources */,
+				53A7870CA46A235F83A40C90 /* RegistrationPresenter.swift in Sources */,
+				84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */,
+				F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */,
+				025AFCE59506FF8036640AED /* RegistrationProvider.swift in Sources */,
+				739C3232A0389339D54C4D78 /* RegistrationDataStore.swift in Sources */,
+				EB78341B56457785F062297E /* RegistrationService.swift in Sources */,
+				2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */,
+				50895E881714F33D6DC92FF7 /* PasswordRecoveryBuilder.swift in Sources */,
+				E6D3052965286F9841638A7E /* PasswordRecoveryViewController.swift in Sources */,
+				E68562833B1C3D32B29531DF /* PasswordRecoveryInteractor.swift in Sources */,
+				7736B82A817177105DB31236 /* PasswordRecoveryPresenter.swift in Sources */,
+				A337C1B9EC4E2FB68A96FC37 /* PasswordRecoveryDataFlow.swift in Sources */,
+				B3E05778EFEBE26DDC8EF54D /* PasswordRecoveryModel.swift in Sources */,
+				A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */,
+				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,
+				3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */,
+				BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

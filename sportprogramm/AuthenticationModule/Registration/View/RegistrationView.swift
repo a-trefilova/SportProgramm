@@ -1,14 +1,16 @@
+//
+//  Created by Alyona Sabitskaya on 06/11/2020.
+//
 
 import UIKit
-import SnapKit
 
-extension UserModuleView {
+extension RegistrationView {
     struct Appearance {
         let exampleOffset: CGFloat = 10
     }
 }
 
-class UserModuleView: UIView {
+class RegistrationView: UIView {
     let appearance = Appearance()
 
     fileprivate(set) lazy var customView: UIView = {
@@ -18,7 +20,6 @@ class UserModuleView: UIView {
 
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
-        backgroundColor = .white
         addSubviews()
         makeConstraints()
     }

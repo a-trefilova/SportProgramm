@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import WebKit
 
 protocol AuthenticationModuleDisplayLogic: class {
     func displaySomething(viewModel: AuthenticationModule.Something.ViewModel)
@@ -40,13 +41,23 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.emailTextField.delegate = self
         rootView?.passwordTextField.delegate = self
         rootView?.loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-        doSomething()
+        rootView?.forgotLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTappped(gesture:))))
+        //doSomething()
     }
 
+    @objc func forgotPasswordTappped(gesture: UITapGestureRecognizer) {
+        if gesture.state == .recognized {
+            rootView?.forgotLabel.isUserInteractionEnabled = false
+            let builder = PasswordRecoveryBuilder()
+            let vc = builder.build()
+            vc.navigationController?.navigationBar.isHidden = false
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
     @objc func loginTapped() {
         rootView?.emailTextField.endEditing(true)
         rootView?.passwordTextField.endEditing(true)
-        print(authData)
         checkIfUserExists()
     }
     
@@ -75,6 +86,9 @@ extension AuthenticationModuleViewController: AuthenticationModuleDisplayLogic {
         case let .error(message):
             print("error \(message)")
         case let .result(items):
+            let builder = UserModuleBuilder()
+            let controller = builder.build()
+            navigationController?.pushViewController(controller, animated: true)
             print("result: \(items)")
         case .emptyResult:
             print("empty result")
