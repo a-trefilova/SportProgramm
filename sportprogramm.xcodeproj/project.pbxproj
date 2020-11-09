@@ -58,6 +58,7 @@
 		D66861B3255052A400FC8219 /* Tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861B2255052A400FC8219 /* Tables.swift */; };
 		D66861B625555C4400FC8219 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */; };
 		D66861B825555C9D00FC8219 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */; };
+		D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */; };
 		D6FEB94A253B7048003085F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB949253B7048003085F9 /* AppDelegate.swift */; };
 		D6FEB94C253B7048003085F9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6FEB94B253B7048003085F9 /* SceneDelegate.swift */; };
 		D6FEB953253B704A003085F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6FEB952253B704A003085F9 /* Assets.xcassets */; };
@@ -153,6 +154,7 @@
 		D66861B2255052A400FC8219 /* Tables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
 		D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../Downloads/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../Downloads/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
+		D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRec+didTapAttrText.swift"; sourceTree = "<group>"; };
 		D6FEB946253B7048003085F9 /* sportprogramm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sportprogramm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6FEB949253B7048003085F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6FEB94B253B7048003085F9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -430,6 +432,7 @@
 				D6FEB957253B704A003085F9 /* Info.plist */,
 				D66861AC255009A000FC8219 /* GoogleService-Info.plist */,
 				D66861B2255052A400FC8219 /* Tables.swift */,
+				D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -829,6 +832,7 @@
 				84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */,
 				F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */,
 				025AFCE59506FF8036640AED /* RegistrationProvider.swift in Sources */,
+				D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */,
 				739C3232A0389339D54C4D78 /* RegistrationDataStore.swift in Sources */,
 				EB78341B56457785F062297E /* RegistrationService.swift in Sources */,
 				2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */,

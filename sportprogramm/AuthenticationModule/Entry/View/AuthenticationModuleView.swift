@@ -86,6 +86,15 @@ class AuthenticationModuleView: UIView {
         return button
     }()
     
+    let rangeOfRegisterWord: NSRange = NSRange(location: 18, length: 18)
+    
+    let registerLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+        return label
+    }()
+    
     let lineOne: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.3)
@@ -102,7 +111,7 @@ class AuthenticationModuleView: UIView {
      override init(frame: CGRect) {
          super.init(frame: frame)
          backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-         
+         setAttributesToRegisterLabel()
          addSubviews()
          makeConstraints()
      }
@@ -111,8 +120,18 @@ class AuthenticationModuleView: UIView {
          fatalError("init(coder:) has not been implemented")
      }
     
-   
-     
+    private func setAttributesToRegisterLabel() {
+        let registerWord = "Зарегистрироваться"
+        let string = NSAttributedString(string: "Ещё нет аккаунта? \(registerWord)", attributes: nil)
+        let attrString = NSMutableAttributedString(attributedString: string)
+        
+        attrString.setAttributes([NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)], range: rangeOfRegisterWord)
+        //registerLabel.setTextTitle(bySize: 15)
+        registerLabel.attributedText = attrString
+        registerLabel.textAlignment = .center
+    }
+    
+    
      func addSubviews() {
         addSubview(titleContainer)
         titleContainer.addSubview(titleLabel)
@@ -127,6 +146,7 @@ class AuthenticationModuleView: UIView {
         
         addSubview(bottomContainer)
        bottomContainer.addSubview(loginButton)
+        bottomContainer.addSubview(registerLabel)
      }
      
      func makeConstraints() {
@@ -214,6 +234,13 @@ class AuthenticationModuleView: UIView {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(16)
             make.height.equalTo((UIScreen.main.bounds.height / 3) / 5)
+        }
+        
+        registerLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(loginButton.snp.bottom).offset(32)
+            make.leading.equalTo(bottomContainer.snp.leading).offset(16)
+            make.trailing.equalTo(bottomContainer.snp.trailing).offset(-16)
+            
         }
      }
      

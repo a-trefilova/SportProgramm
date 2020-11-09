@@ -1,7 +1,3 @@
-//
-//  AuthenticationModule module
-//  Created by Alyona Sabitskaya on 27/10/2020.
-//
 
 import UIKit
 import WebKit
@@ -42,6 +38,7 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.passwordTextField.delegate = self
         rootView?.loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         rootView?.forgotLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(forgotPasswordTappped(gesture:))))
+        rootView?.registerLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(registerTapped(gesture:))))
         //doSomething()
     }
 
@@ -51,6 +48,16 @@ class AuthenticationModuleViewController: UIViewController {
             let builder = PasswordRecoveryBuilder()
             let vc = builder.build()
             vc.navigationController?.navigationBar.isHidden = false
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
+    }
+    
+    @objc func registerTapped(gesture: UITapGestureRecognizer) {
+        if gesture.state == .recognized {
+            let builder = RegistrationBuilder()
+            let vc = builder.build()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
