@@ -13,7 +13,11 @@ class UserModuleViewController: UIViewController {
     let interactor: UserModuleBusinessLogic
     var state: UserModule.ViewControllerState
 
-    init(interactor: UserModuleBusinessLogic, initialState: UserModule.ViewControllerState = .loading) {
+    private var rootView: UserModuleView? {
+        return view as? UserModuleView
+    }
+    
+    init(interactor: UserModuleBusinessLogic, initialState: UserModule.ViewControllerState /*= .loading(<#AuthenticationModuleModel#>)*/) {
         self.interactor = interactor
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
@@ -25,8 +29,7 @@ class UserModuleViewController: UIViewController {
 
     // MARK: View lifecycle
     override func loadView() {
-        let view = UserModuleView(frame: UIScreen.main.bounds)
-        self.view = view
+        view = UserModuleView(frame: UIScreen.main.bounds)
         // make additional setup of view or save references to subviews
     }
 
@@ -38,8 +41,19 @@ class UserModuleViewController: UIViewController {
 
     // MARK: Do something
     func doSomething() {
-        let request = UserModule.Something.Request()
-        interactor.doSomething(request: request)
+        switch state {
+        case .loading(let user):
+            rootView?.label.text = user.email
+            let request = UserModule.Something.Request(tableKey: user.email!)
+            interactor.doSomething(request: request)
+        case .result(_):
+            print("")
+        case .emptyResult:
+            print("")
+        case .error(message: let message):
+            print("")
+        }
+        
     }
 }
 

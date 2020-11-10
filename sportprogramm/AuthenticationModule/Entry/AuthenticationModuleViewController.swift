@@ -16,6 +16,8 @@ class AuthenticationModuleViewController: UIViewController {
     var authData: Dictionary = ["email": String(),
                                 "password": String()] as [String : Any]
     
+    var transferToUserModuleModel: AuthenticationModuleModel?
+    
     init(interactor: AuthenticationModuleBusinessLogic, initialState: AuthenticationModule.ViewControllerState = .loading) {
         self.interactor = interactor
         self.state = initialState
@@ -66,6 +68,11 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.emailTextField.endEditing(true)
         rootView?.passwordTextField.endEditing(true)
         checkIfUserExists()
+        guard let model = transferToUserModuleModel else { return }
+        let builder = UserModuleBuilder()
+        let state = UserModule.ViewControllerState.loading(model)
+        let controller = builder.set(initialState: state).build()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     // MARK: Do something
@@ -93,9 +100,11 @@ extension AuthenticationModuleViewController: AuthenticationModuleDisplayLogic {
         case let .error(message):
             print("error \(message)")
         case let .result(items):
-            let builder = UserModuleBuilder()
-            let controller = builder.build()
-            navigationController?.pushViewController(controller, animated: true)
+            print("==========")
+            print(items)
+            print("==========")
+            guard let item = items.first else { return }
+            transferToUserModuleModel = AuthenticationModuleModel(email: item.email, phoneNumber: item.phoneNumber, password: item.password)
             print("result: \(items)")
         case .emptyResult:
             print("empty result")

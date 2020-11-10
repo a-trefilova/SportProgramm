@@ -30,7 +30,7 @@ enum AuthenticationModule {
 
     enum ViewControllerState {
         case loading
-        case result([Any/*viewModel*/])
+        case result([AuthenticationModuleModel])
         case emptyResult
         case error(message: String)
     }

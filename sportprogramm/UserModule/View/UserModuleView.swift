@@ -11,9 +11,14 @@ extension UserModuleView {
 class UserModuleView: UIView {
     let appearance = Appearance()
 
-    fileprivate(set) lazy var customView: UIView = {
+     var customView: UIView = {
         let view = UIView()
         return view
+    }()
+    
+    var label: UILabel = {
+        let label = UILabel()
+        return label
     }()
 
     override init(frame: CGRect = CGRect.zero) {
@@ -29,8 +34,18 @@ class UserModuleView: UIView {
 
     func addSubviews(){
         addSubview(customView)
+        customView.addSubview(label)
     }
 
     func makeConstraints() {
+        customView.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+        label.snp.makeConstraints { (make) in
+            make.top.equalTo(customView.snp.top)
+            make.leading.equalTo(customView.snp.leading)
+            make.trailing.equalTo(customView.snp.trailing)
+            make.height.greaterThanOrEqualTo(100)
+        }
     }
 }

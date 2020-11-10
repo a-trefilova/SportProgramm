@@ -75,7 +75,7 @@ extension RegistrationViewController: RegistrationDisplayLogic {
         case let .error(message):
             print("error \(message)")
         case let .result(items):
-            let builder = UserModuleBuilder()
+            let builder = AuthenticationModuleBuilder()
             let vc = builder.build()
             navigationController?.pushViewController(vc, animated: true)
             print("result: \(items)")

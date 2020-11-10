@@ -7,6 +7,7 @@ enum UserModule {
     // MARK: Use cases
     enum Something {
         struct Request {
+            var tableKey: String
         }
 
         struct Response {
@@ -24,7 +25,7 @@ enum UserModule {
     }
 
     enum ViewControllerState {
-        case loading
+        case loading(AuthenticationModuleModel)
         case result([Any/*viewModel*/])
         case emptyResult
         case error(message: String)

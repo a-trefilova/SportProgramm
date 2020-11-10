@@ -17,7 +17,7 @@ class UserModuleBuilder: ModuleBuilder {
     func build() -> UIViewController {
         let presenter = UserModulePresenter()
         let interactor = UserModuleInteractor(presenter: presenter)
-        let controller = UserModuleViewController(interactor: interactor)
+        let controller = UserModuleViewController(interactor: interactor, initialState: initialState!)
 
         presenter.viewController = controller
         return controller
