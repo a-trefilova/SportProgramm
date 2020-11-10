@@ -4,6 +4,7 @@
 
 protocol RegistrationProviderProtocol {
     func getItems(completion: @escaping ([RegistrationModel]?, RegistrationProviderError?) -> Void)
+    func sendItems(datamodel: RegistrationModel, completion: @escaping ([RegistrationModel]?, RegistrationProviderError?) -> Void)
 }
 
 enum RegistrationProviderError: Error {
@@ -32,5 +33,20 @@ struct RegistrationProvider: RegistrationProviderProtocol {
                 completion(self.dataStore.models, nil)
             }
         }
+    }
+    
+    func sendItems(datamodel: RegistrationModel, completion: @escaping ([RegistrationModel]?, RegistrationProviderError?) -> Void) {
+        if dataStore.models?.isEmpty == false {
+                   return completion(self.dataStore.models, nil)
+        }
+        service.createNewUser(dataModel: datamodel) { (array, error) in
+            if let error = error {
+                completion(nil, .getItemsFailed(underlyingError: error))
+            } else if let models = array {
+                self.dataStore.models = models
+                completion(self.dataStore.models, nil)
+            }
+        }
+        
     }
 }

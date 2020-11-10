@@ -63,10 +63,36 @@ class RegistrationView: UIView {
         return label
     }()
     
+    let bottomContainer: UIView = {
+        let view = UIView()
+        view.clipsToBounds = true
+        return view
+    }()
+    
+    let loginButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Зарегистрироваться", for: .normal)
+        button.layer.cornerRadius = 5
+        button.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        button.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+        button.setTitleColor(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), for: .selected)
+
+        return button
+    }()
+    
+    let registerLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.isUserInteractionEnabled = true
+        label.font = UIFont(name: "SF Pro Display", size: 15)
+        return label
+    }()
+    
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         setUpCheckBox()
+        setUpBottomLabel()
         addSubviews()
         makeConstraints()
     }
@@ -91,6 +117,16 @@ class RegistrationView: UIView {
         //applyLabel.font = UIFont(name: "SF Pro Display", size: 15)
         applyLabel.textAlignment = .left
     }
+    
+    func setUpBottomLabel() {
+        let register: String = "Войти"
+        let string = NSAttributedString(string: "Уже есть аккаунт? \(register)")
+        let attrString = NSMutableAttributedString(attributedString: string)
+        attrString.setAttributes([NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)], range: NSRange(location: 18, length: 5))
+        attrString.setAttributes([NSAttributedString.Key.kern : 0.37], range: NSRange(location: 18, length: register.count))
+        registerLabel.attributedText = attrString
+        registerLabel.textAlignment = .center
+    }
 
     func addSubviews(){
         addSubview(titleContainer)
@@ -105,6 +141,10 @@ class RegistrationView: UIView {
         tfContainer.addSubview(checkboxContainer)
         checkboxContainer.addSubview(checkBox)
         checkboxContainer.addSubview(applyLabel)
+        
+        addSubview(bottomContainer)
+        bottomContainer.addSubview(loginButton)
+         bottomContainer.addSubview(registerLabel)
     }
 
     func makeConstraints() {
@@ -173,6 +213,27 @@ class RegistrationView: UIView {
             make.leading.equalTo(checkBox.snp.trailing).offset(5)
             make.centerY.equalTo(checkboxContainer.snp.centerY)
             make.trailing.equalTo(checkboxContainer.snp.trailing).offset(-16)
+            
+        }
+        
+        bottomContainer.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset((UIScreen.main.bounds.height / 4)*3)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        loginButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview()
+            make.centerX.equalTo(tfContainer.snp.centerX)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(16)
+            make.height.equalTo((UIScreen.main.bounds.height / 3) / 5)
+        }
+        
+        registerLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(loginButton.snp.bottom).offset(32)
+            make.leading.equalTo(bottomContainer.snp.leading).offset(16)
+            make.trailing.equalTo(bottomContainer.snp.trailing).offset(-16)
             
         }
     }

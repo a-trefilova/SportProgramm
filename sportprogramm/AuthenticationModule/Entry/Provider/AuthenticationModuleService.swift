@@ -31,13 +31,6 @@ class AuthenticationModuleService: AuthenticationModuleServiceProtocol {
     }
     
     
-    func createNewUser(by email: String, password: String) {
-        ref = db.collection("users").addDocument(data: ["email": email,
-                                                        "password": password,
-                                                        "phone": "+00000000000"], completion: { (error) in
-                        
-        })
-    }
     
     func checkIfUserIsExists(by email: String, password: String, completion: @escaping (Bool) -> Void){
         db.collection("users").getDocuments { (querySnapshot, error) in

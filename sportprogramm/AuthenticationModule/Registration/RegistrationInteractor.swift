@@ -5,6 +5,7 @@
 
 protocol RegistrationBusinessLogic {
     func doSomething(request: Registration.Something.Request)
+    func sendingDatamodel(request: Registration.Something.Request) 
 }
 
 /// Класс для описания бизнес-логики модуля Registration
@@ -20,6 +21,20 @@ class RegistrationInteractor: RegistrationBusinessLogic {
     // MARK: Do something
     func doSomething(request: Registration.Something.Request) {
         provider.getItems { (items, error) in
+            let result: Registration.RegistrationRequestResult
+            if let items = items {
+                result = .success(items)
+            } else if let error = error {
+                result = .failure(.someError(message: error.localizedDescription))
+            } else {
+                result = .failure(.someError(message: "No Data"))
+            }
+            self.presenter.presentSomething(response: Registration.Something.Response(result: result))
+        }
+    }
+    
+    func sendingDatamodel(request: Registration.Something.Request) {
+        provider.sendItems(datamodel: request.datamodel) { (items, error) in
             let result: Registration.RegistrationRequestResult
             if let items = items {
                 result = .success(items)

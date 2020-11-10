@@ -7,6 +7,7 @@ enum Registration {
     // MARK: Use cases
     enum Something {
         struct Request {
+            var datamodel: RegistrationModel
         }
 
         struct Response {

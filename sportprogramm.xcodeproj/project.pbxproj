@@ -51,7 +51,7 @@
 		CA5E73F07730455F4D710A72 /* UserModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */; };
 		CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */; };
 		CCAD73305D3903D2E49CBA17 /* UserModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DA3662E0D55993EDD2B /* UserModuleDataStore.swift */; };
-		D5D0A427DE737068EE51DD3A /* AuthenticationModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */; };
+		D5D0A427DE737068EE51DD3A /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40311FDD41C02E3A2051B6D6 /* UserDataModel.swift */; };
 		D66861AD255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861AE255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861AF255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
@@ -117,7 +117,7 @@
 		2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleBuilder.swift; sourceTree = "<group>"; };
 		35A19B4FA09C64F149868282 /* Pods_sportprogramm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogramm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleDataFlow.swift; sourceTree = "<group>"; };
-		40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleModel.swift; sourceTree = "<group>"; };
+		40311FDD41C02E3A2051B6D6 /* UserDataModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		47E7E5F857952679329BE143 /* Pods_sportprogramm_sportprogrammUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogramm_sportprogrammUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4947A8AA8909A35C74B5C2E7 /* TrainerModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleDataStore.swift; sourceTree = "<group>"; };
 		49F45E151A7018E4EC2A3B8E /* UserModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleViewController.swift; sourceTree = "<group>"; };
@@ -315,7 +315,7 @@
 		7721EE238117E8DBCC4D5B94 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */,
+				40311FDD41C02E3A2051B6D6 /* UserDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -799,7 +799,7 @@
 				18062C233C834147FB1AB9F9 /* AuthenticationModuleInteractor.swift in Sources */,
 				3D1EC614C0F2335C3B9EA0C6 /* AuthenticationModulePresenter.swift in Sources */,
 				359208B0595AC5099D0487E9 /* AuthenticationModuleDataFlow.swift in Sources */,
-				D5D0A427DE737068EE51DD3A /* AuthenticationModuleModel.swift in Sources */,
+				D5D0A427DE737068EE51DD3A /* UserDataModel.swift in Sources */,
 				F822108DC65ADEC71CD5C1F3 /* AuthenticationModuleProvider.swift in Sources */,
 				97889C8FE0E12B3EFA0EAC21 /* AuthenticationModuleDataStore.swift in Sources */,
 				0666A80B854D22B59886D17D /* AuthenticationModuleService.swift in Sources */,

@@ -12,7 +12,12 @@ protocol RegistrationDisplayLogic: class {
 class RegistrationViewController: UIViewController {
     let interactor: RegistrationBusinessLogic
     var state: Registration.ViewControllerState
-
+    var dataModelSendedToFirebase: RegistrationModel?
+    
+    private var rootView: RegistrationView? {
+        return view as? RegistrationView
+    }
+    
     init(interactor: RegistrationBusinessLogic, initialState: Registration.ViewControllerState = .loading) {
         self.interactor = interactor
         self.state = initialState
@@ -25,21 +30,35 @@ class RegistrationViewController: UIViewController {
 
     // MARK: View lifecycle
     override func loadView() {
-        let view = RegistrationView(frame: UIScreen.main.bounds)
-        self.view = view
-        // make additional setup of view or save references to subviews
+        view = RegistrationView(frame: UIScreen.main.bounds)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = false
+        rootView?.loginButton.addTarget(self, action: #selector(sendDatamodel), for: .touchUpInside)
+        //doSomething()
+    }
+    
+    @objc func sendDatamodel() {
+        getDataModel()
         doSomething()
     }
-
+    
+    private func getDataModel() {
+       guard let email = rootView?.emailTf.text,
+        let name = rootView?.nameTf.text,
+        let password = rootView?.passwordTf.text
+        else { return }
+        dataModelSendedToFirebase = RegistrationModel(uid: 0, name: name, email: email, password: password)
+    }
+    
     // MARK: Do something
     func doSomething() {
-        let request = Registration.Something.Request()
-        interactor.doSomething(request: request)
+        guard let datamodel = dataModelSendedToFirebase else { return }
+        let request = Registration.Something.Request(datamodel: datamodel)
+        //interactor.doSomething(request: request)
+        interactor.sendingDatamodel(request: request)
     }
 }
 
@@ -56,6 +75,9 @@ extension RegistrationViewController: RegistrationDisplayLogic {
         case let .error(message):
             print("error \(message)")
         case let .result(items):
+            let builder = UserModuleBuilder()
+            let vc = builder.build()
+            navigationController?.pushViewController(vc, animated: true)
             print("result: \(items)")
         case .emptyResult:
             print("empty result")

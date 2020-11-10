@@ -1,8 +1,10 @@
 
 struct RegistrationModel{
-    // Example
+    
     let uid: Int
     let name: String
+    let email: String
+    let password: String
 }
 
 extension RegistrationModel: Equatable {

@@ -1,15 +1,31 @@
-//
-//  Created by Alyona Sabitskaya on 06/11/2020.
-//
+import Firebase
 
 protocol RegistrationServiceProtocol {
     func fetchItems(completion: @escaping ([RegistrationModel]?, Error?) -> Void)
+    func createNewUser(dataModel: RegistrationModel,  completion: @escaping ([RegistrationModel]?, Error?) -> Void)
 }
 
-/// Получает данные для модуля Registration
+
 class RegistrationService: RegistrationServiceProtocol {
 
+    var ref: DocumentReference? = nil
+    let db = Firestore.firestore()
+    
     func fetchItems(completion: @escaping ([RegistrationModel]?, Error?) -> Void) {
         completion(nil, nil)
+        //createNewUser(byName: <#T##String#>, email: <#T##String#>, password: <#T##String#>)
     }
+    
+    func createNewUser(dataModel: RegistrationModel,  completion: @escaping ([RegistrationModel]?, Error?) -> Void) {
+        ref = db.collection("users").addDocument(data: ["email": dataModel.email,
+                                                        "name": dataModel.name,
+                                                        "password": dataModel.password ], completion: { (error) in
+                        
+        })
+        
+        completion([dataModel], nil)
+    }
+    
+    
+    
 }
