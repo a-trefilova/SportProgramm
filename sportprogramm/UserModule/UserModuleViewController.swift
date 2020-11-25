@@ -9,7 +9,7 @@ protocol UserModuleDisplayLogic: class {
     func displaySomething(viewModel: UserModule.Something.ViewModel)
 }
 
-class UserModuleViewController: UIViewController {
+class UserModuleViewController: UITabBarController {
     let interactor: UserModuleBusinessLogic
     var state: UserModule.ViewControllerState
 
@@ -28,15 +28,34 @@ class UserModuleViewController: UIViewController {
     }
 
     // MARK: View lifecycle
-    override func loadView() {
-        view = UserModuleView(frame: UIScreen.main.bounds)
-        // make additional setup of view or save references to subviews
-    }
+//    override func loadView() {
+//        view = UserModuleView(frame: UIScreen.main.bounds)
+//        // make additional setup of view or save references to subviews
+//    }
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        setUpTapBar()
         
         doSomething()
+    }
+    
+    private func setUpTapBar(){
+        let fistvc = UserProgrammsBuilder().build()
+        let firstItem = UITabBarItem(title: "Программы", image: UIImage(named: "TrainIcon"), tag: 0)
+        fistvc.tabBarItem = firstItem
+        
+        let secondvc = UserTrainingCalendarBuilder().build()
+        let secItem = UITabBarItem(title: "Тренировки", image: UIImage(named: "calendar"), tag: 1)
+        secondvc.tabBarItem = secItem
+        
+        let thirdvc = UserSettingsBuilder().build()
+        let thrdItem = UITabBarItem(title: "Настройки", image: UIImage(named: "settings"), tag: 2)
+        thirdvc.tabBarItem = thrdItem
+        
+        let listofvc = [fistvc, secondvc, thirdvc]
+        viewControllers = listofvc
     }
 
     // MARK: Do something

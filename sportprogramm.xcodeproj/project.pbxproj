@@ -12,33 +12,54 @@
 		0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */; };
 		0AC8AF45C6BA486DA1A797D0 /* TrainerModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862DC6304C95BA261942A085 /* TrainerModuleInteractor.swift */; };
 		0B80000420D53FDE3FDFFA53 /* UserModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */; };
+		0CEF344D82F1F9557C643C04 /* UserSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FE8226BF5641FBE811E478 /* UserSettingsPresenter.swift */; };
 		12429ED90F04596E564F9207 /* UserModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19EB632B445864AC56064D0 /* UserModulePresenter.swift */; };
+		12F57DE69FB23F01E0E29B54 /* UserProgrammsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F26102C211A5A05690A4F9 /* UserProgrammsService.swift */; };
 		18062C233C834147FB1AB9F9 /* AuthenticationModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */; };
 		1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BAFF617AAA7FF9B0F983A /* PasswordRecoveryDataStore.swift */; };
+		1F9BCA229E61E1498939A58D /* UserTrainingCalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B506AFC76A39822185526340 /* UserTrainingCalendarPresenter.swift */; };
+		280E59C17B73F6D5EEA3B2E2 /* UserTrainingCalendarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C228CEA3F3AEA10DB72447 /* UserTrainingCalendarBuilder.swift */; };
 		2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43D0C15774DF5AF39E26590 /* RegistrationView.swift */; };
+		2E1D8A9DF6CBD6806C13B8A4 /* UserTrainingCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA8CD006C06D68A90498150 /* UserTrainingCalendarViewController.swift */; };
+		2E5B0E68749A9B97745B1A63 /* UserProgrammsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57169451E9396B8EB6C06856 /* UserProgrammsView.swift */; };
 		2F45CC83E74DE7242A461C04 /* UserModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8E8CD3993D7C97427A498CE /* UserModuleModel.swift */; };
+		2FDEADEDEF93B3BF170B4C41 /* UserProgrammsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93F034057AA785184EE0F72D /* UserProgrammsProvider.swift */; };
+		2FEF183CA975C2B18D4C824B /* UserProgrammsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B634D2111F2D4D28608792 /* UserProgrammsViewController.swift */; };
 		359208B0595AC5099D0487E9 /* AuthenticationModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */; };
 		35C8CDAB544E5AAA1819F043 /* TrainerModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4947A8AA8909A35C74B5C2E7 /* TrainerModuleDataStore.swift */; };
 		38CB51413B7D2A206EBD2427 /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD467A11AD6A5CC40DF08D3C /* RegistrationInteractor.swift */; };
 		3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7F32D3892DC7937BF2B290 /* PasswordRecoveryService.swift */; };
 		3B316A51C7AF4C4FE9BD5822 /* TrainerModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610F3D98211648AEA1F722BC /* TrainerModuleModel.swift */; };
 		3D1EC614C0F2335C3B9EA0C6 /* AuthenticationModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */; };
+		3D5E9D08A1E0C43C8C3EF354 /* UserSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F007B8EAF4451DD0772FFD8 /* UserSettingsInteractor.swift */; };
 		41616779C423B637A064C19B /* Pods_sportprogrammTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3F5528899C8FA092635342E /* Pods_sportprogrammTests.framework */; };
 		41A6D4CEDAEFB8CEC0A08BF0 /* Pods_sportprogramm_sportprogrammUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47E7E5F857952679329BE143 /* Pods_sportprogramm_sportprogrammUITests.framework */; };
+		44E44F7353A2B0D54DF1390D /* UserProgrammsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65687F656F3ABD600603CA2 /* UserProgrammsBuilder.swift */; };
+		481880AC55500B5552383796 /* UserProgrammsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C98F51D1FD3E221A440CA3 /* UserProgrammsModel.swift */; };
 		50895E881714F33D6DC92FF7 /* PasswordRecoveryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */; };
 		526DC687D0BC420391581571 /* Pods_sportprogramm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35A19B4FA09C64F149868282 /* Pods_sportprogramm.framework */; };
 		53A7870CA46A235F83A40C90 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2096C23491E088C861670B /* RegistrationPresenter.swift */; };
+		5781E4F43BA619BD2370E96A /* UserTrainingCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A1C74389037466BDD87213 /* UserTrainingCalendarView.swift */; };
+		5F71183AA6F35A7464D19232 /* UserSettingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6C2BC446EB0C1E1B926550 /* UserSettingsService.swift */; };
+		63F1DF5A196E22FE9C635DA4 /* UserTrainingCalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCA08E7E889F02F62F9026D /* UserTrainingCalendarModel.swift */; };
 		69A7E1642C276163AD6C983F /* TrainerModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CABB74D1DFA3B88B0C093E /* TrainerModuleProvider.swift */; };
+		6FA5ECA32A40974D45D0363C /* UserSettingsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5739D49060B81C5205071B84 /* UserSettingsProvider.swift */; };
+		6FBF0D2F18C172A2CEE14EBE /* UserSettingsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE7756FA7D2C5CF81A9BAE /* UserSettingsDataStore.swift */; };
 		739C3232A0389339D54C4D78 /* RegistrationDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */; };
 		7409EC69C150BC198C6908FE /* TrainerModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE8F33C6D1C486E702F4870 /* TrainerModulePresenter.swift */; };
 		7736B82A817177105DB31236 /* PasswordRecoveryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */; };
 		79E9B8B4C9C0D4BD01A85D8B /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 546412060AD3A73FF6403F24 /* RegistrationViewController.swift */; };
 		7AAD55BFFB5A30063476DDBC /* TrainerModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDCDEFA61D134B003F9B38B /* TrainerModuleViewController.swift */; };
 		7CECF9474B765300F4B8972D /* AuthenticationModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFE5509DA3DDAE9FE3571E8 /* AuthenticationModuleView.swift */; };
+		7EE76DF24B3236549F00FAB3 /* UserSettingsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707BB42FAD7D5C561A6E357 /* UserSettingsDataFlow.swift */; };
 		84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */; };
 		850F5652FDC2C4FA7F71FEFF /* UserModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995DB96135E7A859458C679 /* UserModuleService.swift */; };
+		874D7173BB88770FA7736E87 /* UserTrainingCalendarDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */; };
+		930E3BEFC2E7D18826D920EB /* UserProgrammsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85415AB2A5A8F9BB0865160D /* UserProgrammsDataFlow.swift */; };
+		93D75A4959243A5E6271B7E6 /* UserTrainingCalendarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */; };
 		97889C8FE0E12B3EFA0EAC21 /* AuthenticationModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A4EEA138BB13990F01C614 /* AuthenticationModuleDataStore.swift */; };
 		99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD2369D9638EB30236E00 /* TrainerModuleService.swift */; };
+		9DFDEF42A0692E4E09AA0582 /* UserSettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D5D0E7BA36D52E42720D09 /* UserSettingsBuilder.swift */; };
 		A337C1B9EC4E2FB68A96FC37 /* PasswordRecoveryDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D55A69365605289FF21D9C1 /* PasswordRecoveryDataFlow.swift */; };
 		A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A38A556A30049AE495A3F1B /* PasswordRecoveryProvider.swift */; };
 		ADB6F6879CA5F959BC24352E /* TrainerModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070E770051843B932686F480 /* TrainerModuleDataFlow.swift */; };
@@ -46,11 +67,18 @@
 		B3E05778EFEBE26DDC8EF54D /* PasswordRecoveryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */; };
 		B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CC5315C1557F2DB20A39FFF /* TrainerModuleView.swift */; };
 		BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90AFABA39DAF669F71BF4A3 /* PasswordRecoveryView.swift */; };
+		BADB0331A021A809F590EC8A /* UserSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F635333B0C757FFA4D46864E /* UserSettingsModel.swift */; };
 		BCDD7A6AFB84E1AEAF20B1C2 /* UserModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41D9D046500CA7FFA4F5D8A /* UserModuleProvider.swift */; };
+		C1DDF19E1C71FB25F38696E7 /* UserProgrammsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D12D935EB76D2101DBD652C /* UserProgrammsPresenter.swift */; };
+		C36A1856C3D4805BD4ECD287 /* UserProgrammsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F43D92C5BA085F86068AE5 /* UserProgrammsInteractor.swift */; };
 		C7C969AFA1483A8F6CC83763 /* TrainerModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74A19C0B2E4913A3F5B8FC0 /* TrainerModuleBuilder.swift */; };
 		CA5E73F07730455F4D710A72 /* UserModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */; };
 		CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */; };
+		CC9D9A9EC51D9D91A8F5EFE5 /* UserTrainingCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */; };
 		CCAD73305D3903D2E49CBA17 /* UserModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DA3662E0D55993EDD2B /* UserModuleDataStore.swift */; };
+		CE6CE72623135FD9F5050235 /* UserTrainingCalendarDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */; };
+		D4D0B5642E070F5071737A3F /* UserProgrammsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D086EFB985AEC8B3923485C5 /* UserProgrammsDataStore.swift */; };
+		D59012DE7794EC43C8093C0A /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E03266CA20DC4CAED93C6E /* UserSettingsView.swift */; };
 		D5D0A427DE737068EE51DD3A /* AuthenticationModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */; };
 		D66861AD255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
 		D66861AE255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
@@ -80,7 +108,9 @@
 		EB78341B56457785F062297E /* RegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647205C82370E7D49252F2CD /* RegistrationService.swift */; };
 		ED79E34D390FFF52C43E799B /* UserModuleDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6259D01F238583683EDE1D /* UserModuleDataFlow.swift */; };
 		F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C1DC484750A673891FEF0 /* RegistrationModel.swift */; };
+		F55D88CB5659CDEC31A835EA /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400555AAF480FB8029EBD4C /* UserSettingsViewController.swift */; };
 		F594AF763EED4B93EE5F3088 /* UserModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE377D61C9183E1099AD15 /* UserModuleBuilder.swift */; };
+		F726156951858F88164BBC76 /* UserTrainingCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */; };
 		F822108DC65ADEC71CD5C1F3 /* AuthenticationModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14E7D9C23823F0C8F8D430 /* AuthenticationModuleProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -107,33 +137,52 @@
 		0C2096C23491E088C861670B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryModel.swift; sourceTree = "<group>"; };
 		15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationBuilder.swift; sourceTree = "<group>"; };
+		1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarDataStore.swift; sourceTree = "<group>"; };
 		174B2037C70170DBA4320D79 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryBuilder.swift; sourceTree = "<group>"; };
 		17CABB74D1DFA3B88B0C093E /* TrainerModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleProvider.swift; sourceTree = "<group>"; };
+		1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarProvider.swift; sourceTree = "<group>"; };
+		25E03266CA20DC4CAED93C6E /* UserSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
+		2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarInteractor.swift; sourceTree = "<group>"; };
 		2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		2995DB96135E7A859458C679 /* UserModuleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleService.swift; sourceTree = "<group>"; };
 		2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataStore.swift; sourceTree = "<group>"; };
 		2CDCDEFA61D134B003F9B38B /* TrainerModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleViewController.swift; sourceTree = "<group>"; };
+		2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarService.swift; sourceTree = "<group>"; };
 		2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleBuilder.swift; sourceTree = "<group>"; };
 		35A19B4FA09C64F149868282 /* Pods_sportprogramm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogramm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37C98F51D1FD3E221A440CA3 /* UserProgrammsModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsModel.swift; sourceTree = "<group>"; };
 		380B7E64FCD30DBFF36B3827 /* AuthenticationModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleDataFlow.swift; sourceTree = "<group>"; };
+		39F43D92C5BA085F86068AE5 /* UserProgrammsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsInteractor.swift; sourceTree = "<group>"; };
 		40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleModel.swift; sourceTree = "<group>"; };
 		47E7E5F857952679329BE143 /* Pods_sportprogramm_sportprogrammUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogramm_sportprogrammUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4947A8AA8909A35C74B5C2E7 /* TrainerModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleDataStore.swift; sourceTree = "<group>"; };
 		49F45E151A7018E4EC2A3B8E /* UserModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleViewController.swift; sourceTree = "<group>"; };
+		4AA8CD006C06D68A90498150 /* UserTrainingCalendarViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarViewController.swift; sourceTree = "<group>"; };
 		4C30005749C2673EA69F4FC4 /* Pods-sportprogramm-sportprogrammUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm-sportprogrammUITests.release.xcconfig"; path = "Target Support Files/Pods-sportprogramm-sportprogrammUITests/Pods-sportprogramm-sportprogrammUITests.release.xcconfig"; sourceTree = "<group>"; };
 		546412060AD3A73FF6403F24 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		54C228CEA3F3AEA10DB72447 /* UserTrainingCalendarBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarBuilder.swift; sourceTree = "<group>"; };
+		57169451E9396B8EB6C06856 /* UserProgrammsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsView.swift; sourceTree = "<group>"; };
+		5739D49060B81C5205071B84 /* UserSettingsProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsProvider.swift; sourceTree = "<group>"; };
 		5A38A556A30049AE495A3F1B /* PasswordRecoveryProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryProvider.swift; sourceTree = "<group>"; };
 		5D55A69365605289FF21D9C1 /* PasswordRecoveryDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryDataFlow.swift; sourceTree = "<group>"; };
+		5F007B8EAF4451DD0772FFD8 /* UserSettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsInteractor.swift; sourceTree = "<group>"; };
 		610F3D98211648AEA1F722BC /* TrainerModuleModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleModel.swift; sourceTree = "<group>"; };
 		647205C82370E7D49252F2CD /* RegistrationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationService.swift; sourceTree = "<group>"; };
 		65A4EEA138BB13990F01C614 /* AuthenticationModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleDataStore.swift; sourceTree = "<group>"; };
+		6CCA08E7E889F02F62F9026D /* UserTrainingCalendarModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarModel.swift; sourceTree = "<group>"; };
 		6DD66BC5FA1240536C99FC6E /* Pods-sportprogrammTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogrammTests.debug.xcconfig"; path = "Target Support Files/Pods-sportprogrammTests/Pods-sportprogrammTests.debug.xcconfig"; sourceTree = "<group>"; };
 		710C1DC484750A673891FEF0 /* RegistrationModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModel.swift; sourceTree = "<group>"; };
 		755BAFF617AAA7FF9B0F983A /* PasswordRecoveryDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryDataStore.swift; sourceTree = "<group>"; };
 		78E746DAE90DC17290945CBF /* Pods-sportprogramm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm.release.xcconfig"; path = "Target Support Files/Pods-sportprogramm/Pods-sportprogramm.release.xcconfig"; sourceTree = "<group>"; };
+		7D12D935EB76D2101DBD652C /* UserProgrammsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsPresenter.swift; sourceTree = "<group>"; };
+		8400555AAF480FB8029EBD4C /* UserSettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		85415AB2A5A8F9BB0865160D /* UserProgrammsDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsDataFlow.swift; sourceTree = "<group>"; };
 		862DC6304C95BA261942A085 /* TrainerModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleInteractor.swift; sourceTree = "<group>"; };
 		8CC5315C1557F2DB20A39FFF /* TrainerModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleView.swift; sourceTree = "<group>"; };
+		93F034057AA785184EE0F72D /* UserProgrammsProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsProvider.swift; sourceTree = "<group>"; };
+		97F26102C211A5A05690A4F9 /* UserProgrammsService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsService.swift; sourceTree = "<group>"; };
+		A1D5D0E7BA36D52E42720D09 /* UserSettingsBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsBuilder.swift; sourceTree = "<group>"; };
 		A3F5528899C8FA092635342E /* Pods_sportprogrammTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sportprogrammTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A651260C897C2FEBF263A6AE /* AuthenticationModuleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleService.swift; sourceTree = "<group>"; };
 		A68F3DA3662E0D55993EDD2B /* UserModuleDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleDataStore.swift; sourceTree = "<group>"; };
@@ -144,12 +193,18 @@
 		AE6259D01F238583683EDE1D /* UserModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleDataFlow.swift; sourceTree = "<group>"; };
 		B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataFlow.swift; sourceTree = "<group>"; };
 		B192B5781A5571A6AB6458CA /* Pods-sportprogrammTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogrammTests.release.xcconfig"; path = "Target Support Files/Pods-sportprogrammTests/Pods-sportprogrammTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarDataFlow.swift; sourceTree = "<group>"; };
+		B506AFC76A39822185526340 /* UserTrainingCalendarPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarPresenter.swift; sourceTree = "<group>"; };
+		B707BB42FAD7D5C561A6E357 /* UserSettingsDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsDataFlow.swift; sourceTree = "<group>"; };
 		B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleInteractor.swift; sourceTree = "<group>"; };
+		B8FE8226BF5641FBE811E478 /* UserSettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsPresenter.swift; sourceTree = "<group>"; };
 		BB7F32D3892DC7937BF2B290 /* PasswordRecoveryService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryService.swift; sourceTree = "<group>"; };
 		C41D9D046500CA7FFA4F5D8A /* UserModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleProvider.swift; sourceTree = "<group>"; };
+		C65687F656F3ABD600603CA2 /* UserProgrammsBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsBuilder.swift; sourceTree = "<group>"; };
 		C981F6AC5C217271AE8F4156 /* AuthenticationModuleViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleViewController.swift; sourceTree = "<group>"; };
 		CBE8F33C6D1C486E702F4870 /* TrainerModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModulePresenter.swift; sourceTree = "<group>"; };
 		CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleView.swift; sourceTree = "<group>"; };
+		D086EFB985AEC8B3923485C5 /* UserProgrammsDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsDataStore.swift; sourceTree = "<group>"; };
 		D66861AC255009A000FC8219 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D66861B2255052A400FC8219 /* Tables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tables.swift; sourceTree = "<group>"; };
 		D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../Downloads/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
@@ -178,13 +233,18 @@
 		D6FEB991253B7B10003085F9 /* SF-Compact-Rounded-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Compact-Rounded-Regular.otf"; sourceTree = "<group>"; };
 		D74A19C0B2E4913A3F5B8FC0 /* TrainerModuleBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleBuilder.swift; sourceTree = "<group>"; };
 		D77209554CBC633403953558 /* Pods-sportprogramm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogramm.debug.xcconfig"; path = "Target Support Files/Pods-sportprogramm/Pods-sportprogramm.debug.xcconfig"; sourceTree = "<group>"; };
+		D7B634D2111F2D4D28608792 /* UserProgrammsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserProgrammsViewController.swift; sourceTree = "<group>"; };
+		D8A1C74389037466BDD87213 /* UserTrainingCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarView.swift; sourceTree = "<group>"; };
 		DD14E7D9C23823F0C8F8D430 /* AuthenticationModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleProvider.swift; sourceTree = "<group>"; };
 		DE8ABF39C76996261D477B7A /* RegistrationProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationProvider.swift; sourceTree = "<group>"; };
+		DF6C2BC446EB0C1E1B926550 /* UserSettingsService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsService.swift; sourceTree = "<group>"; };
 		E19EB632B445864AC56064D0 /* UserModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModulePresenter.swift; sourceTree = "<group>"; };
 		E43D0C15774DF5AF39E26590 /* RegistrationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		E90AFABA39DAF669F71BF4A3 /* PasswordRecoveryView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryView.swift; sourceTree = "<group>"; };
 		EE340C3E34D1BFAA666DCCBC /* AuthenticationModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModuleInteractor.swift; sourceTree = "<group>"; };
 		F54C5DEB7C15680B4A6DE356 /* AuthenticationModulePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AuthenticationModulePresenter.swift; sourceTree = "<group>"; };
+		F635333B0C757FFA4D46864E /* UserSettingsModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsModel.swift; sourceTree = "<group>"; };
+		FBEE7756FA7D2C5CF81A9BAE /* UserSettingsDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsDataStore.swift; sourceTree = "<group>"; };
 		FC99010D20F127FEF5545FB4 /* PasswordRecoveryInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryInteractor.swift; sourceTree = "<group>"; };
 		FD467A11AD6A5CC40DF08D3C /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,6 +281,22 @@
 			isa = PBXGroup;
 			children = (
 				8CC5315C1557F2DB20A39FFF /* TrainerModuleView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		073D9D789E9D7F9505A0936C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D8A1C74389037466BDD87213 /* UserTrainingCalendarView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E472AFCD5C354B8E5AA8239 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				25E03266CA20DC4CAED93C6E /* UserSettingsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -289,9 +365,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		4A79F28DB030F53418917D4E /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */,
+				1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */,
+				2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		4F082C3E0E3CD442CF0A038D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57169451E9396B8EB6C06856 /* UserProgrammsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5233F0BBA7D3EE54960DCD4A /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				93F034057AA785184EE0F72D /* UserProgrammsProvider.swift */,
+				D086EFB985AEC8B3923485C5 /* UserProgrammsDataStore.swift */,
+				97F26102C211A5A05690A4F9 /* UserProgrammsService.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		62A629ABBDE359B37191F1F6 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				E6D57D79056A7A04E29F90AC /* UserProgramms */,
+				BF1FC805C6A1B02D31658049 /* UserTrainingCalendar */,
+				EB2B4E1BC6457A32746213F4 /* UserSettings */,
 				AAFE377D61C9183E1099AD15 /* UserModuleBuilder.swift */,
 				49F45E151A7018E4EC2A3B8E /* UserModuleViewController.swift */,
 				B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */,
@@ -310,6 +417,24 @@
 				CE13564639B2D5667D0B2AD2 /* UserModuleView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		6F32D19A339EFA4FBA345923 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				5739D49060B81C5205071B84 /* UserSettingsProvider.swift */,
+				FBEE7756FA7D2C5CF81A9BAE /* UserSettingsDataStore.swift */,
+				DF6C2BC446EB0C1E1B926550 /* UserSettingsService.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		6F55F41E908C37DAAFFC9330 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6CCA08E7E889F02F62F9026D /* UserTrainingCalendarModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		7721EE238117E8DBCC4D5B94 /* Model */ = {
@@ -392,6 +517,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF1FC805C6A1B02D31658049 /* UserTrainingCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				54C228CEA3F3AEA10DB72447 /* UserTrainingCalendarBuilder.swift */,
+				4AA8CD006C06D68A90498150 /* UserTrainingCalendarViewController.swift */,
+				2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */,
+				B506AFC76A39822185526340 /* UserTrainingCalendarPresenter.swift */,
+				B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */,
+				6F55F41E908C37DAAFFC9330 /* Model */,
+				4A79F28DB030F53418917D4E /* Provider */,
+				073D9D789E9D7F9505A0936C /* View */,
+			);
+			path = UserTrainingCalendar;
+			sourceTree = "<group>";
+		};
 		D4080EDAFF613BCA39BD3420 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +545,14 @@
 				99A49EEE5DF0ECF171918465 /* View */,
 			);
 			path = Registration;
+			sourceTree = "<group>";
+		};
+		D5462DFE28D522E01B65BA30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37C98F51D1FD3E221A440CA3 /* UserProgrammsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D66861A925488BA100FC8219 /* TrainerModule */ = {
@@ -522,12 +670,50 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E2DE7BAE897D57C3F1C3E278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F635333B0C757FFA4D46864E /* UserSettingsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E5BECD2BAA44CFD7223482B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				A8E8CD3993D7C97427A498CE /* UserModuleModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E6D57D79056A7A04E29F90AC /* UserProgramms */ = {
+			isa = PBXGroup;
+			children = (
+				C65687F656F3ABD600603CA2 /* UserProgrammsBuilder.swift */,
+				D7B634D2111F2D4D28608792 /* UserProgrammsViewController.swift */,
+				39F43D92C5BA085F86068AE5 /* UserProgrammsInteractor.swift */,
+				7D12D935EB76D2101DBD652C /* UserProgrammsPresenter.swift */,
+				85415AB2A5A8F9BB0865160D /* UserProgrammsDataFlow.swift */,
+				D5462DFE28D522E01B65BA30 /* Model */,
+				5233F0BBA7D3EE54960DCD4A /* Provider */,
+				4F082C3E0E3CD442CF0A038D /* View */,
+			);
+			path = UserProgramms;
+			sourceTree = "<group>";
+		};
+		EB2B4E1BC6457A32746213F4 /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				A1D5D0E7BA36D52E42720D09 /* UserSettingsBuilder.swift */,
+				8400555AAF480FB8029EBD4C /* UserSettingsViewController.swift */,
+				5F007B8EAF4451DD0772FFD8 /* UserSettingsInteractor.swift */,
+				B8FE8226BF5641FBE811E478 /* UserSettingsPresenter.swift */,
+				B707BB42FAD7D5C561A6E357 /* UserSettingsDataFlow.swift */,
+				E2DE7BAE897D57C3F1C3E278 /* Model */,
+				6F32D19A339EFA4FBA345923 /* Provider */,
+				0E472AFCD5C354B8E5AA8239 /* View */,
+			);
+			path = UserSettings;
 			sourceTree = "<group>";
 		};
 		F159D5EF856860F428DE9682 /* Provider */ = {
@@ -846,6 +1032,36 @@
 				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,
 				3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */,
 				BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */,
+				44E44F7353A2B0D54DF1390D /* UserProgrammsBuilder.swift in Sources */,
+				2FEF183CA975C2B18D4C824B /* UserProgrammsViewController.swift in Sources */,
+				C36A1856C3D4805BD4ECD287 /* UserProgrammsInteractor.swift in Sources */,
+				C1DDF19E1C71FB25F38696E7 /* UserProgrammsPresenter.swift in Sources */,
+				930E3BEFC2E7D18826D920EB /* UserProgrammsDataFlow.swift in Sources */,
+				481880AC55500B5552383796 /* UserProgrammsModel.swift in Sources */,
+				2FDEADEDEF93B3BF170B4C41 /* UserProgrammsProvider.swift in Sources */,
+				D4D0B5642E070F5071737A3F /* UserProgrammsDataStore.swift in Sources */,
+				12F57DE69FB23F01E0E29B54 /* UserProgrammsService.swift in Sources */,
+				2E5B0E68749A9B97745B1A63 /* UserProgrammsView.swift in Sources */,
+				280E59C17B73F6D5EEA3B2E2 /* UserTrainingCalendarBuilder.swift in Sources */,
+				2E1D8A9DF6CBD6806C13B8A4 /* UserTrainingCalendarViewController.swift in Sources */,
+				F726156951858F88164BBC76 /* UserTrainingCalendarInteractor.swift in Sources */,
+				1F9BCA229E61E1498939A58D /* UserTrainingCalendarPresenter.swift in Sources */,
+				CE6CE72623135FD9F5050235 /* UserTrainingCalendarDataFlow.swift in Sources */,
+				63F1DF5A196E22FE9C635DA4 /* UserTrainingCalendarModel.swift in Sources */,
+				93D75A4959243A5E6271B7E6 /* UserTrainingCalendarProvider.swift in Sources */,
+				874D7173BB88770FA7736E87 /* UserTrainingCalendarDataStore.swift in Sources */,
+				CC9D9A9EC51D9D91A8F5EFE5 /* UserTrainingCalendarService.swift in Sources */,
+				5781E4F43BA619BD2370E96A /* UserTrainingCalendarView.swift in Sources */,
+				9DFDEF42A0692E4E09AA0582 /* UserSettingsBuilder.swift in Sources */,
+				F55D88CB5659CDEC31A835EA /* UserSettingsViewController.swift in Sources */,
+				3D5E9D08A1E0C43C8C3EF354 /* UserSettingsInteractor.swift in Sources */,
+				0CEF344D82F1F9557C643C04 /* UserSettingsPresenter.swift in Sources */,
+				7EE76DF24B3236549F00FAB3 /* UserSettingsDataFlow.swift in Sources */,
+				BADB0331A021A809F590EC8A /* UserSettingsModel.swift in Sources */,
+				6FA5ECA32A40974D45D0363C /* UserSettingsProvider.swift in Sources */,
+				6FBF0D2F18C172A2CEE14EBE /* UserSettingsDataStore.swift in Sources */,
+				5F71183AA6F35A7464D19232 /* UserSettingsService.swift in Sources */,
+				D59012DE7794EC43C8093C0A /* UserSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
