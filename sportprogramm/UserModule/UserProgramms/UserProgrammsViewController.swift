@@ -34,7 +34,10 @@ class UserProgrammsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Программы"
+        title = "Мои программы"
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.title = "Мои программы"
         doSomething()
     }
 

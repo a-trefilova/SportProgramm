@@ -27,12 +27,6 @@ class UserModuleViewController: UITabBarController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: View lifecycle
-//    override func loadView() {
-//        view = UserModuleView(frame: UIScreen.main.bounds)
-//        // make additional setup of view or save references to subviews
-//    }
-
     override func viewDidLoad() {
         
         super.viewDidLoad()
