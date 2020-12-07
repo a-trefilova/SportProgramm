@@ -1,25 +1,31 @@
-//
-//  UserProgramms module
-//  Created by Alyona Sabitskaya on 15/11/2020.
-//
 
 import UIKit
 
-class UserProgrammsBuilder: ModuleBuilder {
+protocol UserProgrammsBuilderProtocol: class {
+    func build() -> UIViewController
+}
 
-    var initialState: UserProgramms.ViewControllerState?
-
-    func set(initialState: UserProgramms.ViewControllerState) -> UserProgrammsBuilder {
-        self.initialState = initialState
-        return self
-    } 
+class UserProgrammsBuilder: UserProgrammsBuilderProtocol {
+    var userEmail: String
+    let service = UserProgrammsService()
+    init(userEmail: String) {
+        self.userEmail = userEmail
+        
+    }
+    
 
     func build() -> UIViewController {
-        let presenter = UserProgrammsPresenter()
-        let interactor = UserProgrammsInteractor(presenter: presenter)
-        let controller = UserProgrammsViewController(interactor: interactor)
-
-        presenter.viewController = controller
-        return controller
+        let view = UserProgrammsViewController()
+        if let model = service.fetchItems(byEmail: userEmail) {
+            print("************")
+            print(model)
+            let presenter = UserProgrammsPresenter(view: view, model: model)
+            view.presenter = presenter
+            return view
+        }
+        return UIViewController()
     }
+    
+    
+    
 }

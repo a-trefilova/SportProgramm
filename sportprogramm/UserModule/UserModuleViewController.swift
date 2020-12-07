@@ -30,13 +30,16 @@ class UserModuleViewController: UITabBarController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        setUpTapBar()
+       // setUpTapBar()
         
         doSomething()
     }
     
-    private func setUpTapBar(){
-        let fistvc = UserProgrammsBuilder().build()
+    private func setUpTapBar(byEmail email: String?) {
+        guard let email = email else { return }
+        let firstVcBuilder = UserProgrammsBuilder(userEmail: email)
+        let fistvc = firstVcBuilder.build()
+        
         let firstItem = UITabBarItem(title: "Программы", image: UIImage(named: "TrainIcon"), tag: 0)
         fistvc.tabBarItem = firstItem
         
@@ -48,7 +51,11 @@ class UserModuleViewController: UITabBarController {
         let thrdItem = UITabBarItem(title: "Настройки", image: UIImage(named: "settings"), tag: 2)
         thirdvc.tabBarItem = thrdItem
         
-        let listofvc = [fistvc, secondvc, thirdvc]
+        let fourthVc = UserActivityModuleBuilder().build()
+        let fourthItem = UITabBarItem(title: "Активность", image: UIImage(systemName: "circle"), tag: 3)
+        fourthVc.tabBarItem = fourthItem
+        
+        let listofvc = [fistvc, secondvc, thirdvc, fourthVc]
         viewControllers = listofvc
     }
 
@@ -59,6 +66,9 @@ class UserModuleViewController: UITabBarController {
             rootView?.label.text = user.email
             let request = UserModule.Something.Request(tableKey: user.email!)
             interactor.doSomething(request: request)
+            print("******************")
+            print("\(user.email)")
+            setUpTapBar(byEmail: user.email)
         case .result(_):
             print("")
         case .emptyResult:
@@ -78,7 +88,7 @@ extension UserModuleViewController: UserModuleDisplayLogic {
     func display(newState: UserModule.ViewControllerState) {
         state = newState
         switch state {
-        case .loading:
+        case .loading(let user):
             print("loading...")
         case let .error(message):
             print("error \(message)")

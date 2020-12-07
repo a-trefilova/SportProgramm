@@ -22,8 +22,8 @@ class UserProgrammsView: UIView {
     }()
     
     
-    var activeTrainingsContainer: UIView = {
-        let view = UIView()
+    var activeTrainingsContainer: UITableView = {
+        let view = UITableView()
         view.clipsToBounds = true
         return view
     }()
@@ -180,22 +180,3 @@ class CustomProgrammCellView: UIView {
 }
 
 
-struct FullProgramm {
-    var title: String
-    var numberOfWeeks: Int
-    var excersicesByDay: [ProgrammPerDay]
-}
-
-struct ProgrammPerDay {
-    var titleOfDay: String
-    var exercises: [Excersice]
-}
-
-struct Excersice {
-    var title: String
-    var numberOfSets: Int
-    var numberOfReps: Int
-    var weight: Int
-    var isSuperset: Bool
-    
-}

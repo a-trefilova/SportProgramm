@@ -1,33 +1,28 @@
-//
-//  UserProgramms module
-//  Created by Alyona Sabitskaya on 15/11/2020.
-//
-
-import UIKit
-
-protocol UserProgrammsPresentationLogic {
-    func presentSomething(response: UserProgramms.Something.Response)
+protocol UserProgrammsViewProtocol {
+    func setUserProgramm(userProgramm: UserProgrammsModel)
 }
 
-/// Отвечает за отображение данных модуля UserProgramms
-class UserProgrammsPresenter: UserProgrammsPresentationLogic {
-    weak var viewController: UserProgrammsDisplayLogic?
+protocol UserProgrammsPresenterProtocol {
+    func presentUserProgramms(userProgramm: UserProgrammsModel)
+    init(view: UserProgrammsViewProtocol, model: UserProgrammsModel)
+}
 
-    // MARK: Do something
-    func presentSomething(response: UserProgramms.Something.Response) {
-        var viewModel: UserProgramms.Something.ViewModel
+
+class UserProgrammsPresenter: UserProgrammsPresenterProtocol {
+    
+    var view: UserProgrammsViewProtocol
+    var model: UserProgrammsModel
+    
+    
+    required init(view: UserProgrammsViewProtocol, model: UserProgrammsModel) {
         
-        switch response.result {
-        case let .failure(error):
-            viewModel = UserProgramms.Something.ViewModel(state: .error(message: error.localizedDescription))
-        case let .success(result):
-            if result.isEmpty {
-                viewModel = UserProgramms.Something.ViewModel(state: .emptyResult)
-            } else {
-                viewModel = UserProgramms.Something.ViewModel(state: .result(result))
-            }
-        }
-        
-        viewController?.displaySomething(viewModel: viewModel)
+        self.view = view
+        self.model = model
     }
+    
+    func presentUserProgramms(userProgramm: UserProgrammsModel) {
+        
+     }
+       
+    
 }
