@@ -11,6 +11,12 @@ extension UserProgrammsView {
 class UserProgrammsView: UIView {
     let appearance = Appearance()
 
+    var dataSource: UserProgrammsModel {
+        didSet {
+            self.layoutSubviews()
+        }
+    }
+    
     var customView: UIScrollView = {
         let view = UIScrollView()
         view.isScrollEnabled = true
@@ -28,7 +34,7 @@ class UserProgrammsView: UIView {
         return view
     }()
     
-    var cellForActiveCont = CustomProgrammCellView(title: "Основная программа", numberOfWeeks: 6, numberOfTrainings: 2)
+    var cellForActiveCont: CustomProgrammCellView
     
     var inactiveTrainingsContainer: UIView = {
         let view = UIView()
@@ -36,12 +42,31 @@ class UserProgrammsView: UIView {
         view.backgroundColor = .blue
         return view
     }()
+    
+    
+    var refreshControl : UIActivityIndicatorView {
+        let refreshControl = UIActivityIndicatorView()
+        
+        return refreshControl
+    }
+    
 
-    override init(frame: CGRect = CGRect.zero) {
+//    convenience init(dataSource: UserProgrammsModel) {
+//        self.init(dataSource: dataSource)
+//        self.dataSource = dataSource
+//        cellForActiveCont = CustomProgrammCellView(title: dataSource.userProgramms.first?.title ?? "", numberOfWeeks: dataSource.userProgramms.first?.numberOfWeeks ?? 0, numberOfTrainings: dataSource.userProgramms.first?.excersicesByDay.count ?? 0)
+//    }
+    
+    init(frame: CGRect = CGRect.zero, datasource: UserProgrammsModel) {
+        self.dataSource = datasource
+        
+        cellForActiveCont = CustomProgrammCellView(title: datasource.userProgramms.first?.title ?? "default value", numberOfWeeks: datasource.userProgramms.first?.numberOfWeeks ?? 0, numberOfTrainings: datasource.userProgramms.first?.excersicesByDay.count ?? 0)
+        
         super.init(frame: frame)
         backgroundColor = .white
         addSubviews()
         makeConstraints()
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -49,6 +74,7 @@ class UserProgrammsView: UIView {
     }
 
     func addSubviews(){
+        addSubview(refreshControl)
         addSubview(customView)
         let arrayOfContainers = [activeTrainingsContainer, inactiveTrainingsContainer]
         for cont in arrayOfContainers {
@@ -59,6 +85,11 @@ class UserProgrammsView: UIView {
     }
 
     func makeConstraints() {
+        refreshControl.snp.makeConstraints { (make) in
+                   make.centerX.equalToSuperview()
+                   make.centerY.equalToSuperview()
+        }
+        
         customView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()

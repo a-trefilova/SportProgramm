@@ -1,6 +1,7 @@
 import Firebase
 
 protocol UserProgrammsServiceProtocol {
+     func fetchItems(byEmail email: String, complition:  @escaping (UserProgrammsModel) -> Void) 
 //    func fetchItems(byEmail email: String, completion: @escaping (UserProgrammsModel?, Error?) -> Void)
 }
 
@@ -8,128 +9,116 @@ protocol UserProgrammsServiceProtocol {
 class UserProgrammsService: UserProgrammsServiceProtocol {
     private var ref: DocumentReference? = nil
     private let db = Firestore.firestore()
-    
-//    func fetchItems(byEmail email: String, completion: @escaping (UserProgrammsModel?, Error?) -> Void) {
-//        completion(nil, nil)
-//    }
-    
-//    if let error = error {
-//        completion(false)
-//    } else {
-//        for document in querySnapshot!.documents {
-//            let docEmail = document.data()["email"] as! String
-//            if email == docEmail {
-//                print("User is already exists")
-//                completion(true)
-//            } else {
-//                completion(false)
-//            }
-//
-//        }
-//    }
-    
-    func fetchItems(byEmail email: String) -> (UserProgrammsModel?) {
-        var arrayOfUserProgrammsInString = [String]()
-//        ref?.collection("userprogramms").getDocuments(completion: { (snapshot, error) in
-//            if let error = error {
-//                return
-//            } else {
-//                //collect all user programms from table "userprogramms"
-//                for doc in snapshot!.documents {
-//
-//
-//                    if doc.data()["email"] as! String == email {
-//                      let programmName = doc.data()["programmName"] as! String
-//                        arrayOfUserProgrammsInString.append(programmName)
-//                    }
-//                }
-//            }
-//
-//        })
+
+    func fetchItems(byEmail email: String, complition: @escaping (UserProgrammsModel) -> Void) {
         
+        var allProgrammsName = ""
+        var userProgramms = [FullProgramm]()
         
-        var programmPerDay = [ProgrammPerDay]()
-        ref?.collection("userprogramms").getDocuments(completion: { (snapshot, error) in
-          
-            for programPerDay in snapshot!.documents {
-                
-                print("\n")
-                print("\n")
-                print(programPerDay)
-                
-                let desc = programPerDay["description"] as! String
-                let titleOfDay = programPerDay["titleOfDay"] as! String
-                let numberOfExc = programPerDay["numberOfExercises"] as! Int
-                
-                var excersices = [Excersice]()
-                self.ref?.collection("/userprogramms/user\(email)/programm1/\(programPerDay)/exercises").getDocuments(completion: { (snapshot, error) in
-                    for exc in snapshot!.documents {
-                        let title = exc["title"] as! String
-                        let numberOfSets = exc["numberOfSets"] as! Int
-                        let numberOfReps = exc["numberOfReps"] as! Int
-                        let weight = exc["weight"] as! Int
-                        let isSuperset = exc["isSuperset"] as! Bool
+        //here we getting the documentName for current user by his email and names for all programms
+        //the result is name of document, where all user programms handle + all names
+        db.collection("userprogramms").getDocuments { (snap, error) in
+            var nameOfDoc = "user" + email
+            var allProgrammsNames: [String] = []
+            for doc in snap!.documents {
+                if doc["email"] as? String == email {
+                    allProgrammsName = "user" + email
+                    guard let countOfAllProgramms = doc["numberOfAllProgramms"] as? Int else { return }
+                    for number in 1...countOfAllProgramms {
+                        let variableForNameOfProgramm = "programm" + String(describing: number)
+                        let nameOfProgramm = doc["\(variableForNameOfProgramm)"] as? String
+                        allProgrammsNames.append(nameOfProgramm ?? "")
                         
-                        let exercise = Excersice(title: title,
-                                                 description: "",
-                                                 numberOfSets: numberOfSets,
-                                                 numberOfReps: numberOfReps,
-                                                 weight: weight,
-                                                 isSuperset: isSuperset)
-                        excersices.append(exercise)
                     }
-                })
-                
-                let programPerDay = ProgrammPerDay(titleOfDay: titleOfDay,
-                                                   numberOfExercises: numberOfExc,
-                                                   description: desc,
-                                                   exercises: excersices)
-                programmPerDay.append(programPerDay)
+                }
             }
-        })
-        var fp = FullProgramm(title: "program1", numberOfWeeks: 6, excersicesByDay: programmPerDay)
-        var allProgs = [fp]
-        let upm = UserProgrammsModel(uid: 0, email: email, name: "", userProgramms: allProgs)
-        return upm
+            
+            //var userProgramms = [FullProgramm]()
+             for item in allProgrammsNames {
+                let newRefToProgrammContent = self.db.collection("userprogramms").document(allProgrammsName).collection("\(item)")
+                 newRefToProgrammContent.getDocuments { (snap, error) in
+                     
+                     
+                     //getting number of training days in one programm
+                     var arrayOfAllDays = [Int]()
+                     for doc in snap!.documents {
+                        guard let numberOfDay = doc["day"] as? Int else { return }
+                         arrayOfAllDays.append(numberOfDay)
+                     }
+                     
+                     //getting names of documents per day
+                     var arrayOfDocumentPerDayNames = [String]()
+                     if arrayOfAllDays.count >= 1 {
+                         for doc in snap!.documents {
+                            guard let nameOfProgrammPerDay = doc["nameOfDocument"] as? String else { return }
+                             arrayOfDocumentPerDayNames.append(nameOfProgrammPerDay)
+                         }
+                     }
+                     
+                     var arrayOfProgrammsPerDay = [ProgrammPerDay]()
+                     //getting all programms per day
+                     for doc in snap!.documents {
+                       guard  let titleOfDay = doc["titleOfDay"] as? String,
+                         let numberOfExercises = doc["numberOfExercises"] as? Int,
+                         let description = doc["description"] as? String else { return }
+                         var arrayOfExercisesPerDay = [Excersice]()
+                         if arrayOfDocumentPerDayNames.count >= 1 {
+                             for element in arrayOfDocumentPerDayNames {
+//                                 let newRefToExcersices = self.db.collection("userprogramms").document(allProgrammsName).collection("\(String(describing: item))").document("\(String(describing: element))").collection("exercises")
+//                                print(String(describing: newRefToExcersices))
+                                
+                                 self.db.collection("userprogramms").document(allProgrammsName).collection("\(String(describing: item))").document("\(String(describing: element))").collection("exercises").getDocuments { (snapshot, error) in
+                                     for document in snapshot!.documents {
+                                       guard  let title = document["title"] as? String,
+                                         let numberOfSets = document["numberOfSets"] as? Int,
+                                         let numberOfReps = document["numberOfReps"] as? Int,
+                                         let weight = document["weight"] as? Int,
+                                         let isSuperset = document["isSuperset"] as? Bool else { return }
+                                         let exercise = Excersice(title: title,
+                                                                  description: "",
+                                                                  numberOfSets: numberOfSets,
+                                                                  numberOfReps: numberOfReps,
+                                                                  weight: weight,
+                                                                  isSuperset: isSuperset)
+                                         arrayOfExercisesPerDay.append(exercise)
+                                     }
+                                 }
+                                 
+                             }
+                         } else {
+                             print("Theres no training programms here ")
+                         }
+                         
+                         let programmPerDay = ProgrammPerDay(titleOfDay: titleOfDay,
+                         numberOfExercises: numberOfExercises,
+                         description: description, exercises: arrayOfExercisesPerDay)
+                         arrayOfProgrammsPerDay.append(programmPerDay)
+                     } //getting all programms per day
+                     
+                 
+                    let fullProgramm = FullProgramm(title: item, numberOfWeeks: 5, excersicesByDay: arrayOfProgrammsPerDay)
+                    userProgramms.append(fullProgramm)
+                 }
+             }
+            let userProgrammsModel = UserProgrammsModel(uid: 0, email: email, name: "", userProgramms: userProgramms)
+            print(userProgrammsModel)
+            complition(userProgrammsModel)
+            
+        }
+
         
+
         
-//        var arrayOfFullProgramms = [FullProgramm]()
-//        ref?.collection("programmsContent").getDocuments(completion: { (snapshot, error) in
-//            for item in arrayOfUserProgrammsInString {
-//                for doc in snapshot!.documents {
-//                    if doc.data()["title"] as! String == item {
-//                        let userProgramm = FullProgramm(title: doc.data()["title"] as! String,
-//                                                        numberOfWeeks: doc.data()["numberOfWeeks"] as! Int,
-//                                                        excersicesByDay: <#T##[ProgrammPerDay]#>)
-//                    }
-//                }
-//            }
-//        })
-        
-        
-    }
-}
+    }//end of func
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}//end of class
 
 
-//struct FullProgramm {
-//    var title: String
-//    var numberOfWeeks: Int
-//    var excersicesByDay: [ProgrammPerDay]
-//}
-//
-//struct ProgrammPerDay {
-//    var titleOfDay: String
-//    var numberOfExercises: Int
-//    var description: String
-//    var exercises: [Excersice]
-//}
-//
-//struct Excersice {
-//    var title: String
-//    var description: String
-//    var numberOfSets: Int
-//    var numberOfReps: Int
-//    var weight: Int
-//    var isSuperset: Bool
-//
-//}

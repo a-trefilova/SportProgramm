@@ -6,10 +6,11 @@ import UIKit
 class UserProgrammsViewController: UIViewController {
 
     var presenter: UserProgrammsPresenterProtocol!
-    
-    private var rootView: UserProgrammsView? {
+    var dataModel: UserProgrammsModel
+    var rootView: UserProgrammsView? {
         return view as? UserProgrammsView
     }
+    
     
 //    init(interactor: UserProgrammsBusinessLogic, initialState: UserProgramms.ViewControllerState /*= .loading(String)*/) {
 //        self.interactor = interactor
@@ -17,18 +18,25 @@ class UserProgrammsViewController: UIViewController {
 //        super.init(nibName: nil, bundle: nil)
 //    }
 
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-
-    // MARK: View lifecycle
-    override func loadView() {
-        view = UserProgrammsView(frame: UIScreen.main.bounds)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
+    init(data: UserProgrammsModel) {
+        self.dataModel = data
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // MARK: View lifecycle
+    override func loadView() {
+        view = UserProgrammsView(frame: .zero, datasource: dataModel)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Мои программы"
+       
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "Мои программы"
@@ -54,6 +62,10 @@ class UserProgrammsViewController: UIViewController {
 //
 //
 //    }
+    
+    
+    
+    
 }
 
 //extension UserProgrammsViewController: UserProgrammsDisplayLogic {
