@@ -6,106 +6,74 @@ import UIKit
 class UserProgrammsViewController: UIViewController {
 
     var presenter: UserProgrammsPresenterProtocol!
-    var dataModel: UserProgrammsModel
     var rootView: UserProgrammsView? {
         return view as? UserProgrammsView
     }
     
+    var programmsToDisplay: UserProgrammsModel?
     
-//    init(interactor: UserProgrammsBusinessLogic, initialState: UserProgramms.ViewControllerState /*= .loading(String)*/) {
-//        self.interactor = interactor
-//        self.state = initialState
-//        super.init(nibName: nil, bundle: nil)
-//    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    init(data: UserProgrammsModel) {
-        self.dataModel = data
-        super.init(nibName: nil, bundle: nil)
-    }
     
     // MARK: View lifecycle
     override func loadView() {
-        view = UserProgrammsView(frame: .zero, datasource: dataModel)
+        view = UserProgrammsView(frame: .zero)
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        rootView?.activeTrainingsContainer.isHidden = true
+        rootView?.activeTrainingsContainer.dataSource = self
+        rootView?.activeTrainingsContainer.delegate = self
+        rootView?.refreshControl.hidesWhenStopped = true
         title = "Мои программы"
+        rootView?.activeTrainingsContainer.register(UserProgrammsTableViewCell.self, forCellReuseIdentifier: UserProgrammsTableViewCell.reuseId)
        
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.topItem?.title = "Мои программы"
         
-//        rootView?.activeTrainingsContainer.delegate = self
-//        rootView?.activeTrainingsContainer.dataSource = self
-//        doSomething()
     }
 
-    // MARK: Do something
-//    func doSomething() {
-//        switch state {
-//        case .loading(let email):
-//            let request = UserProgramms.Something.Request(email: email)
-//            interactor.doSomething(request: request)
-//        case .result(let result):
-//            fallthrough
-//        case .emptyResult:
-//            fatalError()
-//        case .error(message: let message):
-//            fatalError()
-//        }
-//
-//
-//    }
-    
-    
-    
-    
+    override func viewDidAppear(_ animated: Bool) {
+        presenter.presentUserProgramms()
+    }
 }
 
-//extension UserProgrammsViewController: UserProgrammsDisplayLogic {
-//    func displaySomething(viewModel: UserProgramms.Something.ViewModel) {
-//        display(newState: viewModel.state)
-//    }
-//
-//    func display(newState: UserProgramms.ViewControllerState) {
-//        state = newState
-//        switch state {
-//        case .loading:
-//            print("loading...")
-//        case let .error(message):
-//            print("error \(message)")
-//        case let .result(items):
-//            print("result: \(items)")
-//        case .emptyResult:
-//            print("empty result")
-//        }
-//    }
-//}
-
-
-
-//extension UserProgrammsViewController: UITableViewDataSource, UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell = UserProgrammsTableViewCell()
-//        return cell
-//    }
-//
-//
-//}
 
 extension UserProgrammsViewController: UserProgrammsViewProtocol {
+    func startLoading() {
+        rootView?.refreshControl.startAnimating()
+        //rootView?.activeTrainingsContainer.isHidden = true
+        //rootView?.cellForActiveCont.isHidden = true
+    }
+    
+    func finishLoading() {
+        rootView?.refreshControl.stopAnimating()
+        //rootView?.activeTrainingsContainer.isHidden = false
+        //rootView?.cellForActiveCont.isHidden = false
+    }
+    
     func setUserProgramm(userProgramm: UserProgrammsModel) {
+        programmsToDisplay = userProgramm
+        rootView?.activeTrainingsContainer.isHidden = false
+        rootView?.activeTrainingsContainer.reloadData()
+    }
+}
+
+
+extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        programmsToDisplay?.userProgramms.count ?? 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let customCell = tableView.dequeueReusableCell(withIdentifier: UserProgrammsTableViewCell.reuseId, for: indexPath) as! UserProgrammsTableViewCell
+        guard let programm = programmsToDisplay?.userProgramms else { return customCell}
+        customCell.fillCellWithData(programm[indexPath.row])
+        return customCell
         
     }
+    
+    
 }

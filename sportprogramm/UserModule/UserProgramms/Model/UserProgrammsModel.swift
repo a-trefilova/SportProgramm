@@ -21,6 +21,7 @@ struct FullProgramm {
 
 struct ProgrammPerDay {
     var titleOfDay: String
+    var numberOfDay: Int
     var numberOfExercises: Int
     var description: String
     var exercises: [Excersice]

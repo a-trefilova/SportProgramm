@@ -11,12 +11,6 @@ extension UserProgrammsView {
 class UserProgrammsView: UIView {
     let appearance = Appearance()
 
-    var dataSource: UserProgrammsModel {
-        didSet {
-            self.layoutSubviews()
-        }
-    }
-    
     var customView: UIScrollView = {
         let view = UIScrollView()
         view.isScrollEnabled = true
@@ -34,7 +28,7 @@ class UserProgrammsView: UIView {
         return view
     }()
     
-    var cellForActiveCont: CustomProgrammCellView
+   // var cellForActiveCont = CustomProgrammCellView(title: "", numberOfWeeks: 0, numberOfTrainings: 0)
     
     var inactiveTrainingsContainer: UIView = {
         let view = UIView()
@@ -44,24 +38,13 @@ class UserProgrammsView: UIView {
     }()
     
     
-    var refreshControl : UIActivityIndicatorView {
+    var refreshControl : UIActivityIndicatorView = {
         let refreshControl = UIActivityIndicatorView()
         
         return refreshControl
-    }
-    
-
-//    convenience init(dataSource: UserProgrammsModel) {
-//        self.init(dataSource: dataSource)
-//        self.dataSource = dataSource
-//        cellForActiveCont = CustomProgrammCellView(title: dataSource.userProgramms.first?.title ?? "", numberOfWeeks: dataSource.userProgramms.first?.numberOfWeeks ?? 0, numberOfTrainings: dataSource.userProgramms.first?.excersicesByDay.count ?? 0)
-//    }
-    
-    init(frame: CGRect = CGRect.zero, datasource: UserProgrammsModel) {
-        self.dataSource = datasource
-        
-        cellForActiveCont = CustomProgrammCellView(title: datasource.userProgramms.first?.title ?? "default value", numberOfWeeks: datasource.userProgramms.first?.numberOfWeeks ?? 0, numberOfTrainings: datasource.userProgramms.first?.excersicesByDay.count ?? 0)
-        
+    }()
+ 
+    override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         backgroundColor = .white
         addSubviews()
@@ -74,20 +57,22 @@ class UserProgrammsView: UIView {
     }
 
     func addSubviews(){
-        addSubview(refreshControl)
+        customView.addSubview(refreshControl)
         addSubview(customView)
         let arrayOfContainers = [activeTrainingsContainer, inactiveTrainingsContainer]
         for cont in arrayOfContainers {
             customView.addSubview(cont)
         }
         
-        activeTrainingsContainer.addSubview(cellForActiveCont)
+        //activeTrainingsContainer.addSubview(cellForActiveCont)
     }
 
     func makeConstraints() {
         refreshControl.snp.makeConstraints { (make) in
-                   make.centerX.equalToSuperview()
-                   make.centerY.equalToSuperview()
+            make.centerX.equalTo(customView.snp.centerX)
+            make.top.equalTo(activeTrainingsContainer.snp.bottom)
+            make.height.equalTo(40)
+            make.width.equalTo(40)
         }
         
         customView.snp.makeConstraints { (make) in
@@ -102,15 +87,15 @@ class UserProgrammsView: UIView {
             make.top.equalTo(customView.snp.top)
             make.leading.equalTo(customView.snp.leading)
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.greaterThanOrEqualTo(150)
+            make.height.greaterThanOrEqualTo(300)
         }
         
-        cellForActiveCont.snp.makeConstraints { (make) in
-            make.top.equalTo(activeTrainingsContainer.snp.top).offset(20)
-            make.leading.equalTo(activeTrainingsContainer.snp.leading).offset(16)
-            make.trailing.equalTo(activeTrainingsContainer.snp.trailing).inset(16)
-            make.bottom.equalTo(activeTrainingsContainer.snp.bottom).inset(16)
-        }
+//        cellForActiveCont.snp.makeConstraints { (make) in
+//            make.top.equalTo(activeTrainingsContainer.snp.top).offset(20)
+//            make.leading.equalTo(activeTrainingsContainer.snp.leading).offset(16)
+//            make.trailing.equalTo(activeTrainingsContainer.snp.trailing).inset(16)
+//            make.bottom.equalTo(activeTrainingsContainer.snp.bottom).inset(16)
+//        }
         
         inactiveTrainingsContainer.snp.makeConstraints { (make) in
             make.top.equalTo(activeTrainingsContainer.snp.bottom)
