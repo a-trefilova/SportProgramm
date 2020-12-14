@@ -1,3 +1,5 @@
+import Foundation
+
 protocol UserProgrammsViewProtocol {
     func startLoading()
     func finishLoading()
@@ -19,7 +21,7 @@ class UserProgrammsPresenter: UserProgrammsPresenterProtocol {
 //    var model: UserProgrammsModel
     var userEmail: String
     var service: UserProgrammsService
-    
+    let instanceOfMockUserData = MockUserProgrammsData()
 //    required init(view: UserProgrammsViewProtocol, model: UserProgrammsModel, email: String) {
 //
 //        self.view = view
@@ -43,10 +45,19 @@ class UserProgrammsPresenter: UserProgrammsPresenterProtocol {
 //     }
        
     func presentUserProgramms() {
+       
         userView.startLoading()
-        service.fetchItems(byEmail: userEmail) { (model) in
-            self.userView.finishLoading()
-            self.userView.setUserProgramm(userProgramm: model)
-        }
+//        DispatchQueue.global(qos: .userInteractive).async {
+//            self.service.fetchItems(byEmail: self.userEmail) { (model) in
+//                DispatchQueue.main.async {
+//                    self.userView.finishLoading()
+//                    self.userView.setUserProgramm(userProgramm: model)
+//                }
+//
+//            }
+//        }
+        userView.finishLoading()
+        userView.setUserProgramm(userProgramm: instanceOfMockUserData.programm)
+        
     }
 }

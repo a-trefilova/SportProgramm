@@ -16,7 +16,7 @@ class AuthenticationModuleViewController: UIViewController {
     var authData: Dictionary = ["email": String(),
                                 "password": String()] as [String : Any]
     
-    var transferToUserModuleModel: AuthenticationModuleModel?
+    static var transferToUserModuleModel: AuthenticationModuleModel?
     
     init(interactor: AuthenticationModuleBusinessLogic, initialState: AuthenticationModule.ViewControllerState = .loading) {
         self.interactor = interactor
@@ -68,11 +68,16 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.emailTextField.endEditing(true)
         rootView?.passwordTextField.endEditing(true)
         checkIfUserExists()
-        guard let model = transferToUserModuleModel else { return }
+        
+        SceneDelegate.isAuthorized = true
         let builder = UserModuleBuilder()
+        guard let model = AuthenticationModuleViewController.transferToUserModuleModel else { return }
         let state = UserModule.ViewControllerState.loading(model)
         let controller = builder.set(initialState: state).build()
+        
         navigationController?.pushViewController(controller, animated: true)
+        //navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
     // MARK: Do something
@@ -104,7 +109,7 @@ extension AuthenticationModuleViewController: AuthenticationModuleDisplayLogic {
             print(items)
             print("==========")
             guard let item = items.first else { return }
-            transferToUserModuleModel = AuthenticationModuleModel(email: item.email, phoneNumber: item.phoneNumber, password: item.password)
+            AuthenticationModuleViewController.transferToUserModuleModel = AuthenticationModuleModel(email: item.email, phoneNumber: item.phoneNumber, password: item.password)
             print("result: \(items)")
         case .emptyResult:
             print("empty result")

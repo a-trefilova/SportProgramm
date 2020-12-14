@@ -11,19 +11,36 @@ class UserProgrammsService: UserProgrammsServiceProtocol {
     private let db = Firestore.firestore()
 
     func fetchItems(byEmail email: String, complition: @escaping (UserProgrammsModel) -> Void) {
+       // var arrayToShow = [Int]()
         
-       gettingAnArrayOfProgrammsForUser(byEmail: email) { (userProgramms) in
+        
+            let programms = self.getTheIDsOfUserProgramms(email: email)
+            let userModel = UserProgrammsModel(uid: 0, email: email, name: "USERNAME", userProgramms: programms)
+            print(userModel)
+            DispatchQueue.main.async {
+                complition(userModel)
+            }
+            
+        
+        
+            
+            
+    }
+        //print(arrayToShow)
+        
+      /* gettingAnArrayOfProgrammsForUser(byEmail: email) { (userProgramms) in
          let userProgramms = userProgramms
          let userProgrammsModel = UserProgrammsModel(uid: 0, email: email, name: "", userProgramms: userProgramms)
          //print(userProgrammsModel)
          complition(userProgrammsModel)
         print(userProgrammsModel)
         }
+      */
     
-    }
     
     
-    private func gettingAnArrayOfProgrammsForUser(byEmail email: String, complition: @escaping ([FullProgramm]) -> Void ) {
+    
+ /*   private func gettingAnArrayOfProgrammsForUser(byEmail email: String, complition: @escaping ([FullProgramm]) -> Void ) {
         let refToUserProgramms = db.collection("userprogramms")
         
         refToUserProgramms.getDocuments { (snap, error) in
@@ -125,11 +142,105 @@ class UserProgrammsService: UserProgrammsServiceProtocol {
                                        isSuperset: isSuperset)
                 arrayOfExercises.append(exercise)
             }
-            print(arrayOfExercises)
             complition(arrayOfExercises)
         }
        
     }
+    
+   */
+    
+    
+    func getTheIDsOfUserProgramms(email: String) -> [FullProgramm] {
+        
+        func getTheIdsOfDaysInOneProgramm(programmId: Int) -> [Int] {
+            let ref = db.collection("programms")
+            var arrayOfIds = [Int]()
+            ref.getDocuments { (snap, error) in
+                for doc in snap!.documents {
+                    guard let proId = doc["programmID"] as? Int else { return }
+                    if programmId == proId {
+                        guard let numberOfDaysInPro = doc["daysInProgramm"] as? Int else { return }
+                        for number in 1...numberOfDaysInPro {
+                            guard let dayId = doc["day + \(String(describing: number)) + ID"] as? Int else { return }
+                            arrayOfIds.append(dayId)
+                        }
+                    }
+                }
+                
+            }
+            
+            return arrayOfIds
+        }
+        
+        
+        let db = Firestore.firestore()
+        var userProgramms = [FullProgramm]()
+        let ref = db.collection("userprogramms")
+        var arrayOfIds = [Int]()
+        ref.getDocuments { (snap, error) in
+            for doc in snap!.documents {
+                if doc["email"] as? String == email {
+                    guard let numberOfAllProgramms = doc["numberOfAllProgramms"] as? Int else { return }
+                    for number in 1...numberOfAllProgramms {
+                        guard let iDofProgramm = doc["programm + \(String(describing: number)) + ID"] as? Int else { return }
+                        arrayOfIds.append(iDofProgramm)
+                    }
+                }
+            }
+            for item in arrayOfIds {
+                let arrayOfDaysIds = getTheIdsOfDaysInOneProgramm(programmId: item)
+                var arrayOfDays = [ProgrammPerDay]()
+                
+                for element in arrayOfDaysIds {
+                    
+                    getTheExercisesPerDay(dayId: element) { (exercises) in
+                        var oneDay = ProgrammPerDay(titleOfDay: "", numberOfDay: 0, numberOfExercises: 0, description: "", exercises: [])
+                        oneDay.exercises = exercises
+                        oneDay.numberOfExercises = exercises.count
+                        arrayOfDays.append(oneDay)
+                        print(oneDay)
+                    }
+                    
+                }
+                let fullProgram = FullProgramm(title: "", numberOfWeeks: 10, excersicesByDay: arrayOfDays)
+                userProgramms.append(fullProgram)
+            }
+            //complition(arrayOfIds)
+        }
+        
+        
+        
+        func getTheExercisesPerDay(dayId: Int, complition: @escaping ([Excersice]) -> Void) {
+            let ref = db.collection("dailyProgramms")
+            ref.getDocuments { (snap, error) in
+                for doc in snap!.documents {
+                    guard let dayId = doc["dayID"] as? Int else { return }
+                    if dayId == dayId {
+                        guard let numberOfExercises = doc["numberOfExercises"] as? Int else { return }
+                        var exercises = [Excersice]()
+                        for number in 1...numberOfExercises {
+                          guard  let desc = doc["ex + \(number) + description"] as? String,
+                            let sets = doc["ex + \(number) + sets"] as? Int,
+                            let reps = doc["ex + \(number) + reps"] as? Int,
+                            let weight = doc["ex + \(number) + weight"] as? Int else { return }
+                            let exercice = Excersice(title: "",
+                                                     description: desc, numberOfSets: sets, numberOfReps: reps, weight: weight, isSuperset: false)
+                            exercises.append(exercice)
+                        }
+                        complition(exercises)
+                    }
+                }
+            }
+        }
+        
+        
+        
+        return userProgramms
+    }
+
+
+    
+    
     
     
     

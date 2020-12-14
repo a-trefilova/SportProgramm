@@ -11,33 +11,18 @@ extension UserProgrammsView {
 class UserProgrammsView: UIView {
     let appearance = Appearance()
 
-    var customView: UIScrollView = {
-        let view = UIScrollView()
-        view.isScrollEnabled = true
-        view.isUserInteractionEnabled = true
-        view.showsVerticalScrollIndicator = true
-        view.indicatorStyle = .default
+    var customView: UIView = {
+        let view = UIView()
         view.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
         return view
     }()
-    
-    
+
     var activeTrainingsContainer: UITableView = {
         let view = UITableView()
         view.clipsToBounds = true
         return view
     }()
-    
-   // var cellForActiveCont = CustomProgrammCellView(title: "", numberOfWeeks: 0, numberOfTrainings: 0)
-    
-    var inactiveTrainingsContainer: UIView = {
-        let view = UIView()
-        view.clipsToBounds = true
-        view.backgroundColor = .blue
-        return view
-    }()
-    
-    
+
     var refreshControl : UIActivityIndicatorView = {
         let refreshControl = UIActivityIndicatorView()
         
@@ -49,21 +34,27 @@ class UserProgrammsView: UIView {
         backgroundColor = .white
         addSubviews()
         makeConstraints()
-        
+        setUpTrainingContainer()
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    private func setUpTrainingContainer() {
+        //activeTrainingsContainer.tableFooterView = UIView()
+        activeTrainingsContainer.separatorStyle = .none
+        
+    }
+    
     func addSubviews(){
         customView.addSubview(refreshControl)
         addSubview(customView)
-        let arrayOfContainers = [activeTrainingsContainer, inactiveTrainingsContainer]
-        for cont in arrayOfContainers {
-            customView.addSubview(cont)
-        }
-        
+//        let arrayOfContainers = [recentTrainingContainer, activeTrainingsContainer, inactiveTrainingsContainer]
+//        for cont in arrayOfContainers {
+//            customView.addSubview(cont)
+//        }
+        customView.addSubview(activeTrainingsContainer)
         //activeTrainingsContainer.addSubview(cellForActiveCont)
     }
 
@@ -76,33 +67,19 @@ class UserProgrammsView: UIView {
         }
         
         customView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().inset(50)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
-        
-        
+
         activeTrainingsContainer.snp.makeConstraints { (make) in
             make.top.equalTo(customView.snp.top)
             make.leading.equalTo(customView.snp.leading)
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.height.greaterThanOrEqualTo(300)
+            make.bottom.equalTo(customView.snp.bottom).offset(50)
         }
         
-//        cellForActiveCont.snp.makeConstraints { (make) in
-//            make.top.equalTo(activeTrainingsContainer.snp.top).offset(20)
-//            make.leading.equalTo(activeTrainingsContainer.snp.leading).offset(16)
-//            make.trailing.equalTo(activeTrainingsContainer.snp.trailing).inset(16)
-//            make.bottom.equalTo(activeTrainingsContainer.snp.bottom).inset(16)
-//        }
-        
-        inactiveTrainingsContainer.snp.makeConstraints { (make) in
-            make.top.equalTo(activeTrainingsContainer.snp.bottom)
-            make.leading.equalTo(customView.snp.leading)
-            make.trailing.equalTo(customView.snp.trailing)
-            make.bottom.equalTo(customView.snp.bottom)
-        }
     }
 }
 
@@ -114,6 +91,7 @@ class CustomProgrammCellView: UIView {
     let weeksLabel = UILabel()
     let numberOfTrainingsPerWeek = UILabel()
     let trainingsLabel = UILabel()
+    let rightButton = UIButton(type: .detailDisclosure)
     
     init(title: String, numberOfWeeks: Int, numberOfTrainings: Int) {
         self.titleOfCell = title
@@ -124,6 +102,20 @@ class CustomProgrammCellView: UIView {
         trainingsLabel.text = "тренировок в неделю"
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
         setUpView()
+        let image = UIImage(systemName: "chevron.right")
+        rightButton.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
+        //rightButton.setTitleColor(UIColor(red: 60, green: 60, blue: 67, alpha: 0.6), for: .normal)
+        rightButton.imageWith(color: UIColor(red: 60, green: 60, blue: 67, alpha: 1), for: .normal)
+    }
+    
+    convenience init(titleOfCell: String, numberOfExercises: Int, nameOfLabel: String, titleOfProgramm: String) {
+        self.init(title: titleOfCell, numberOfWeeks: numberOfExercises, numberOfTrainings: 0)
+        titleLabel.text = titleOfCell
+        numberOfWeeksLabel.text = String(describing: numberOfExercises)
+        weeksLabel.text = nameOfLabel
+        numberOfTrainingsPerWeek.isHidden = true
+        trainingsLabel.isHidden = true 
+        //title of programm 
     }
 
     private func setUpView() {
@@ -135,9 +127,9 @@ class CustomProgrammCellView: UIView {
         addSubview(weeksLabel)
         addSubview(numberOfTrainingsPerWeek)
         addSubview(trainingsLabel)
+        addSubview(rightButton)
         setUpStyle()
         makeConstraints()
-        
     }
     
     private func setUpStyle() {
@@ -187,6 +179,13 @@ class CustomProgrammCellView: UIView {
             make.leading.equalTo(numberOfTrainingsPerWeek.snp.trailing).offset(4)
             make.bottom.equalToSuperview().inset(14)
         }
+        
+        rightButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(14)
+            make.trailing.equalToSuperview().inset(20)
+            make.height.lessThanOrEqualTo(11)
+            make.width.lessThanOrEqualTo(6)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -195,4 +194,31 @@ class CustomProgrammCellView: UIView {
     
 }
 
+
+extension UIImage {
+    public func image(withTintColor color: UIColor) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
+        let context: CGContext = UIGraphicsGetCurrentContext()!
+        context.translateBy(x: 0, y: self.size.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+        context.setBlendMode(CGBlendMode.normal)
+        let rect: CGRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        context.clip(to: rect, mask: self.cgImage!)
+        color.setFill()
+        context.fill(rect)
+        let newImage: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
+    }
+}
+
+extension UIButton {
+    func imageWith(color:UIColor, for: UIControl.State) {
+        if let imageForState = self.image(for: state) {
+            self.image(for: .normal)?.withRenderingMode(.alwaysTemplate)
+            let colorizedImage = imageForState.image(withTintColor: color)
+            self.setImage(colorizedImage, for: state)
+        }
+    }
+}
 
