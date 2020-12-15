@@ -7,12 +7,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     static var isAuthorized: Bool = false
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+      
         if SceneDelegate.isAuthorized == false {
             let builder = AuthenticationModuleBuilder()
             let controller = builder.build()
             let navController = UINavigationController(rootViewController: controller)
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.backgroundColor = .clear
+            
             guard let windowScene = (scene as? UIWindowScene) else { return }
             
             window = UIWindow(frame: windowScene.coordinateSpace.bounds)

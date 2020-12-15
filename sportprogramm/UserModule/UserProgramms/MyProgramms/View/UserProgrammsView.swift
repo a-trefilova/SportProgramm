@@ -29,6 +29,12 @@ class UserProgrammsView: UIView {
         return refreshControl
     }()
  
+    let lineOne: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.3)
+        return view
+    }()
+    
     override init(frame: CGRect = CGRect.zero) {
         super.init(frame: frame)
         backgroundColor = .white
@@ -48,36 +54,40 @@ class UserProgrammsView: UIView {
     }
     
     func addSubviews(){
-        customView.addSubview(refreshControl)
         addSubview(customView)
-//        let arrayOfContainers = [recentTrainingContainer, activeTrainingsContainer, inactiveTrainingsContainer]
-//        for cont in arrayOfContainers {
-//            customView.addSubview(cont)
-//        }
+        customView.addSubview(refreshControl)
+        customView.addSubview(lineOne)
         customView.addSubview(activeTrainingsContainer)
-        //activeTrainingsContainer.addSubview(cellForActiveCont)
     }
 
     func makeConstraints() {
-        refreshControl.snp.makeConstraints { (make) in
-            make.centerX.equalTo(customView.snp.centerX)
-            make.top.equalTo(activeTrainingsContainer.snp.bottom)
-            make.height.equalTo(40)
-            make.width.equalTo(40)
-        }
+//        refreshControl.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(customView.snp.centerX)
+//            make.top.equalTo(activeTrainingsContainer.snp.bottom)
+//            make.height.equalTo(40)
+//            make.width.equalTo(40)
+//        }
         
         customView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().inset(50)
+            make.top.equalToSuperview()
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview()
         }
+        
+        lineOne.snp.makeConstraints { (make) in
+            make.top.equalTo(customView.snp.top).offset(180)
+            make.leading.equalTo(customView.snp.leading).offset(16)
+            make.trailing.equalTo(customView.snp.trailing).offset(16)
+            make.height.equalTo(1)
+            make.width.equalToSuperview()
+        }
 
         activeTrainingsContainer.snp.makeConstraints { (make) in
-            make.top.equalTo(customView.snp.top)
+            make.top.equalTo(customView.snp.top).offset(200)
             make.leading.equalTo(customView.snp.leading)
             make.width.equalTo(UIScreen.main.bounds.width)
-            make.bottom.equalTo(customView.snp.bottom).offset(50)
+            make.bottom.equalTo(customView.snp.bottom)
         }
         
     }
@@ -102,9 +112,8 @@ class CustomProgrammCellView: UIView {
         trainingsLabel.text = "тренировок в неделю"
         super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
         setUpView()
-        let image = UIImage(systemName: "chevron.right")
-        rightButton.setImage(image?.withRenderingMode(.alwaysTemplate), for: .normal)
-        //rightButton.setTitleColor(UIColor(red: 60, green: 60, blue: 67, alpha: 0.6), for: .normal)
+        let image = UIImage(named: "chevron_right")
+        rightButton.setImage(image, for: .normal)
         rightButton.imageWith(color: UIColor(red: 60, green: 60, blue: 67, alpha: 1), for: .normal)
     }
     

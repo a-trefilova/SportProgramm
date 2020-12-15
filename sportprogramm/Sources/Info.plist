@@ -2,20 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>SF-Pro-Display-Bold.otf</string>
-		<string>SF-Pro-Text-Regular.otf</string>
-		<string>SF-Compact-Rounded-Black.otf</string>
-		<string>SF-Compact-Rounded-Bold.otf</string>
-		<string>SF-Compact-Rounded-Heavy.otf</string>
-		<string>SF-Compact-Rounded-Light.otf</string>
-		<string>SF-Compact-Rounded-Medium.otf</string>
-		<string>SF-Compact-Rounded-Regular.otf</string>
-		<string>SF-Compact-Rounded-Semibold.otf</string>
-		<string>SF-Compact-Rounded-Thin.otf</string>
-		<string>SF-Compact-Rounded-Ultralight.otf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -34,6 +20,20 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>SF-Pro-Display-Bold.otf</string>
+		<string>SF-Pro-Text-Regular.otf</string>
+		<string>SF-Compact-Rounded-Black.otf</string>
+		<string>SF-Compact-Rounded-Bold.otf</string>
+		<string>SF-Compact-Rounded-Heavy.otf</string>
+		<string>SF-Compact-Rounded-Light.otf</string>
+		<string>SF-Compact-Rounded-Medium.otf</string>
+		<string>SF-Compact-Rounded-Regular.otf</string>
+		<string>SF-Compact-Rounded-Semibold.otf</string>
+		<string>SF-Compact-Rounded-Thin.otf</string>
+		<string>SF-Compact-Rounded-Ultralight.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -57,6 +57,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<false/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

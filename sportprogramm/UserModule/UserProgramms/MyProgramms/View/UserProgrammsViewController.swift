@@ -1,8 +1,6 @@
 
 import UIKit
 
-
-
 class UserProgrammsViewController: UIViewController {
 
     let numberOfSections: Int = 3
@@ -41,6 +39,7 @@ class UserProgrammsViewController: UIViewController {
         //navigationController?.navigationBar.isTranslucent = true
         
         navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false
@@ -57,6 +56,7 @@ class UserProgrammsViewController: UIViewController {
         rootView?.activeTrainingsContainer.register(UserProgrammsRecentTrainingCell.self, forCellReuseIdentifier: UserProgrammsRecentTrainingCell.reuseId)
         
         rootView?.activeTrainingsContainer.backgroundColor = .clear
+        
         
     }
 }
@@ -160,5 +160,16 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //tableView.isUserInteractionEnabled = false
+        if indexPath.section == 1 {
+            guard let programms = programmsToDisplay?.userProgramms else { return }
+            let programm = programms[indexPath.row]
+            let builer = DetailedProgrammBuilder()
+            let vc = builer.build(withProgramm: programm)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
     
 }
