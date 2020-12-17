@@ -76,6 +76,7 @@ class AuthenticationModuleViewController: UIViewController {
         let controller = builder.set(initialState: state).build()
         
         navigationController?.pushViewController(controller, animated: true)
+        navigationController?.navigationBar.isHidden = false
         //navigationController?.navigationBar.prefersLargeTitles = true
         
     }

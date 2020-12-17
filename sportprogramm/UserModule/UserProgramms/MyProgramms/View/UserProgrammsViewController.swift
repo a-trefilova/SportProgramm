@@ -27,19 +27,12 @@ class UserProgrammsViewController: UIViewController {
         title = "Мои программы"
         
        setUpTableViews()
-        
+        setUpNavBar()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.topItem?.hidesBackButton = true
-        navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.topItem?.title = "Мои программы"
-        //navigationController?.navigationBar.isTranslucent = true
-        
-        navigationController?.hidesBarsOnSwipe = true
-        navigationController?.navigationBar.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+   //     setUpNavBar()
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.hidesBarsOnSwipe = false
@@ -58,6 +51,14 @@ class UserProgrammsViewController: UIViewController {
         rootView?.activeTrainingsContainer.backgroundColor = .clear
         
         
+    }
+    
+    private func setUpNavBar() {
+        navigationController?.navigationBar.topItem?.hidesBackButton = true
+        navigationController?.navigationBar.topItem?.title = "Мои программы"
+        navigationController?.navigationItem.title = "Мои программы"
+        navigationController?.hidesBarsOnSwipe = true
+        navigationController?.navigationBar.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
     }
 }
 
