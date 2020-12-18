@@ -88,6 +88,9 @@
 		D670AF952577C6E5000BB237 /* UserActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF942577C6E5000BB237 /* UserActivityPresenter.swift */; };
 		D670AF972577C6FC000BB237 /* UserActivityModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF962577C6FC000BB237 /* UserActivityModuleBuilder.swift */; };
 		D670AF992577D6BD000BB237 /* UserProgrammsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */; };
+		D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */; };
+		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
+		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
 		D6D772732588DEF000AA476F /* DetailedProgrammPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */; };
 		D6D772752588E05A00AA476F /* DetailedProgrammViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */; };
 		D6D772772588E08D00AA476F /* DetailedProgrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772762588E08D00AA476F /* DetailedProgrammView.swift */; };
@@ -216,6 +219,9 @@
 		D670AF942577C6E5000BB237 /* UserActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityPresenter.swift; sourceTree = "<group>"; };
 		D670AF962577C6FC000BB237 /* UserActivityModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityModuleBuilder.swift; sourceTree = "<group>"; };
 		D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsTableViewCell.swift; sourceTree = "<group>"; };
+		D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowWeekdayCell.swift; sourceTree = "<group>"; };
+		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
 		D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammPresenter.swift; sourceTree = "<group>"; };
 		D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammViewController.swift; sourceTree = "<group>"; };
 		D6D772762588E08D00AA476F /* DetailedProgrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammView.swift; sourceTree = "<group>"; };
@@ -614,6 +620,16 @@
 			path = UserActivityModule;
 			sourceTree = "<group>";
 		};
+		D6C103BB258CB080000B05F2 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */,
+				D6C103B9258CB015000B05F2 /* CustomNavBar.swift */,
+				D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
 		D6D7726C2588DE5100AA476F /* DetailedProgramm */ = {
 			isa = PBXGroup;
 			children = (
@@ -655,6 +671,7 @@
 		D6D772702588DEBB00AA476F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D6C103BB258CB080000B05F2 /* CustomViews */,
 				D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */,
 				D6D772762588E08D00AA476F /* DetailedProgrammView.swift */,
 			);
@@ -1042,6 +1059,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6FEB94A253B7048003085F9 /* AppDelegate.swift in Sources */,
+				D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */,
 				D6FEB94C253B7048003085F9 /* SceneDelegate.swift in Sources */,
 				CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */,
 				AE12D23474862A95A5A29A70 /* AuthenticationModuleViewController.swift in Sources */,
@@ -1067,6 +1085,7 @@
 				7AAD55BFFB5A30063476DDBC /* TrainerModuleViewController.swift in Sources */,
 				0AC8AF45C6BA486DA1A797D0 /* TrainerModuleInteractor.swift in Sources */,
 				7409EC69C150BC198C6908FE /* TrainerModulePresenter.swift in Sources */,
+				D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */,
 				ADB6F6879CA5F959BC24352E /* TrainerModuleDataFlow.swift in Sources */,
 				3B316A51C7AF4C4FE9BD5822 /* TrainerModuleModel.swift in Sources */,
 				D66861B3255052A400FC8219 /* Tables.swift in Sources */,
@@ -1120,6 +1139,7 @@
 				874D7173BB88770FA7736E87 /* UserTrainingCalendarDataStore.swift in Sources */,
 				CC9D9A9EC51D9D91A8F5EFE5 /* UserTrainingCalendarService.swift in Sources */,
 				5781E4F43BA619BD2370E96A /* UserTrainingCalendarView.swift in Sources */,
+				D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */,
 				9DFDEF42A0692E4E09AA0582 /* UserSettingsBuilder.swift in Sources */,
 				F55D88CB5659CDEC31A835EA /* UserSettingsViewController.swift in Sources */,
 				3D5E9D08A1E0C43C8C3EF354 /* UserSettingsInteractor.swift in Sources */,
