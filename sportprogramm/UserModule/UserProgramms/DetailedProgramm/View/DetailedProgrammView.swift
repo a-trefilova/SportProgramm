@@ -37,6 +37,16 @@ class DetailedProgrammView: UIView {
         return view
     }()
     
+    var containerForWeekdays: UIStackView = {
+        let view = UIStackView()
+        view.axis = .horizontal
+        view.spacing = 32
+        view.distribution = .fillProportionally
+        return view
+    }()
+    
+    var arrayOfWeekdayLabels: [UILabel] = [UILabel]()
+    
     var headerView: UIView = {
         let view = UIView()
         view.isUserInteractionEnabled = true
@@ -54,9 +64,22 @@ class DetailedProgrammView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        fillArrayOfWeekdayLabels()
         addSubviews()
         makeConstraints()
     }
+    
+    private func fillArrayOfWeekdayLabels() {
+        let arrayOfDays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+        for item in arrayOfDays {
+            let label = UILabel()
+            label.font = UIFont(name: "SF Pro Text", size: 16)
+            label.text = item
+            arrayOfWeekdayLabels.append(label)
+        }
+    }
+    
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -70,7 +93,10 @@ class DetailedProgrammView: UIView {
         customView.addSubview(containerForTrainings)
         containerForTrainings.tableHeaderView = headerView
         headerView.addSubview(containerForDays)
-    
+        headerView.addSubview(containerForWeekdays)
+        for item in arrayOfWeekdayLabels {
+            containerForWeekdays.addArrangedSubview(item)
+        }
     }
     
     private func makeConstraints() {
@@ -103,8 +129,8 @@ class DetailedProgrammView: UIView {
         
         containerForTrainings.snp.makeConstraints { (make) in
             make.top.equalTo(containerForTitle.snp.bottom)
-            make.leading.equalTo(customView.snp.leading).offset(16)
-            make.trailing.equalTo(customView.snp.trailing).offset(-16)
+            make.leading.equalTo(customView.snp.leading).offset(14)
+            make.trailing.equalTo(customView.snp.trailing).offset(-14)
             make.bottom.equalToSuperview()
         }
         
@@ -112,7 +138,14 @@ class DetailedProgrammView: UIView {
             make.top.equalToSuperview()
             make.leading.equalTo(customView.snp.leading)
             make.trailing.equalTo(customView.snp.trailing)
-            make.height.lessThanOrEqualTo(50)
+            make.height.lessThanOrEqualTo(80)
+        }
+        
+        containerForWeekdays.snp.makeConstraints { (make) in
+            make.top.equalTo(containerForDays.snp.bottom)
+            make.leading.equalTo(customView.snp.leading).offset(16)
+            make.trailing.equalTo(customView.snp.trailing).offset(-16)
+            make.bottom.equalToSuperview()
         }
     }
     

@@ -53,8 +53,6 @@
 		7EE76DF24B3236549F00FAB3 /* UserSettingsDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B707BB42FAD7D5C561A6E357 /* UserSettingsDataFlow.swift */; };
 		84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */; };
 		850F5652FDC2C4FA7F71FEFF /* UserModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995DB96135E7A859458C679 /* UserModuleService.swift */; };
-		874D7173BB88770FA7736E87 /* UserTrainingCalendarDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */; };
-		93D75A4959243A5E6271B7E6 /* UserTrainingCalendarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */; };
 		97889C8FE0E12B3EFA0EAC21 /* AuthenticationModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A4EEA138BB13990F01C614 /* AuthenticationModuleDataStore.swift */; };
 		99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD2369D9638EB30236E00 /* TrainerModuleService.swift */; };
 		9DFDEF42A0692E4E09AA0582 /* UserSettingsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D5D0E7BA36D52E42720D09 /* UserSettingsBuilder.swift */; };
@@ -73,7 +71,6 @@
 		CC398AC08202234B4A9E95A4 /* AuthenticationModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F971BAC3F2330C52B052A88 /* AuthenticationModuleBuilder.swift */; };
 		CC9D9A9EC51D9D91A8F5EFE5 /* UserTrainingCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */; };
 		CCAD73305D3903D2E49CBA17 /* UserModuleDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68F3DA3662E0D55993EDD2B /* UserModuleDataStore.swift */; };
-		CE6CE72623135FD9F5050235 /* UserTrainingCalendarDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */; };
 		D59012DE7794EC43C8093C0A /* UserSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E03266CA20DC4CAED93C6E /* UserSettingsView.swift */; };
 		D5D0A427DE737068EE51DD3A /* AuthenticationModuleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40311FDD41C02E3A2051B6D6 /* AuthenticationModuleModel.swift */; };
 		D66861AD255009A000FC8219 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D66861AC255009A000FC8219 /* GoogleService-Info.plist */; };
@@ -118,7 +115,6 @@
 		F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710C1DC484750A673891FEF0 /* RegistrationModel.swift */; };
 		F55D88CB5659CDEC31A835EA /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400555AAF480FB8029EBD4C /* UserSettingsViewController.swift */; };
 		F594AF763EED4B93EE5F3088 /* UserModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFE377D61C9183E1099AD15 /* UserModuleBuilder.swift */; };
-		F726156951858F88164BBC76 /* UserTrainingCalendarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */; };
 		F822108DC65ADEC71CD5C1F3 /* AuthenticationModuleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD14E7D9C23823F0C8F8D430 /* AuthenticationModuleProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,13 +141,10 @@
 		0C2096C23491E088C861670B /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		1498092BDE80062C12EA926D /* PasswordRecoveryModel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryModel.swift; sourceTree = "<group>"; };
 		15B3D10129657B3777FF91A9 /* RegistrationBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationBuilder.swift; sourceTree = "<group>"; };
-		1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarDataStore.swift; sourceTree = "<group>"; };
 		174B2037C70170DBA4320D79 /* PasswordRecoveryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryViewController.swift; sourceTree = "<group>"; };
 		17851B7A4727B802B2523073 /* PasswordRecoveryBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryBuilder.swift; sourceTree = "<group>"; };
 		17CABB74D1DFA3B88B0C093E /* TrainerModuleProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrainerModuleProvider.swift; sourceTree = "<group>"; };
-		1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarProvider.swift; sourceTree = "<group>"; };
 		25E03266CA20DC4CAED93C6E /* UserSettingsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsView.swift; sourceTree = "<group>"; };
-		2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarInteractor.swift; sourceTree = "<group>"; };
 		2857A23EDD0FB71FD69D8E1D /* PasswordRecoveryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PasswordRecoveryPresenter.swift; sourceTree = "<group>"; };
 		2995DB96135E7A859458C679 /* UserModuleService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleService.swift; sourceTree = "<group>"; };
 		2AA250B2EDE9AF518AD74F33 /* RegistrationDataStore.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataStore.swift; sourceTree = "<group>"; };
@@ -198,7 +191,6 @@
 		AE6259D01F238583683EDE1D /* UserModuleDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleDataFlow.swift; sourceTree = "<group>"; };
 		B17DF2842B4510C230B4C7C6 /* RegistrationDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationDataFlow.swift; sourceTree = "<group>"; };
 		B192B5781A5571A6AB6458CA /* Pods-sportprogrammTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sportprogrammTests.release.xcconfig"; path = "Target Support Files/Pods-sportprogrammTests/Pods-sportprogrammTests.release.xcconfig"; sourceTree = "<group>"; };
-		B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarDataFlow.swift; sourceTree = "<group>"; };
 		B506AFC76A39822185526340 /* UserTrainingCalendarPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserTrainingCalendarPresenter.swift; sourceTree = "<group>"; };
 		B707BB42FAD7D5C561A6E357 /* UserSettingsDataFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserSettingsDataFlow.swift; sourceTree = "<group>"; };
 		B7D5E8CBF30047E0C779A513 /* UserModuleInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UserModuleInteractor.swift; sourceTree = "<group>"; };
@@ -304,6 +296,7 @@
 		073D9D789E9D7F9505A0936C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4AA8CD006C06D68A90498150 /* UserTrainingCalendarViewController.swift */,
 				D8A1C74389037466BDD87213 /* UserTrainingCalendarView.swift */,
 			);
 			path = View;
@@ -379,16 +372,6 @@
 				710C1DC484750A673891FEF0 /* RegistrationModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		4A79F28DB030F53418917D4E /* Provider */ = {
-			isa = PBXGroup;
-			children = (
-				1CDAA1108F0DBB25BAAEDD2C /* UserTrainingCalendarProvider.swift */,
-				1624036614525FABDB896141 /* UserTrainingCalendarDataStore.swift */,
-				2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */,
-			);
-			path = Provider;
 			sourceTree = "<group>";
 		};
 		4F082C3E0E3CD442CF0A038D /* View */ = {
@@ -530,12 +513,9 @@
 			isa = PBXGroup;
 			children = (
 				54C228CEA3F3AEA10DB72447 /* UserTrainingCalendarBuilder.swift */,
-				4AA8CD006C06D68A90498150 /* UserTrainingCalendarViewController.swift */,
-				2729BA4DCCB93C7DF3615D69 /* UserTrainingCalendarInteractor.swift */,
 				B506AFC76A39822185526340 /* UserTrainingCalendarPresenter.swift */,
-				B3C817335EF8205F77B09D85 /* UserTrainingCalendarDataFlow.swift */,
+				2EEC1355EF24401065B5FA71 /* UserTrainingCalendarService.swift */,
 				6F55F41E908C37DAAFFC9330 /* Model */,
-				4A79F28DB030F53418917D4E /* Provider */,
 				073D9D789E9D7F9505A0936C /* View */,
 			);
 			path = UserTrainingCalendar;
@@ -1131,12 +1111,8 @@
 				D670AF972577C6FC000BB237 /* UserActivityModuleBuilder.swift in Sources */,
 				280E59C17B73F6D5EEA3B2E2 /* UserTrainingCalendarBuilder.swift in Sources */,
 				2E1D8A9DF6CBD6806C13B8A4 /* UserTrainingCalendarViewController.swift in Sources */,
-				F726156951858F88164BBC76 /* UserTrainingCalendarInteractor.swift in Sources */,
 				1F9BCA229E61E1498939A58D /* UserTrainingCalendarPresenter.swift in Sources */,
-				CE6CE72623135FD9F5050235 /* UserTrainingCalendarDataFlow.swift in Sources */,
 				63F1DF5A196E22FE9C635DA4 /* UserTrainingCalendarModel.swift in Sources */,
-				93D75A4959243A5E6271B7E6 /* UserTrainingCalendarProvider.swift in Sources */,
-				874D7173BB88770FA7736E87 /* UserTrainingCalendarDataStore.swift in Sources */,
 				CC9D9A9EC51D9D91A8F5EFE5 /* UserTrainingCalendarService.swift in Sources */,
 				5781E4F43BA619BD2370E96A /* UserTrainingCalendarView.swift in Sources */,
 				D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */,

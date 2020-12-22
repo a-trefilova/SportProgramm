@@ -1,25 +1,14 @@
-//
-//  UserTrainingCalendar module
-//  Created by Alyona Sabitskaya on 15/11/2020.
-//
+
 
 import UIKit
 
-class UserTrainingCalendarBuilder: ModuleBuilder {
-
-    var initialState: UserTrainingCalendar.ViewControllerState?
-
-    func set(initialState: UserTrainingCalendar.ViewControllerState) -> UserTrainingCalendarBuilder {
-        self.initialState = initialState
-        return self
-    } 
-
+class UserTrainingCalendarBuilder {
+    let instanceOfMockUserData = MockUserProgrammsData()
     func build() -> UIViewController {
-        let presenter = UserTrainingCalendarPresenter()
-        let interactor = UserTrainingCalendarInteractor(presenter: presenter)
-        let controller = UserTrainingCalendarViewController(interactor: interactor)
-
-        presenter.viewController = controller
-        return controller
+        guard let model = instanceOfMockUserData.programm.userProgramms.first else { return UIViewController()}
+        let view = UserTrainingCalendarViewController()
+        let presenter = UserTrainingCalendarPresenter(view: view, programm: model)
+        view.presenter = presenter
+        return view
     }
 }

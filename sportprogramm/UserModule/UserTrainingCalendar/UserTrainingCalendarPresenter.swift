@@ -1,33 +1,33 @@
-//
-//  UserTrainingCalendar module
-//  Created by Alyona Sabitskaya on 15/11/2020.
-//
+import Foundation
 
-import UIKit
-
-protocol UserTrainingCalendarPresentationLogic {
-    func presentSomething(response: UserTrainingCalendar.Something.Response)
+protocol UserTrainingCalendarViewProtocol {
+    func startLoading()
+    func finishLoading()
+    func setTrainingCalendar(forProgramm programm: FullProgramm)
 }
 
-/// Отвечает за отображение данных модуля UserTrainingCalendar
-class UserTrainingCalendarPresenter: UserTrainingCalendarPresentationLogic {
-    weak var viewController: UserTrainingCalendarDisplayLogic?
+protocol UserTrainingCalendarPresenterProtocol {
+    init(view: UserTrainingCalendarViewProtocol, programm: FullProgramm)
+    func presentCalendar()
+}
 
-    // MARK: Do something
-    func presentSomething(response: UserTrainingCalendar.Something.Response) {
-        var viewModel: UserTrainingCalendar.Something.ViewModel
-        
-        switch response.result {
-        case let .failure(error):
-            viewModel = UserTrainingCalendar.Something.ViewModel(state: .error(message: error.localizedDescription))
-        case let .success(result):
-            if result.isEmpty {
-                viewModel = UserTrainingCalendar.Something.ViewModel(state: .emptyResult)
-            } else {
-                viewModel = UserTrainingCalendar.Something.ViewModel(state: .result(result))
-            }
-        }
-        
-        viewController?.displaySomething(viewModel: viewModel)
+
+class UserTrainingCalendarPresenter: UserTrainingCalendarPresenterProtocol {
+    let instanceOfMockUserData = MockUserProgrammsData()
+    let view: UserTrainingCalendarViewProtocol
+    let model: FullProgramm
+    
+    required init(view: UserTrainingCalendarViewProtocol, programm: FullProgramm) {
+        self.view = view
+        self.model = programm
     }
+    
+    func presentCalendar() {
+        view.startLoading()
+        view.finishLoading()
+        view.setTrainingCalendar(forProgramm: model)
+    }
+    
+    
 }
+

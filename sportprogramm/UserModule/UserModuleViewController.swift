@@ -51,12 +51,9 @@ class UserModuleViewController: UITabBarController {
         let thrdItem = UITabBarItem(title: "Настройки", image: UIImage(named: "settings"), tag: 2)
         thirdvc.tabBarItem = thrdItem
         
-        let fourthVc = UserActivityModuleBuilder().build()
-        let fourthItem = UITabBarItem(title: "Активность", image: UIImage(systemName: "circle"), tag: 3)
-        fourthVc.tabBarItem = fourthItem
-        
-        let listofvc = [fistvc, secondvc, thirdvc, fourthVc]
+        let listofvc = [fistvc, secondvc, thirdvc]
         viewControllers = listofvc
+        
     }
 
     // MARK: Do something
