@@ -3,7 +3,7 @@ import UIKit
 import JTAppleCalendar
 
 class UserTrainingCalendarViewController: UIViewController {
-    
+    let formatter = DateFormatter()
     var presenter: UserTrainingCalendarPresenterProtocol?
     var dataModel: FullProgramm?
     var rootView: UserTrainingCalendarView? {
@@ -22,8 +22,10 @@ class UserTrainingCalendarViewController: UIViewController {
         rootView?.calendarView.calendarDataSource = self
         rootView?.calendarView.calendarDelegate = self
         rootView?.calendarView.register(CustomCalendarCell.self, forCellWithReuseIdentifier: CustomCalendarCell.reuseId)
+        rootView?.calendarView.register(CustomMonthHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: CustomMonthHeader.reuseId)
         title = "Тренировки"
-        rootView?.setUpTitle(title: "Выберите день начала программы", description: "Необходимо выполнять \(String(describing: dataModel?.excersicesByDay.count)) тренировок в неделю")
+        guard let countOfTrainingsPerWeek = dataModel?.excersicesByDay.count else { return }
+        rootView?.setUpTitle(title: "Выберите день начала программы", description: "Необходимо выполнять \(String(countOfTrainingsPerWeek)) тренировок в неделю")
     }
 
 
@@ -55,7 +57,7 @@ extension UserTrainingCalendarViewController: JTACMonthViewDataSource {
        
         let configParams =  ConfigurationParameters(startDate: startDate,
                                                     endDate: endDate,
-                                                    numberOfRows: 5,
+                                                    numberOfRows: 6,
                                                     generateInDates: InDateCellGeneration.forAllMonths,
                                                     generateOutDates: OutDateCellGeneration.tillEndOfRow,
                                                     firstDayOfWeek: DaysOfWeek?.some(DaysOfWeek.monday),
@@ -73,6 +75,24 @@ extension UserTrainingCalendarViewController: JTACMonthViewDataSource {
           cell.fillCellWithData(text: "")
        }
     }
+    
+    
+    func configureCell(view: JTACDayCell?, cellState: CellState) {
+        guard let cell = view as? CustomCalendarCell  else { return }
+        cell.fillCellWithData(text: cellState.text)
+        handleCellTextColor(cell: cell, cellState: cellState)
+        handleCellSelected(cell: cell, cellState: cellState)
+    }
+
+    func handleCellSelected(cell: CustomCalendarCell, cellState: CellState) {
+        if cellState.isSelected {
+            cell.setCellSelected()
+        } else {
+            cell.setCellDeselected()
+        }
+    }
+    
+    
 }
 
 extension UserTrainingCalendarViewController: JTACMonthViewDelegate {
@@ -90,7 +110,23 @@ extension UserTrainingCalendarViewController: JTACMonthViewDelegate {
         
     }
     
+    func calendar(_ calendar: JTACMonthView, didSelectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
     
+    func calendar(_ calendar: JTACMonthView, didDeselectDate date: Date, cell: JTACDayCell?, cellState: CellState, indexPath: IndexPath) {
+        configureCell(view: cell, cellState: cellState)
+    }
     
+    func calendar(_ calendar: JTACMonthView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTACMonthReusableView {
+        formatter.setLocalizedDateFormatFromTemplate("MMMM YYYY")
+        formatter.locale = Locale(identifier: "ru_RU")
+        let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: CustomMonthHeader.reuseId, for: indexPath) as! CustomMonthHeader
+        header.label.text = formatter.string(from: range.start)
+        return header
+    }
     
+    func calendarSizeForMonths(_ calendar: JTACMonthView?) -> MonthSize? {
+        return MonthSize(defaultSize: 40)
+    }
 }
