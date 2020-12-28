@@ -19,11 +19,25 @@ class UserTrainingCalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.presentCalendar()
+        setUpRootView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    private func setUpRootView() {
         rootView?.calendarView.calendarDataSource = self
         rootView?.calendarView.calendarDelegate = self
         rootView?.calendarView.register(CustomCalendarCell.self, forCellWithReuseIdentifier: CustomCalendarCell.reuseId)
         rootView?.calendarView.register(CustomMonthHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: CustomMonthHeader.reuseId)
-        title = "Тренировки"
+        
         guard let countOfTrainingsPerWeek = dataModel?.excersicesByDay.count else { return }
         rootView?.setUpTitle(title: "Выберите день начала программы", description: "Необходимо выполнять \(String(countOfTrainingsPerWeek)) тренировок в неделю")
     }

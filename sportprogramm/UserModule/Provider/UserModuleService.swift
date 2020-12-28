@@ -3,13 +3,13 @@
 //
 
 protocol UserModuleServiceProtocol {
-    func fetchItems(completion: @escaping ([UserModuleModel]?, Error?) -> Void)
+    func fetchItems(completion: @escaping ([UserProgrammsModel]?, Error?) -> Void)
 }
 
 /// Получает данные для модуля UserModule
 class UserModuleService: UserModuleServiceProtocol {
 
-    func fetchItems(completion: @escaping ([UserModuleModel]?, Error?) -> Void) {
+    func fetchItems(completion: @escaping ([UserProgrammsModel]?, Error?) -> Void) {
         completion(nil, nil)
     }
 }

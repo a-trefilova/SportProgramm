@@ -39,10 +39,16 @@ class DetailedProgrammViewController: UIViewController {
         rootView?.layoutIfNeeded()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.tintColor = .black
+    }
     
     private func setUpNavBar() {
       //  navigationController?.navigationBar.isHidden = true
         navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.backgroundColor = .clear
+        navigationController?.navigationBar.topItem?.title = ""
         guard let dataModel = dataModel else { return }
         rootView?.setUpTitle(title: dataModel.title, description: String(describing: dataModel.numberOfWeeks) + " недель в программе" + "\n" + String(describing: dataModel.excersicesByDay.count) + " тренировок в неделю")
     }

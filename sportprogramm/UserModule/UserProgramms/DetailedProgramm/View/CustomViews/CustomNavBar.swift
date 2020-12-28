@@ -131,7 +131,7 @@ class CustomNavBar: UIView {
         transparentContainerForTitleAndDescription.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(transparentContainerForTitleAndDescription.snp.top).offset(50)
-            make.leading.equalTo(transparentContainerForTitleAndDescription.snp.leading).offset(16)
+            make.leading.equalTo(transparentContainerForTitleAndDescription.snp.leading).offset(30)
             make.trailing.equalTo(transparentContainerForTitleAndDescription.snp.trailing).offset(-17)
             make.height.lessThanOrEqualTo(30)
         
@@ -144,7 +144,7 @@ class CustomNavBar: UIView {
         transparentContainerForTitleAndDescription.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(titleLabel.snp.bottom)
-            make.leading.equalTo(transparentContainerForTitleAndDescription.snp.leading).offset(16)
+            make.leading.equalTo(transparentContainerForTitleAndDescription.snp.leading).offset(30)
             make.trailing.equalTo(transparentContainerForTitleAndDescription.snp.trailing).offset(-17)
             make.bottom.equalTo(transparentContainerForTitleAndDescription.snp.bottom).offset(-26)
         }

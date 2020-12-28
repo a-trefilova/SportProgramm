@@ -71,7 +71,7 @@ class UserTrainingCalendarView: UIView {
             make.top.equalTo(containerForTitle.snp.bottom)
             make.leading.equalTo(customView.snp.leading)
             make.trailing.equalTo(customView.snp.trailing)
-            make.bottom.equalTo(customView.snp.bottom).offset(-150)
+            make.bottom.equalTo(customView.snp.bottom)
         }
     }
     

@@ -1,12 +1,7 @@
-//
-//  Created by Alyona Sabitskaya on 27/10/2020.
-//
 
-/// Модель данных, описывающая ...
 struct UserModuleModel{
-    // Example
     let uid: Int
-    let name: String
+    let userProgramms: [FullProgramm]
 }
 
 extension UserModuleModel: Equatable {

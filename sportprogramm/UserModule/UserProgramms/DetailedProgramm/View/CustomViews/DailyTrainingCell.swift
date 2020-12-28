@@ -3,58 +3,112 @@ import Foundation
 import UIKit
 import SnapKit
 
-
 class DailyTrainingCell: UITableViewCell {
     static var reuseId = "DailyTrainingCell"
     var numberOfExercises: Int = 3
     var numberOfDay: Int = 1
     var exercises: [Excersice]?
     
-    private func createOneSubCell(withExercise exercise: Excersice, numberOfExercise: Int) -> UIView {
+    private func createOneSubCell(withExercise exercise: Excersice, numberOfExercise: Int, numberOfAllExercises: Int ) -> UIView {
+
+        //setting a count number
+        let viewForNumber = UIView()
+        viewForNumber.backgroundColor = .black
+        viewForNumber.layer.cornerRadius = 8
+
         let numberOfExerciseLabel = UILabel()
         numberOfExerciseLabel.layer.cornerRadius = 8
         numberOfExerciseLabel.backgroundColor = .black
         numberOfExerciseLabel.textColor = .white
         numberOfExerciseLabel.textAlignment = .center
         numberOfExerciseLabel.font = UIFont(name: "SF Pro Display", size: 14)
-        numberOfExerciseLabel.text = String("\(numberOfExercise)")
-        
+        numberOfExerciseLabel.text = String("\(numberOfExercise + 1)")
+
+        //setting connecting line between count numbers
+        let connectingViewToTop = UIView()
+        connectingViewToTop.backgroundColor = .black
+
+        let connectingViewToBottom = UIView()
+        connectingViewToBottom.backgroundColor = .black
+
+        //setting title of exercise
         let exTitleLabel = UILabel()
         exTitleLabel.textColor = .black
         exTitleLabel.font = UIFont(name: "SF Pro Display", size: 14)
         exTitleLabel.textAlignment = .left
-        exTitleLabel.text = exercise.title
-        
+        exTitleLabel.numberOfLines = 0
+        exTitleLabel.lineBreakMode = .byWordWrapping
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.32
+        let text = exercise.title
+        exTitleLabel.attributedText = NSMutableAttributedString(string: text, attributes: [NSAttributedString.Key.kern: -0.41, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+
+
+        //setting description
         let descriptionLabel = UILabel()
         descriptionLabel.textColor = UIColor(red: 0.235, green: 0.235, blue: 0.263, alpha: 0.6)
         descriptionLabel.font = UIFont(name: "SF Pro Text", size: 12)
         descriptionLabel.textAlignment = .left
-        descriptionLabel.text = "Подходов: " + String(describing: exercise.numberOfSets) + " " + "Повторений: " + String(describing: exercise.numberOfReps) + " " + "Вес: " + String(describing: exercise.weight)
-        
+        let paragraphStyleForDescription = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.54
+        let descriptionText = "Подходов: " + String(describing: exercise.numberOfSets) + " " + "Повторений: " + String(describing: exercise.numberOfReps) + " " + "Вес: " + String(describing: exercise.weight)
+        descriptionLabel.attributedText = NSMutableAttributedString(string: descriptionText, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyleForDescription])
+
+
         let viewForSubCell = UIView()
         viewForSubCell.clipsToBounds = true
-        viewForSubCell.addSubview(numberOfExerciseLabel)
+        viewForSubCell.addSubview(viewForNumber)
+        viewForNumber.addSubview(numberOfExerciseLabel)
+        viewForSubCell.addSubview(connectingViewToTop)
+        viewForSubCell.addSubview(connectingViewToBottom)
         viewForSubCell.addSubview(exTitleLabel)
         viewForSubCell.addSubview(descriptionLabel)
+
+        if numberOfExercise == 0 {
+            connectingViewToTop.isHidden = true
+        }
         
-        numberOfExerciseLabel.snp.makeConstraints { (make) in
+        if numberOfExercise == numberOfAllExercises - 2 {
+            connectingViewToBottom.isHidden = true
+        }
+        
+        viewForNumber.snp.makeConstraints { (make) in
             make.leading.equalToSuperview().offset(5)
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(5)
             make.height.lessThanOrEqualTo(26)
             make.width.lessThanOrEqualTo(26)
         }
-        
+
+        numberOfExerciseLabel.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
+
+        connectingViewToTop.snp.makeConstraints { (make) in
+            make.width.equalTo(2)
+            make.centerX.equalTo(viewForNumber.snp.centerX)
+            make.top.equalToSuperview()
+            make.bottom.equalTo(viewForNumber.snp.top).inset(5)
+        }
+
+        connectingViewToBottom.snp.makeConstraints { (make) in
+            make.width.equalTo(2)
+            make.centerX.equalTo(viewForNumber.snp.centerX)
+            make.top.equalTo(viewForNumber.snp.bottom).inset(5)
+            make.bottom.equalToSuperview()
+        }
+
         exTitleLabel.snp.makeConstraints { (make) in
             make.leading.equalTo(numberOfExerciseLabel.snp.trailing).offset(16)
             make.top.equalToSuperview()
         }
-        
+
         descriptionLabel.snp.makeConstraints { (make) in
             make.top.equalTo(exTitleLabel.snp.bottom)
             make.leading.equalTo(numberOfExerciseLabel.snp.trailing).offset(16)
-            make.bottom.equalToSuperview()
+            //make.bottom.equalToSuperview()
         }
-        
+
         return viewForSubCell
     }
     
@@ -79,7 +133,7 @@ class DailyTrainingCell: UITableViewCell {
         numberOfExercises = data.count
         var arrayOfSubviews = [UIView]()
         for (index,item) in data.enumerated() {
-            let view = createOneSubCell(withExercise: item, numberOfExercise: index)
+            let view = createOneSubCell(withExercise: item, numberOfExercise: index, numberOfAllExercises: numberOfExercises)
             arrayOfSubviews.append(view)
         }
         contentView.backgroundColor = .clear

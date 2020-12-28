@@ -12,7 +12,7 @@ protocol UserModuleDisplayLogic: class {
 class UserModuleViewController: UITabBarController {
     let interactor: UserModuleBusinessLogic
     var state: UserModule.ViewControllerState
-
+    var userModel: UserProgrammsModel?
     private var rootView: UserModuleView? {
         return view as? UserModuleView
     }
@@ -21,6 +21,7 @@ class UserModuleViewController: UITabBarController {
         self.interactor = interactor
         self.state = initialState
         super.init(nibName: nil, bundle: nil)
+        setUpTapBar()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,15 +36,17 @@ class UserModuleViewController: UITabBarController {
         doSomething()
     }
     
-    private func setUpTapBar(byEmail email: String?) {
-        guard let email = email else { return }
-        let firstVcBuilder = UserProgrammsBuilder(userEmail: email)
+    private func setUpTapBar() {
+        guard let model = userModel else { return }
+        let firstVcBuilder = UserProgrammsBuilder(model: model)
         let fistvc = firstVcBuilder.build()
+        
         
         let firstItem = UITabBarItem(title: "Программы", image: UIImage(named: "TrainIcon"), tag: 0)
         fistvc.tabBarItem = firstItem
         
-        let secondvc = UserTrainingCalendarBuilder().build()
+        guard let programm = model.userProgramms.first else { return }
+        let secondvc = UserTrainingCalendarBuilder(model: programm).build()
         let secItem = UITabBarItem(title: "Тренировки", image: UIImage(named: "calendar"), tag: 1)
         secondvc.tabBarItem = secItem
         
@@ -53,6 +56,8 @@ class UserModuleViewController: UITabBarController {
         
         let listofvc = [fistvc, secondvc, thirdvc]
         viewControllers = listofvc
+        
+        navigationController?.navigationBar.isHidden = false
         
     }
 
@@ -64,13 +69,13 @@ class UserModuleViewController: UITabBarController {
             let request = UserModule.Something.Request(tableKey: user.email!)
             interactor.doSomething(request: request)
             print("******************")
-            print("\(user.email)")
-            setUpTapBar(byEmail: user.email)
-        case .result(_):
-            print("")
+            print("\(String(describing: user.email))")
+            setUpTapBar()
+        case .result(let items):
+            userModel = items.first
         case .emptyResult:
             print("")
-        case .error(message: let message):
+        case .error(message: _):
             print("")
         }
         
@@ -90,7 +95,7 @@ extension UserModuleViewController: UserModuleDisplayLogic {
         case let .error(message):
             print("error \(message)")
         case let .result(items):
-            print("result: \(items)")
+            userModel = items.first
         case .emptyResult:
             print("empty result")
         }

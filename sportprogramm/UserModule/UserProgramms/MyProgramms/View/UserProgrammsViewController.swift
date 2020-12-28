@@ -15,29 +15,27 @@ class UserProgrammsViewController: UIViewController {
     // MARK: View lifecycle
     override func loadView() {
         view = UserProgrammsView(frame: .zero)
-        
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        rootView?.refreshControl.hidesWhenStopped = true
-        title = "Мои программы"
-        
-       setUpTableViews()
+        setUpTableViews()
         setUpNavBar()
     }
     
 
     override func viewWillAppear(_ animated: Bool) {
-   //     setUpNavBar()
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        setUpNavBar()
+
     }
     override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.hidesBarsOnSwipe = false
+        super.viewWillDisappear(animated)
+       // navigationController?.navigationBar.isHidden = true
     }
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         presenter.presentUserProgramms()
     }
     
@@ -47,17 +45,13 @@ class UserProgrammsViewController: UIViewController {
         rootView?.activeTrainingsContainer.delegate = self
         rootView?.activeTrainingsContainer.register(UserProgrammsTableViewCell.self, forCellReuseIdentifier: UserProgrammsTableViewCell.reuseId)
         rootView?.activeTrainingsContainer.register(UserProgrammsRecentTrainingCell.self, forCellReuseIdentifier: UserProgrammsRecentTrainingCell.reuseId)
-        
         rootView?.activeTrainingsContainer.backgroundColor = .clear
-        
         
     }
     
     private func setUpNavBar() {
-        navigationController?.navigationBar.topItem?.hidesBackButton = true
         navigationController?.navigationBar.topItem?.title = "Мои программы"
-        navigationController?.navigationItem.title = "Мои программы"
-        navigationController?.hidesBarsOnSwipe = true
+        //navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
     }
 }
@@ -165,6 +159,14 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
         tableView.deselectRow(at: indexPath, animated: true)
         //tableView.isUserInteractionEnabled = false
         if indexPath.section == 1 {
+            guard let programms = programmsToDisplay?.userProgramms else { return }
+            let programm = programms[indexPath.row]
+            let builer = DetailedProgrammBuilder()
+            let vc = builer.build(withProgramm: programm)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        if indexPath.section == 2 {
             guard let programms = programmsToDisplay?.userProgramms else { return }
             let programm = programms[indexPath.row]
             let builer = DetailedProgrammBuilder()

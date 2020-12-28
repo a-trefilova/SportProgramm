@@ -20,6 +20,7 @@ class AuthenticationModuleService: AuthenticationModuleServiceProtocol {
             if bool {
                 let model = AuthenticationModuleModel(email: email, phoneNumber: nil, password: password)
                 completion([model], nil)
+                UserDefaults.standard.set(email, forKey: "userEmail")
                 return
                 
             } else {

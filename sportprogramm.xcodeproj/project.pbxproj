@@ -80,14 +80,11 @@
 		D66861B625555C4400FC8219 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */; };
 		D66861B825555C9D00FC8219 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */; };
 		D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */; };
-		D670AF912577C687000BB237 /* UserActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF902577C687000BB237 /* UserActivityModel.swift */; };
-		D670AF932577C69A000BB237 /* UserActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF922577C69A000BB237 /* UserActivityViewController.swift */; };
-		D670AF952577C6E5000BB237 /* UserActivityPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF942577C6E5000BB237 /* UserActivityPresenter.swift */; };
-		D670AF972577C6FC000BB237 /* UserActivityModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF962577C6FC000BB237 /* UserActivityModuleBuilder.swift */; };
 		D670AF992577D6BD000BB237 /* UserProgrammsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */; };
 		D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */; };
 		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
 		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
+		D6C1040D25960645000B05F2 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1040C25960645000B05F2 /* MockData.swift */; };
 		D6D772732588DEF000AA476F /* DetailedProgrammPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */; };
 		D6D772752588E05A00AA476F /* DetailedProgrammViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */; };
 		D6D772772588E08D00AA476F /* DetailedProgrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772762588E08D00AA476F /* DetailedProgrammView.swift */; };
@@ -206,14 +203,11 @@
 		D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Display-Bold.otf"; path = "../../../Downloads/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../Downloads/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRec+didTapAttrText.swift"; sourceTree = "<group>"; };
-		D670AF902577C687000BB237 /* UserActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityModel.swift; sourceTree = "<group>"; };
-		D670AF922577C69A000BB237 /* UserActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityViewController.swift; sourceTree = "<group>"; };
-		D670AF942577C6E5000BB237 /* UserActivityPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityPresenter.swift; sourceTree = "<group>"; };
-		D670AF962577C6FC000BB237 /* UserActivityModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivityModuleBuilder.swift; sourceTree = "<group>"; };
 		D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsTableViewCell.swift; sourceTree = "<group>"; };
 		D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowWeekdayCell.swift; sourceTree = "<group>"; };
 		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
+		D6C1040C25960645000B05F2 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammPresenter.swift; sourceTree = "<group>"; };
 		D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammViewController.swift; sourceTree = "<group>"; };
 		D6D772762588E08D00AA476F /* DetailedProgrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammView.swift; sourceTree = "<group>"; };
@@ -387,7 +381,6 @@
 		62A629ABBDE359B37191F1F6 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
-				D670AF8F2577C652000BB237 /* UserActivityModule */,
 				E6D57D79056A7A04E29F90AC /* UserProgramms */,
 				BF1FC805C6A1B02D31658049 /* UserTrainingCalendar */,
 				EB2B4E1BC6457A32746213F4 /* UserSettings */,
@@ -589,17 +582,6 @@
 			path = Entry;
 			sourceTree = "<group>";
 		};
-		D670AF8F2577C652000BB237 /* UserActivityModule */ = {
-			isa = PBXGroup;
-			children = (
-				D670AF902577C687000BB237 /* UserActivityModel.swift */,
-				D670AF922577C69A000BB237 /* UserActivityViewController.swift */,
-				D670AF942577C6E5000BB237 /* UserActivityPresenter.swift */,
-				D670AF962577C6FC000BB237 /* UserActivityModuleBuilder.swift */,
-			);
-			path = UserActivityModule;
-			sourceTree = "<group>";
-		};
 		D6C103BB258CB080000B05F2 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +730,7 @@
 			isa = PBXGroup;
 			children = (
 				A8E8CD3993D7C97427A498CE /* UserModuleModel.swift */,
+				D6C1040C25960645000B05F2 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1071,7 +1054,6 @@
 				D66861B3255052A400FC8219 /* Tables.swift in Sources */,
 				69A7E1642C276163AD6C983F /* TrainerModuleProvider.swift in Sources */,
 				35C8CDAB544E5AAA1819F043 /* TrainerModuleDataStore.swift in Sources */,
-				D670AF912577C687000BB237 /* UserActivityModel.swift in Sources */,
 				99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */,
 				B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */,
 				0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */,
@@ -1080,6 +1062,7 @@
 				53A7870CA46A235F83A40C90 /* RegistrationPresenter.swift in Sources */,
 				84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */,
 				F2C2FAFF05E4CA123A6AB8F8 /* RegistrationModel.swift in Sources */,
+				D6C1040D25960645000B05F2 /* MockData.swift in Sources */,
 				D6D772792588E28D00AA476F /* DetailedProgrammBuilder.swift in Sources */,
 				025AFCE59506FF8036640AED /* RegistrationProvider.swift in Sources */,
 				D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */,
@@ -1097,18 +1080,15 @@
 				A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */,
 				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,
 				3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */,
-				D670AF932577C69A000BB237 /* UserActivityViewController.swift in Sources */,
 				BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */,
 				44E44F7353A2B0D54DF1390D /* UserProgrammsBuilder.swift in Sources */,
 				2FEF183CA975C2B18D4C824B /* UserProgrammsViewController.swift in Sources */,
 				D6D772732588DEF000AA476F /* DetailedProgrammPresenter.swift in Sources */,
-				D670AF952577C6E5000BB237 /* UserActivityPresenter.swift in Sources */,
 				C1DDF19E1C71FB25F38696E7 /* UserProgrammsPresenter.swift in Sources */,
 				481880AC55500B5552383796 /* UserProgrammsModel.swift in Sources */,
 				12F57DE69FB23F01E0E29B54 /* UserProgrammsService.swift in Sources */,
 				D6D772772588E08D00AA476F /* DetailedProgrammView.swift in Sources */,
 				2E5B0E68749A9B97745B1A63 /* UserProgrammsView.swift in Sources */,
-				D670AF972577C6FC000BB237 /* UserActivityModuleBuilder.swift in Sources */,
 				280E59C17B73F6D5EEA3B2E2 /* UserTrainingCalendarBuilder.swift in Sources */,
 				2E1D8A9DF6CBD6806C13B8A4 /* UserTrainingCalendarViewController.swift in Sources */,
 				1F9BCA229E61E1498939A58D /* UserTrainingCalendarPresenter.swift in Sources */,

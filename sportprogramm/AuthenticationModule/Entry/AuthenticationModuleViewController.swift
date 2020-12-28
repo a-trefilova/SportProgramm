@@ -69,7 +69,6 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.passwordTextField.endEditing(true)
         checkIfUserExists()
         
-        SceneDelegate.isAuthorized = true
         let builder = UserModuleBuilder()
         guard let model = AuthenticationModuleViewController.transferToUserModuleModel else { return }
         let state = UserModule.ViewControllerState.loading(model)

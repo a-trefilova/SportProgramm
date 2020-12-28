@@ -4,5 +4,5 @@
 
 /// Класс для хранения данных модуля UserModule
 class UserModuleDataStore {
-    var models: [UserModuleModel]?
+    var models: [UserProgrammsModel]?
 }

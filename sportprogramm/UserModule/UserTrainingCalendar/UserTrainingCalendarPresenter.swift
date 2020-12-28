@@ -13,7 +13,7 @@ protocol UserTrainingCalendarPresenterProtocol {
 
 
 class UserTrainingCalendarPresenter: UserTrainingCalendarPresenterProtocol {
-    let instanceOfMockUserData = MockUserProgrammsData()
+   // let instanceOfMockUserData = MockUserProgrammsData()
     let view: UserTrainingCalendarViewProtocol
     let model: FullProgramm
     

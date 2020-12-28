@@ -21,12 +21,12 @@ enum UserModule {
 
     enum UserModuleRequestResult {
         case failure(UserModuleError)
-        case success([UserModuleModel])
+        case success([UserProgrammsModel])
     }
 
     enum ViewControllerState {
         case loading(AuthenticationModuleModel)
-        case result([Any/*viewModel*/])
+        case result([UserProgrammsModel])
         case emptyResult
         case error(message: String)
     }

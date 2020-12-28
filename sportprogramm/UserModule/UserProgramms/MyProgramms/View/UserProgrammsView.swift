@@ -25,7 +25,7 @@ class UserProgrammsView: UIView {
 
     var refreshControl : UIActivityIndicatorView = {
         let refreshControl = UIActivityIndicatorView()
-        
+        refreshControl.hidesWhenStopped = true
         return refreshControl
     }()
  
