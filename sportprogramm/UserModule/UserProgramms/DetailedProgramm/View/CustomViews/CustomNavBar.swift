@@ -258,7 +258,7 @@ class CustomGradientNavbar: UIView {
     
     var titleLabel = UILabel()
     var descriptionLabel = UILabel()
-
+    var arrayOfDates: [Date]?
     
     private var backgroundGradientView: UIView = {
         let view = UIView()
@@ -343,6 +343,8 @@ class CustomGradientNavbar: UIView {
             make.trailing.equalTo(transparentContainerForTitleAndDescription.snp.trailing).offset(-17)
           
         }
+        
+        
         
         let arrayOfDays = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
         var arrayOfViews = [UILabel]()

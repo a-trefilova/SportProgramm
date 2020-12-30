@@ -158,6 +158,17 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         //tableView.isUserInteractionEnabled = false
+        
+        if indexPath.section == 0 {
+            //exactly, here should be the access to local database and we should get the closest training from calendar date like (the most recent training will be tommorow 31.12.2020)
+            
+            guard let ppd = programmsToDisplay?.userProgramms.last?.excersicesByDay.last else { return }
+            let builder  = UserDetailedTrainingBuilder(model: ppd)
+            let vc = builder.build()
+            navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        
         if indexPath.section == 1 {
             guard let programms = programmsToDisplay?.userProgramms else { return }
             let programm = programms[indexPath.row]

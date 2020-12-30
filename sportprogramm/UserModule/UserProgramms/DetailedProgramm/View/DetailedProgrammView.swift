@@ -61,6 +61,13 @@ class DetailedProgrammView: UIView {
         return view
     }()
     
+    var planButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.tintColor = .white
+        button.setTitle( "Запланировать", for: .normal)
+        return button
+    }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -91,6 +98,9 @@ class DetailedProgrammView: UIView {
         customView.addSubview(containerForTitle)
         customView.addSubview(headerView)
         customView.addSubview(containerForTrainings)
+        customView.addSubview(planButton)
+        planButton.layer.cornerRadius = 14
+        customView.sendSubviewToBack(containerForTrainings)
         containerForTrainings.tableHeaderView = headerView
         headerView.addSubview(containerForDays)
         headerView.addSubview(containerForWeekdays)
@@ -146,6 +156,13 @@ class DetailedProgrammView: UIView {
             make.leading.equalTo(customView.snp.leading).offset(16)
             make.trailing.equalTo(customView.snp.trailing).offset(-16)
             make.bottom.equalToSuperview()
+        }
+        
+        planButton.snp.makeConstraints { (make) in
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview().inset(14)
+            make.height.equalTo(56)
         }
     }
     

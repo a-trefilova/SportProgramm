@@ -85,6 +85,11 @@
 		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
 		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
 		D6C1040D25960645000B05F2 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1040C25960645000B05F2 /* MockData.swift */; };
+		D6C104102599EA90000B05F2 /* UserDetailedTrainingBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1040F2599EA90000B05F2 /* UserDetailedTrainingBuilder.swift */; };
+		D6C104122599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C104112599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift */; };
+		D6C104142599EAB0000B05F2 /* UserDetailedTrainingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C104132599EAB0000B05F2 /* UserDetailedTrainingModel.swift */; };
+		D6C104162599EACD000B05F2 /* UserDetailedTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C104152599EACD000B05F2 /* UserDetailedTrainingViewController.swift */; };
+		D6C104182599EADF000B05F2 /* UserDetailedTrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C104172599EADF000B05F2 /* UserDetailedTrainingView.swift */; };
 		D6D772732588DEF000AA476F /* DetailedProgrammPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */; };
 		D6D772752588E05A00AA476F /* DetailedProgrammViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */; };
 		D6D772772588E08D00AA476F /* DetailedProgrammView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6D772762588E08D00AA476F /* DetailedProgrammView.swift */; };
@@ -208,6 +213,11 @@
 		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
 		D6C1040C25960645000B05F2 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		D6C1040F2599EA90000B05F2 /* UserDetailedTrainingBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailedTrainingBuilder.swift; sourceTree = "<group>"; };
+		D6C104112599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailedTrainingPresenter.swift; sourceTree = "<group>"; };
+		D6C104132599EAB0000B05F2 /* UserDetailedTrainingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailedTrainingModel.swift; sourceTree = "<group>"; };
+		D6C104152599EACD000B05F2 /* UserDetailedTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailedTrainingViewController.swift; sourceTree = "<group>"; };
+		D6C104172599EADF000B05F2 /* UserDetailedTrainingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailedTrainingView.swift; sourceTree = "<group>"; };
 		D6D772722588DEF000AA476F /* DetailedProgrammPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammPresenter.swift; sourceTree = "<group>"; };
 		D6D772742588E05A00AA476F /* DetailedProgrammViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammViewController.swift; sourceTree = "<group>"; };
 		D6D772762588E08D00AA476F /* DetailedProgrammView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProgrammView.swift; sourceTree = "<group>"; };
@@ -381,6 +391,7 @@
 		62A629ABBDE359B37191F1F6 /* UserModule */ = {
 			isa = PBXGroup;
 			children = (
+				D6C1040E2599EA4F000B05F2 /* UserDetailedTraining */,
 				E6D57D79056A7A04E29F90AC /* UserProgramms */,
 				BF1FC805C6A1B02D31658049 /* UserTrainingCalendar */,
 				EB2B4E1BC6457A32746213F4 /* UserSettings */,
@@ -590,6 +601,18 @@
 				D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		D6C1040E2599EA4F000B05F2 /* UserDetailedTraining */ = {
+			isa = PBXGroup;
+			children = (
+				D6C1040F2599EA90000B05F2 /* UserDetailedTrainingBuilder.swift */,
+				D6C104112599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift */,
+				D6C104132599EAB0000B05F2 /* UserDetailedTrainingModel.swift */,
+				D6C104152599EACD000B05F2 /* UserDetailedTrainingViewController.swift */,
+				D6C104172599EADF000B05F2 /* UserDetailedTrainingView.swift */,
+			);
+			path = UserDetailedTraining;
 			sourceTree = "<group>";
 		};
 		D6D7726C2588DE5100AA476F /* DetailedProgramm */ = {
@@ -1036,6 +1059,7 @@
 				7CECF9474B765300F4B8972D /* AuthenticationModuleView.swift in Sources */,
 				F594AF763EED4B93EE5F3088 /* UserModuleBuilder.swift in Sources */,
 				E5D28048EC9ED277534F3745 /* UserModuleViewController.swift in Sources */,
+				D6C104122599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift in Sources */,
 				0B80000420D53FDE3FDFFA53 /* UserModuleInteractor.swift in Sources */,
 				12429ED90F04596E564F9207 /* UserModulePresenter.swift in Sources */,
 				ED79E34D390FFF52C43E799B /* UserModuleDataFlow.swift in Sources */,
@@ -1054,6 +1078,7 @@
 				D66861B3255052A400FC8219 /* Tables.swift in Sources */,
 				69A7E1642C276163AD6C983F /* TrainerModuleProvider.swift in Sources */,
 				35C8CDAB544E5AAA1819F043 /* TrainerModuleDataStore.swift in Sources */,
+				D6C104142599EAB0000B05F2 /* UserDetailedTrainingModel.swift in Sources */,
 				99F2B21B04C243C68C1D544E /* TrainerModuleService.swift in Sources */,
 				B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */,
 				0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */,
@@ -1068,6 +1093,7 @@
 				D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */,
 				739C3232A0389339D54C4D78 /* RegistrationDataStore.swift in Sources */,
 				EB78341B56457785F062297E /* RegistrationService.swift in Sources */,
+				D6C104182599EADF000B05F2 /* UserDetailedTrainingView.swift in Sources */,
 				2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */,
 				50895E881714F33D6DC92FF7 /* PasswordRecoveryBuilder.swift in Sources */,
 				E6D3052965286F9841638A7E /* PasswordRecoveryViewController.swift in Sources */,
@@ -1080,9 +1106,11 @@
 				A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */,
 				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,
 				3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */,
+				D6C104162599EACD000B05F2 /* UserDetailedTrainingViewController.swift in Sources */,
 				BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */,
 				44E44F7353A2B0D54DF1390D /* UserProgrammsBuilder.swift in Sources */,
 				2FEF183CA975C2B18D4C824B /* UserProgrammsViewController.swift in Sources */,
+				D6C104102599EA90000B05F2 /* UserDetailedTrainingBuilder.swift in Sources */,
 				D6D772732588DEF000AA476F /* DetailedProgrammPresenter.swift in Sources */,
 				C1DDF19E1C71FB25F38696E7 /* UserProgrammsPresenter.swift in Sources */,
 				481880AC55500B5552383796 /* UserProgrammsModel.swift in Sources */,
