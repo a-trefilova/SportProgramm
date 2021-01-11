@@ -123,7 +123,7 @@ class DetailedProgrammView: UIView {
         }
         
         containerForTitle.snp.makeConstraints { (make) in
-            make.top.equalTo(customView.snp.top)
+            make.top.equalTo(customView.snp.top).offset(-20)
             make.leading.equalTo(customView.snp.leading)
             make.trailing.equalTo(customView.snp.trailing)
             make.height.lessThanOrEqualTo(200)

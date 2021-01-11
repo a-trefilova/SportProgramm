@@ -61,7 +61,7 @@ class UserTrainingCalendarView: UIView {
         }
         
         containerForTitle.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(-20)
             make.leading.equalTo(customView.snp.leading)
             make.trailing.equalTo(customView.snp.trailing)
             make.height.lessThanOrEqualTo(200)

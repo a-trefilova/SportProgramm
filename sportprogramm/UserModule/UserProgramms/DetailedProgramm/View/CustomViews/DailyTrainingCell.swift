@@ -135,9 +135,17 @@ class DailyTrainingCell: UITableViewCell {
                 descriptionOfSetLabel.font = UIFont(name: "SF Pro Text", size: 14)
                 descriptionOfSetLabel.text = "\(exercise.weight)кг/ \(exercise.numberOfReps)повт."
                 
+                let checkmarkButton = UIButton()
+                checkmarkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+                checkmarkButton.imageWith(color: .black, for: .normal)
+                checkmarkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .selected)
+                checkmarkButton.imageWith(color: .black, for: .selected)
+                
+                
                 bcView.addSubview(viewForNumberOfSet)
                 viewForNumberOfSet.addSubview(numberOfSetLabel)
                 bcView.addSubview(descriptionOfSetLabel)
+                bcView.addSubview(checkmarkButton)
                 
                 viewForNumberOfSet.snp.makeConstraints { (make) in
                     make.leading.equalToSuperview()
@@ -153,6 +161,13 @@ class DailyTrainingCell: UITableViewCell {
                 descriptionOfSetLabel.snp.makeConstraints { (make) in
                     make.leading.equalTo(viewForNumberOfSet.snp.trailing).offset(12)
                     make.centerY.equalTo(viewForNumberOfSet.snp.centerY)
+                }
+                
+                checkmarkButton.snp.makeConstraints { (make) in
+                    make.centerY.equalTo(viewForNumberOfSet.snp.centerY)
+                    make.leading.equalTo(descriptionOfSetLabel.snp.trailing).offset(100)
+                    make.height.equalTo(16)
+                    make.width.equalTo(16)
                 }
                 
                 arrayOfViews.append(bcView)

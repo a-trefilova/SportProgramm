@@ -39,7 +39,7 @@ class UserTrainingCalendarViewController: UIViewController {
         rootView?.calendarView.register(CustomMonthHeader.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: CustomMonthHeader.reuseId)
         
         guard let countOfTrainingsPerWeek = dataModel?.excersicesByDay.count else { return }
-        rootView?.setUpTitle(title: "Выберите день начала программы", description: "Необходимо выполнять \(String(countOfTrainingsPerWeek)) тренировок в неделю")
+        rootView?.setUpTitle(title: "Тренировочный календарь", description: "Необходимо выполнять \(String(countOfTrainingsPerWeek)) тренировок в неделю")
     }
 
 

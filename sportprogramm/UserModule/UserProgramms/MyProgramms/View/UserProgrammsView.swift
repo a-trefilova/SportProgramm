@@ -61,12 +61,12 @@ class UserProgrammsView: UIView {
     }
 
     func makeConstraints() {
-//        refreshControl.snp.makeConstraints { (make) in
-//            make.centerX.equalTo(customView.snp.centerX)
-//            make.top.equalTo(activeTrainingsContainer.snp.bottom)
-//            make.height.equalTo(40)
-//            make.width.equalTo(40)
-//        }
+        refreshControl.snp.makeConstraints { (make) in
+            make.centerX.equalTo(customView.snp.centerX)
+            make.top.equalTo(activeTrainingsContainer.snp.bottom)
+            make.height.equalTo(40)
+            make.width.equalTo(40)
+        }
         
         customView.snp.makeConstraints { (make) in
             make.top.equalToSuperview()
@@ -76,7 +76,7 @@ class UserProgrammsView: UIView {
         }
         
         lineOne.snp.makeConstraints { (make) in
-            make.top.equalTo(customView.snp.top).offset(180)
+            make.top.equalTo(customView.snp.top).offset(160)
             make.leading.equalTo(customView.snp.leading).offset(16)
             make.trailing.equalTo(customView.snp.trailing).offset(16)
             make.height.equalTo(1)
@@ -84,7 +84,7 @@ class UserProgrammsView: UIView {
         }
 
         activeTrainingsContainer.snp.makeConstraints { (make) in
-            make.top.equalTo(customView.snp.top).offset(200)
+            make.top.equalTo(customView.snp.top).offset(180)
             make.leading.equalTo(customView.snp.leading)
             make.width.equalTo(UIScreen.main.bounds.width)
             make.bottom.equalTo(customView.snp.bottom)

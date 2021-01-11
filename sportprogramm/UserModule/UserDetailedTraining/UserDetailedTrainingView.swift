@@ -11,6 +11,7 @@ class UserDetailedTrainingView: UIView {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "SF Pro Display", size: 18)
+        label.textAlignment = .center
         return label
     }()
     
@@ -43,12 +44,14 @@ class UserDetailedTrainingView: UIView {
            }
         
         titleLabel.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(50)
+            make.top.equalTo(customView.snp.top).offset(50)
             make.centerX.equalTo(customView.snp.centerX)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
         }
         
         trainingCard.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.top.equalTo(titleLabel.snp.bottom)
             make.leading.equalTo(customView.snp.leading).offset(16)
             make.trailing.equalTo(customView.snp.trailing).offset(-16)
             make.bottom.equalTo(customView.snp.bottom).offset(-16)

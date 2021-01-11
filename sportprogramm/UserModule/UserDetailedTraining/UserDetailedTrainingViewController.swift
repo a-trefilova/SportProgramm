@@ -17,6 +17,8 @@ class UserDetailedTrainingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.presentTraining()
+        navigationController?.navigationBar.backgroundColor = .clear
+        
     }
     
 
@@ -33,9 +35,16 @@ extension UserDetailedTrainingViewController: UserDetailedTrainingViewProtocol {
     
     func setTraining(forTraining training: ProgrammPerDay) {
         //rootView.title = training.title
-        rootView?.titleLabel.text = training.titleOfDay
+       rootView?.titleLabel.text = training.titleOfDay
 //        rootView?.trainingCard.fillCellWithData(data: training.exercises,
 //            numberOfDay: 1)
+        navigationController?.navigationBar.topItem?.title = ""
+        let appearance = UINavigationBarAppearance()
+        let backBtnAppearance = UIBarButtonItemAppearance(style: .done)
+        backBtnAppearance.normal.titlePositionAdjustment = .init(horizontal: 50, vertical: 25)
+        appearance.backButtonAppearance = backBtnAppearance
+        
+        
         rootView?.trainingCard.delegate = self
         rootView?.trainingCard.dataSource = self
         rootView?.trainingCard.register(DailyTrainingCell.self, forCellReuseIdentifier: DailyTrainingCell.reuseId)
