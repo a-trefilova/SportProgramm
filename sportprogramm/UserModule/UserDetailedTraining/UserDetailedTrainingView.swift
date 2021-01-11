@@ -14,8 +14,9 @@ class UserDetailedTrainingView: UIView {
         return label
     }()
     
-    var trainingCard: DailyTrainingCell = {
-        let card = DailyTrainingCell()
+    var trainingCard: UITableView = {
+        let card = UITableView()
+        card.backgroundColor = .clear
         return card
     }()
     

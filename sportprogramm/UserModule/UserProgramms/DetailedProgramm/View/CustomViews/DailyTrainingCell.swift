@@ -8,6 +8,7 @@ class DailyTrainingCell: UITableViewCell {
     var numberOfExercises: Int = 3
     var numberOfDay: Int = 1
     var exercises: [Excersice]?
+    var showsExpandedVersion: Bool = false
     
     private func createOneSubCell(withExercise exercise: Excersice, numberOfExercise: Int, numberOfAllExercises: Int ) -> UIView {
 
@@ -34,7 +35,7 @@ class DailyTrainingCell: UITableViewCell {
         //setting title of exercise
         let exTitleLabel = UILabel()
         exTitleLabel.textColor = .black
-        exTitleLabel.font = UIFont(name: "SF Pro Display", size: 14)
+        exTitleLabel.font = UIFont(name: "SF Pro Text", size: 14)
         exTitleLabel.textAlignment = .left
         exTitleLabel.numberOfLines = 0
         exTitleLabel.lineBreakMode = .byWordWrapping
@@ -104,11 +105,86 @@ class DailyTrainingCell: UITableViewCell {
         }
 
         descriptionLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(exTitleLabel.snp.bottom)
+            make.top.equalTo(exTitleLabel.snp.bottom).offset(9)
             make.leading.equalTo(numberOfExerciseLabel.snp.trailing).offset(16)
             //make.bottom.equalToSuperview()
         }
 
+        
+        //setting expanded version
+        if showsExpandedVersion == true {
+            var arrayOfViews = [UIView]()
+            let numberOfSets = exercise.numberOfSets
+            for item in 1...numberOfSets {
+                let bcView = UIView()
+                bcView.backgroundColor = .clear
+                
+                let viewForNumberOfSet = UIView()
+                viewForNumberOfSet.backgroundColor = .black
+                viewForNumberOfSet.layer.cornerRadius = 8
+                
+                let numberOfSetLabel = UILabel()
+                numberOfSetLabel.textColor = .white
+                numberOfSetLabel.textAlignment = .center
+                numberOfSetLabel.text = String(describing: item)
+                numberOfSetLabel.font = UIFont(name: "SF Pro Display", size: 16)
+                
+                
+                let descriptionOfSetLabel = UILabel()
+                descriptionOfSetLabel.textColor = .black
+                descriptionOfSetLabel.font = UIFont(name: "SF Pro Text", size: 14)
+                descriptionOfSetLabel.text = "\(exercise.weight)кг/ \(exercise.numberOfReps)повт."
+                
+                bcView.addSubview(viewForNumberOfSet)
+                viewForNumberOfSet.addSubview(numberOfSetLabel)
+                bcView.addSubview(descriptionOfSetLabel)
+                
+                viewForNumberOfSet.snp.makeConstraints { (make) in
+                    make.leading.equalToSuperview()
+                    make.height.equalTo(26)
+                    make.width.equalTo(26)
+                }
+                
+                numberOfSetLabel.snp.makeConstraints { (make) in
+                    make.centerX.equalToSuperview()
+                    make.centerY.equalToSuperview()
+                }
+                
+                descriptionOfSetLabel.snp.makeConstraints { (make) in
+                    make.leading.equalTo(viewForNumberOfSet.snp.trailing).offset(12)
+                    make.centerY.equalTo(viewForNumberOfSet.snp.centerY)
+                }
+                
+                arrayOfViews.append(bcView)
+            }
+            
+            let stackViewForSets = UIStackView(arrangedSubviews: arrayOfViews)
+            stackViewForSets.axis = .vertical
+            stackViewForSets.alignment = .leading
+            stackViewForSets.distribution = .fillEqually
+            stackViewForSets.spacing = 34
+            
+            viewForSubCell.addSubview(stackViewForSets)
+ 
+            stackViewForSets.snp.makeConstraints { (make) in
+                make.top.equalTo(descriptionLabel.snp.bottom).offset(11)
+                make.leading.equalTo(descriptionLabel.snp.leading)
+                make.trailing.equalTo(viewForSubCell.snp.trailing).offset(-10)
+                make.bottom.equalTo(viewForSubCell.snp.bottom).offset(-39)
+            }
+            
+            if numberOfExercise == numberOfAllExercises - 2 {
+                connectingViewToBottom.isHidden = false
+            }
+            
+            if numberOfExercise == numberOfAllExercises - 1 {
+                connectingViewToBottom.isHidden = true
+            }
+            
+            viewForSubCell.setNeedsUpdateConstraints()
+            return viewForSubCell
+        }
+        
         return viewForSubCell
     }
     
