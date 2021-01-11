@@ -705,7 +705,6 @@
 		D6FEB93D253B7048003085F9 = {
 			isa = PBXGroup;
 			children = (
-				D67D7CF725AC7EAD005B2920 /* Screenshots */,
 				D6FEB986253B7AB8003085F9 /* Resources */,
 				D6FEB948253B7048003085F9 /* sportprogramm */,
 				D6FEB95F253B704B003085F9 /* sportprogrammTests */,
@@ -758,6 +757,7 @@
 		D6FEB986253B7AB8003085F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D67D7CF725AC7EAD005B2920 /* Screenshots */,
 				D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */,
 				D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */,
 				D6FEB98C253B7B0F003085F9 /* SF-Compact-Rounded-Black.otf */,
