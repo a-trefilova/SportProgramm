@@ -81,6 +81,9 @@
 		D66861B825555C9D00FC8219 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */; };
 		D66861BA2559940000FC8219 /* UITapGestureRec+didTapAttrText.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */; };
 		D670AF992577D6BD000BB237 /* UserProgrammsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */; };
+		D67D7CF225AC5CF3005B2920 /* UserProgrammsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF125AC5CF3005B2920 /* UserProgrammsDataSource.swift */; };
+		D67D7CF425AC690E005B2920 /* UserProgrammsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF325AC690E005B2920 /* UserProgrammsDelegate.swift */; };
+		D67D7CF625AC6949005B2920 /* ViewControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */; };
 		D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */; };
 		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
 		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
@@ -209,6 +212,9 @@
 		D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-Pro-Text-Regular.otf"; path = "../../../Downloads/SF-Pro-Text-Regular.otf"; sourceTree = "<group>"; };
 		D66861B9255993FF00FC8219 /* UITapGestureRec+didTapAttrText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRec+didTapAttrText.swift"; sourceTree = "<group>"; };
 		D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsTableViewCell.swift; sourceTree = "<group>"; };
+		D67D7CF125AC5CF3005B2920 /* UserProgrammsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsDataSource.swift; sourceTree = "<group>"; };
+		D67D7CF325AC690E005B2920 /* UserProgrammsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsDelegate.swift; sourceTree = "<group>"; };
+		D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowWeekdayCell.swift; sourceTree = "<group>"; };
 		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
@@ -381,6 +387,9 @@
 		4F082C3E0E3CD442CF0A038D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D67D7CF125AC5CF3005B2920 /* UserProgrammsDataSource.swift */,
+				D67D7CF325AC690E005B2920 /* UserProgrammsDelegate.swift */,
+				D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */,
 				D7B634D2111F2D4D28608792 /* UserProgrammsViewController.swift */,
 				57169451E9396B8EB6C06856 /* UserProgrammsView.swift */,
 				D670AF982577D6BD000BB237 /* UserProgrammsTableViewCell.swift */,
@@ -1071,6 +1080,7 @@
 				C7C969AFA1483A8F6CC83763 /* TrainerModuleBuilder.swift in Sources */,
 				7AAD55BFFB5A30063476DDBC /* TrainerModuleViewController.swift in Sources */,
 				0AC8AF45C6BA486DA1A797D0 /* TrainerModuleInteractor.swift in Sources */,
+				D67D7CF225AC5CF3005B2920 /* UserProgrammsDataSource.swift in Sources */,
 				7409EC69C150BC198C6908FE /* TrainerModulePresenter.swift in Sources */,
 				D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */,
 				ADB6F6879CA5F959BC24352E /* TrainerModuleDataFlow.swift in Sources */,
@@ -1083,6 +1093,7 @@
 				B59347437768607800527EA8 /* TrainerModuleView.swift in Sources */,
 				0A3003386436E25388079770 /* RegistrationBuilder.swift in Sources */,
 				79E9B8B4C9C0D4BD01A85D8B /* RegistrationViewController.swift in Sources */,
+				D67D7CF425AC690E005B2920 /* UserProgrammsDelegate.swift in Sources */,
 				38CB51413B7D2A206EBD2427 /* RegistrationInteractor.swift in Sources */,
 				53A7870CA46A235F83A40C90 /* RegistrationPresenter.swift in Sources */,
 				84307C964EED907EB7A9E971 /* RegistrationDataFlow.swift in Sources */,
@@ -1096,6 +1107,7 @@
 				D6C104182599EADF000B05F2 /* UserDetailedTrainingView.swift in Sources */,
 				2B4961A13E0D1DF3FB9C1831 /* RegistrationView.swift in Sources */,
 				50895E881714F33D6DC92FF7 /* PasswordRecoveryBuilder.swift in Sources */,
+				D67D7CF625AC6949005B2920 /* ViewControllerDelegateProtocol.swift in Sources */,
 				E6D3052965286F9841638A7E /* PasswordRecoveryViewController.swift in Sources */,
 				E68562833B1C3D32B29531DF /* PasswordRecoveryInteractor.swift in Sources */,
 				D6D772752588E05A00AA476F /* DetailedProgrammViewController.swift in Sources */,
