@@ -585,6 +585,7 @@
 		D66861AB254891D200FC8219 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D67D7CF725AC7EAD005B2920 /* Screenshots */,
 				D6FEB949253B7048003085F9 /* AppDelegate.swift */,
 				D6FEB94B253B7048003085F9 /* SceneDelegate.swift */,
 				D6FEB952253B704A003085F9 /* Assets.xcassets */,
@@ -757,7 +758,6 @@
 		D6FEB986253B7AB8003085F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D67D7CF725AC7EAD005B2920 /* Screenshots */,
 				D66861B725555C9D00FC8219 /* SF-Pro-Text-Regular.otf */,
 				D66861B525555C4400FC8219 /* SF-Pro-Display-Bold.otf */,
 				D6FEB98C253B7B0F003085F9 /* SF-Compact-Rounded-Black.otf */,
