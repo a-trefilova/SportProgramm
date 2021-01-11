@@ -30,7 +30,7 @@ struct UserModuleProvider: UserModuleProviderProtocol {
             if let error = error {
                 completion(nil, .getItemsFailed(underlyingError: error))
             } else if let models = array {
-                let newModel = UserProgrammsModel(uid: 1, email: "", name: "", userProgramms: self.mockData.programm.userProgramms)
+                let newModel = UserProgrammsModel(uid: 1, email: "", name: "", userProgramms: self.mockData.userData.userProgramms)
                 var arrayWithModel = models
                 arrayWithModel.append(newModel)
                 self.dataStore.models = arrayWithModel

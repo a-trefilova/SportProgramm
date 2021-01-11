@@ -17,6 +17,7 @@ struct FullProgramm {
     var title: String
     var numberOfWeeks: Int
     var excersicesByDay: [ProgrammPerDay]
+    var isActive: Bool? = false
 }
 
 struct ProgrammPerDay {

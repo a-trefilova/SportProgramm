@@ -19,8 +19,7 @@ class MockUserProgrammsData {
     let oneDay: ProgrammPerDay
     let twoDay: ProgrammPerDay
     
-    let programm: UserProgrammsModel
-    
+    let userData: UserProgrammsModel
     
     init() {
         exercisesPerFirstDay.append(exercise1)
@@ -37,8 +36,11 @@ class MockUserProgrammsData {
         oneDay = ProgrammPerDay(titleOfDay: "Понедельник", numberOfDay: 1, numberOfExercises: 4, description: "Первый день программы, состоит из 4 упражнений", exercises: exercisesPerFirstDay )
         twoDay = ProgrammPerDay(titleOfDay: "Четверг", numberOfDay: 2, numberOfExercises: 5, description: "Второй день программы, состоит из 5 упражнений", exercises: exercisesPerSecondDay )
         
-        programm = UserProgrammsModel(uid: 0, email: "Atrefilova97@icloud.com", name: "", userProgramms: [FullProgramm(title: "Программа №1", numberOfWeeks: 6, excersicesByDay: [oneDay, twoDay])])
-        
+        userData = UserProgrammsModel(uid: 0,
+                                      email: "Atrefilova97@icloud.com",
+                                      name: "",
+                                      userProgramms: [FullProgramm(title: "Программа №1", numberOfWeeks: 6, excersicesByDay: [oneDay, twoDay], isActive: true), FullProgramm(title: "Цикл 2", numberOfWeeks: 4, excersicesByDay: [twoDay, oneDay], isActive: false)])
+      
     }
     
 }

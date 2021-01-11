@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let builder = UserModuleBuilder()
             let mockData = MockUserProgrammsData()
             guard let email = defaults.object(forKey: "userEmail") as?  String else { return }
-            let model = mockData.programm
+            var model = mockData.userData
             var models = [UserProgrammsModel]()
             models.append(model)
            // let state = UserModule.ViewControllerState.loading(model)

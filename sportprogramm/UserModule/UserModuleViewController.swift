@@ -37,6 +37,17 @@ class UserModuleViewController: UITabBarController {
     }
     
     private func setUpTapBar() {
+        switch state {
+        
+        case .loading(_):
+            break
+        case .result(let resulModel ):
+            self.userModel = resulModel.first
+        case .emptyResult:
+            break
+        case .error(message: let message):
+            break
+        }
         guard let model = userModel else { return }
         let firstVcBuilder = UserProgrammsBuilder(model: model)
         let fistvc = firstVcBuilder.build()

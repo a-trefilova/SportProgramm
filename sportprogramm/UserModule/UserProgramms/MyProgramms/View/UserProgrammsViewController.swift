@@ -54,6 +54,28 @@ class UserProgrammsViewController: UIViewController {
         //navigationController?.hidesBarsOnSwipe = true
         navigationController?.navigationBar.backgroundColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
     }
+    
+    private func chooseActiveProgramms() -> [FullProgramm] {
+        guard let programmsToDisplay = programmsToDisplay else { return [] }
+        var arrayOfActiveProgramms = [FullProgramm]()
+        for item in programmsToDisplay.userProgramms {
+            if item.isActive == true {
+                arrayOfActiveProgramms.append(item)
+            }
+        }
+        return arrayOfActiveProgramms
+    }
+    
+    private func chooseInactiveProgramms() -> [FullProgramm] {
+        guard let programmsToDisplay = programmsToDisplay else { return [] }
+        var arrayOfInactiveProgramms = [FullProgramm]()
+        for item in programmsToDisplay.userProgramms {
+            if item.isActive == false {
+                arrayOfInactiveProgramms.append(item)
+            }
+        }
+        return arrayOfInactiveProgramms
+    }
 }
 
 
@@ -84,16 +106,17 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
         return 3
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section == 0{
+     
+        if section == 0 {
             return 1
         }
         else if section == 1 {
-            return programmsToDisplay?.userProgramms.count ?? 1
+            return chooseActiveProgramms().count
         }
         else if section == 2 {
-            return programmsToDisplay?.userProgramms.count ?? 1
-        } else { return 0}
+            return chooseInactiveProgramms().count
+            
+        } else { return 0 }
        
     }
     
@@ -137,17 +160,16 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
             customCell.fillCellWithData(dataOfDay: programmPerDay, inProgramm: programm)
                 return customCell
         } else if indexPath.section == 1 {
-    
+            let programms = chooseActiveProgramms()
             let customCell = tableView.dequeueReusableCell(withIdentifier: UserProgrammsTableViewCell.reuseId, for: indexPath) as! UserProgrammsTableViewCell
-                guard let programm = programmsToDisplay?.userProgramms else { return customCell}
-                customCell.fillCellWithData(programm[indexPath.row])
-                return customCell
+            customCell.fillCellWithData(programms[indexPath.row])
+            return customCell
+          
         } else if indexPath.section == 2 {
-            
+            let programms = chooseInactiveProgramms()
             let customCell = tableView.dequeueReusableCell(withIdentifier: UserProgrammsTableViewCell.reuseId, for: indexPath) as! UserProgrammsTableViewCell
-                guard let programm = programmsToDisplay?.userProgramms else { return customCell}
-                customCell.fillCellWithData(programm[indexPath.row])
-                return customCell
+            customCell.fillCellWithData(programms[indexPath.row])
+            return customCell
         } else {
             let cell = UITableViewCell()
             return cell
@@ -170,7 +192,7 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
         
         
         if indexPath.section == 1 {
-            guard let programms = programmsToDisplay?.userProgramms else { return }
+            let programms = chooseActiveProgramms()
             let programm = programms[indexPath.row]
             let builer = DetailedProgrammBuilder()
             let vc = builer.build(withProgramm: programm)
@@ -178,7 +200,7 @@ extension UserProgrammsViewController: UITableViewDelegate, UITableViewDataSourc
         }
         
         if indexPath.section == 2 {
-            guard let programms = programmsToDisplay?.userProgramms else { return }
+            let programms = chooseInactiveProgramms()
             let programm = programms[indexPath.row]
             let builer = DetailedProgrammBuilder()
             let vc = builer.build(withProgramm: programm)

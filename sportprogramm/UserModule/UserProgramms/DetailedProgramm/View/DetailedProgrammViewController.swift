@@ -71,7 +71,12 @@ extension DetailedProgrammViewController: DetailedProgrammViewProtocol {
     
     func setFullProgramm(programm: FullProgramm) {
         dataModel = programm
-
+        if  programm.isActive == false {
+            rootView?.planButton.isHidden = false
+        }
+        if programm.isActive == true {
+            rootView?.planButton.isHidden = true
+        }
     }
     
     
