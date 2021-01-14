@@ -68,16 +68,7 @@ class AuthenticationModuleViewController: UIViewController {
         rootView?.emailTextField.endEditing(true)
         rootView?.passwordTextField.endEditing(true)
         checkIfUserExists()
-        
-        let builder = UserModuleBuilder()
-        guard let model = AuthenticationModuleViewController.transferToUserModuleModel else { return }
-        let state = UserModule.ViewControllerState.loading(model)
-        let controller = builder.set(initialState: state).build()
-        
-        navigationController?.pushViewController(controller, animated: true)
-        navigationController?.navigationBar.isHidden = false
-        //navigationController?.navigationBar.prefersLargeTitles = true
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     // MARK: Do something
