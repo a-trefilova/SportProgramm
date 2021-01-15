@@ -84,6 +84,8 @@
 		D67D7CF225AC5CF3005B2920 /* UserProgrammsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF125AC5CF3005B2920 /* UserProgrammsDataSource.swift */; };
 		D67D7CF425AC690E005B2920 /* UserProgrammsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF325AC690E005B2920 /* UserProgrammsDelegate.swift */; };
 		D67D7CF625AC6949005B2920 /* ViewControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */; };
+		D69D401B25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D401A25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift */; };
+		D69D402025B19F6000EDFAE2 /* DetailedTrainingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D401F25B19F6000EDFAE2 /* DetailedTrainingDelegate.swift */; };
 		D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */; };
 		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
 		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
@@ -215,6 +217,8 @@
 		D67D7CF125AC5CF3005B2920 /* UserProgrammsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsDataSource.swift; sourceTree = "<group>"; };
 		D67D7CF325AC690E005B2920 /* UserProgrammsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProgrammsDelegate.swift; sourceTree = "<group>"; };
 		D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegateProtocol.swift; sourceTree = "<group>"; };
+		D69D401A25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTrainingDatasource.swift; sourceTree = "<group>"; };
+		D69D401F25B19F6000EDFAE2 /* DetailedTrainingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTrainingDelegate.swift; sourceTree = "<group>"; };
 		D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowWeekdayCell.swift; sourceTree = "<group>"; };
 		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
@@ -602,6 +606,33 @@
 			path = Entry;
 			sourceTree = "<group>";
 		};
+		D69D402425B19FFB00EDFAE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D6C104132599EAB0000B05F2 /* UserDetailedTrainingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D69D402525B1A00D00EDFAE2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D6C104152599EACD000B05F2 /* UserDetailedTrainingViewController.swift */,
+				D6C104172599EADF000B05F2 /* UserDetailedTrainingView.swift */,
+				D69D401A25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift */,
+				D69D401F25B19F6000EDFAE2 /* DetailedTrainingDelegate.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D69D402625B1A02E00EDFAE2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D6C104112599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		D6C103BB258CB080000B05F2 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,10 +647,9 @@
 			isa = PBXGroup;
 			children = (
 				D6C1040F2599EA90000B05F2 /* UserDetailedTrainingBuilder.swift */,
-				D6C104112599EA9E000B05F2 /* UserDetailedTrainingPresenter.swift */,
-				D6C104132599EAB0000B05F2 /* UserDetailedTrainingModel.swift */,
-				D6C104152599EACD000B05F2 /* UserDetailedTrainingViewController.swift */,
-				D6C104172599EADF000B05F2 /* UserDetailedTrainingView.swift */,
+				D69D402625B1A02E00EDFAE2 /* Presenter */,
+				D69D402525B1A00D00EDFAE2 /* View */,
+				D69D402425B19FFB00EDFAE2 /* Model */,
 			);
 			path = UserDetailedTraining;
 			sourceTree = "<group>";
@@ -1053,6 +1083,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69D401B25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift in Sources */,
 				D6FEB94A253B7048003085F9 /* AppDelegate.swift in Sources */,
 				D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */,
 				D6FEB94C253B7048003085F9 /* SceneDelegate.swift in Sources */,
@@ -1114,6 +1145,7 @@
 				7736B82A817177105DB31236 /* PasswordRecoveryPresenter.swift in Sources */,
 				A337C1B9EC4E2FB68A96FC37 /* PasswordRecoveryDataFlow.swift in Sources */,
 				B3E05778EFEBE26DDC8EF54D /* PasswordRecoveryModel.swift in Sources */,
+				D69D402025B19F6000EDFAE2 /* DetailedTrainingDelegate.swift in Sources */,
 				D670AF992577D6BD000BB237 /* UserProgrammsTableViewCell.swift in Sources */,
 				A66F5326A773B28C18B83AB7 /* PasswordRecoveryProvider.swift in Sources */,
 				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,

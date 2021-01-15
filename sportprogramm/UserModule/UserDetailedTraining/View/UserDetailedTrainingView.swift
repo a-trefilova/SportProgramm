@@ -51,7 +51,7 @@ class UserDetailedTrainingView: UIView {
         }
         
         trainingCard.snp.makeConstraints { (make) in
-            make.top.equalTo(titleLabel.snp.bottom)
+            make.top.equalTo(customView.snp.top)
             make.leading.equalTo(customView.snp.leading).offset(16)
             make.trailing.equalTo(customView.snp.trailing).offset(-16)
             make.bottom.equalTo(customView.snp.bottom).offset(-16)

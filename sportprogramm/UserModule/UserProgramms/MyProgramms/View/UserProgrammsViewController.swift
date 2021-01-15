@@ -1,6 +1,11 @@
 
 import UIKit
 
+
+protocol ViewControllerDelegate: class {
+    func selectedCell(row: Int)
+}
+
 class UserProgrammsViewController: UIViewController, ViewControllerDelegate {
    
 
@@ -33,7 +38,13 @@ class UserProgrammsViewController: UIViewController, ViewControllerDelegate {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-       // navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        //making nav controller transparent 
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = UIColor.clear
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

@@ -35,6 +35,10 @@ class RegistrationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+        
         navigationController?.navigationBar.isHidden = false
         rootView?.loginButton.addTarget(self, action: #selector(sendDatamodel), for: .touchUpInside)
         //doSomething()

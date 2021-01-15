@@ -1,6 +1,11 @@
 
 import UIKit
 
+
+protocol DetailedTrainingViewControllerDelegate: class {
+    func selectedCell(row: Int)
+}
+
 class UserDetailedTrainingViewController: UIViewController {
     
     var rootView: UserDetailedTrainingView? {
@@ -8,6 +13,9 @@ class UserDetailedTrainingViewController: UIViewController {
     }
     
     var presenter: UserDetailedTrainingPresenter?
+    
+    private var dataSource: DetailedTrainingDataSource?
+    private var delegate: DetailedTrainingDelegate?
     
     override func loadView() {
         view = UserDetailedTrainingView(frame: .zero)
@@ -21,6 +29,15 @@ class UserDetailedTrainingViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
 
 }
 
@@ -34,19 +51,18 @@ extension UserDetailedTrainingViewController: UserDetailedTrainingViewProtocol {
     }
     
     func setTraining(forTraining training: ProgrammPerDay) {
-        //rootView.title = training.title
-       rootView?.titleLabel.text = training.titleOfDay
-//        rootView?.trainingCard.fillCellWithData(data: training.exercises,
-//            numberOfDay: 1)
-        navigationController?.navigationBar.topItem?.title = ""
+        rootView?.titleLabel.text = training.titleOfDay
+        
         let appearance = UINavigationBarAppearance()
         let backBtnAppearance = UIBarButtonItemAppearance(style: .done)
         backBtnAppearance.normal.titlePositionAdjustment = .init(horizontal: 50, vertical: 25)
         appearance.backButtonAppearance = backBtnAppearance
         
+        dataSource = DetailedTrainingDataSource(data: training)
+        delegate = DetailedTrainingDelegate(data: training, delegate: self)
         
-        rootView?.trainingCard.delegate = self
-        rootView?.trainingCard.dataSource = self
+        rootView?.trainingCard.delegate = delegate
+        rootView?.trainingCard.dataSource = dataSource
         rootView?.trainingCard.register(DailyTrainingCell.self, forCellReuseIdentifier: DailyTrainingCell.reuseId)
         rootView?.trainingCard.tableFooterView = UIView()
     }
@@ -55,25 +71,15 @@ extension UserDetailedTrainingViewController: UserDetailedTrainingViewProtocol {
 }
 
 
-extension UserDetailedTrainingViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+extension UserDetailedTrainingViewController: DetailedTrainingViewControllerDelegate {
+    func selectedCell(row: Int) {
+        print("Row: \(row)")
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DailyTrainingCell.reuseId, for: indexPath) as! DailyTrainingCell
-        guard let exercises = presenter?.model.exercises else { return cell }
-        cell.showsExpandedVersion = true
-        cell.fillCellWithData(data: exercises, numberOfDay: 1)
-        cell.setNeedsUpdateConstraints()
-        cell.setNeedsLayout()
-        return cell
-        
-    }
-    
     
 }
 
-extension UserDetailedTrainingViewController: UITableViewDelegate {
-    
-}
+
+
+
+
+
