@@ -86,6 +86,7 @@
 		D67D7CF625AC6949005B2920 /* ViewControllerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */; };
 		D69D401B25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D401A25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift */; };
 		D69D402025B19F6000EDFAE2 /* DetailedTrainingDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D401F25B19F6000EDFAE2 /* DetailedTrainingDelegate.swift */; };
+		D69D403425B1C4B800EDFAE2 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69D403325B1C4B800EDFAE2 /* CustomButton.swift */; };
 		D6C103B8258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */; };
 		D6C103BA258CB015000B05F2 /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103B9258CB015000B05F2 /* CustomNavBar.swift */; };
 		D6C103BD258CB0FF000B05F2 /* DailyTrainingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */; };
@@ -219,6 +220,7 @@
 		D67D7CF525AC6949005B2920 /* ViewControllerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegateProtocol.swift; sourceTree = "<group>"; };
 		D69D401A25B19F3300EDFAE2 /* DetailedTrainingDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTrainingDatasource.swift; sourceTree = "<group>"; };
 		D69D401F25B19F6000EDFAE2 /* DetailedTrainingDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTrainingDelegate.swift; sourceTree = "<group>"; };
+		D69D403325B1C4B800EDFAE2 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalFlowWeekdayCell.swift; sourceTree = "<group>"; };
 		D6C103B9258CB015000B05F2 /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
 		D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyTrainingCell.swift; sourceTree = "<group>"; };
@@ -639,6 +641,7 @@
 				D6C103B7258CAFEE000B05F2 /* HorizontalFlowWeekdayCell.swift */,
 				D6C103B9258CB015000B05F2 /* CustomNavBar.swift */,
 				D6C103BC258CB0FF000B05F2 /* DailyTrainingCell.swift */,
+				D69D403325B1C4B800EDFAE2 /* CustomButton.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1151,6 +1154,7 @@
 				1809228ADB7DD66E0CB652CB /* PasswordRecoveryDataStore.swift in Sources */,
 				3A95A438423A8AAA53A97C08 /* PasswordRecoveryService.swift in Sources */,
 				D6C104162599EACD000B05F2 /* UserDetailedTrainingViewController.swift in Sources */,
+				D69D403425B1C4B800EDFAE2 /* CustomButton.swift in Sources */,
 				BAB492C738DF9F6289FBACBD /* PasswordRecoveryView.swift in Sources */,
 				44E44F7353A2B0D54DF1390D /* UserProgrammsBuilder.swift in Sources */,
 				2FEF183CA975C2B18D4C824B /* UserProgrammsViewController.swift in Sources */,

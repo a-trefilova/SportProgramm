@@ -239,7 +239,7 @@ class DailyTrainingCell: UITableViewCell {
         for (index, item) in arrayOfSubviews.enumerated() {
             if index == 0 {
                 item.snp.makeConstraints { (make) in
-                    make.top.equalTo(dayLabel.snp.bottom)
+                    make.top.equalTo(dayLabel.snp.bottom).offset(15)
                     make.leading.equalTo(myContentView.snp.leading).offset(15)
                     make.trailing.equalTo(myContentView.snp.trailing).offset(-15)
                     make.height.greaterThanOrEqualTo(50)
@@ -265,42 +265,6 @@ class DailyTrainingCell: UITableViewCell {
         }
     }
     
-    
 }
 
-class CheckBox: UIButton {
-    
-    let uncheckedImage = UIImage(systemName: "checkmark.square")! as UIImage
-    let checkedImage = UIImage(systemName: "checkmark.square.fill")! as UIImage
-    var isChecked: Bool = false {
-        didSet{
-            if isChecked == true {
-                self.setImage(checkedImage, for: UIControl.State.normal)
-            } else {
-                self.setImage(uncheckedImage, for: UIControl.State.normal)
-            }
-        }
-    }
-    
-    override init(frame: CGRect) {
-       
-        super.init(frame: frame)
-        self.setImage(uncheckedImage, for: UIControl.State.normal)
-        self.imageWith(color: .blue, for: .normal)
-        self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
-        self.isChecked = false
-        
-    }
-    
-    @objc func buttonClicked(sender: UIButton) {
-        print("checkbox taped")
-            if sender == self {
-                isChecked = !isChecked
-            }
-        
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
+

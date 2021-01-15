@@ -40,8 +40,7 @@ class DetailedProgrammView: UIView {
     var containerForWeekdays: UIStackView = {
         let view = UIStackView()
         view.axis = .horizontal
-        view.spacing = 32
-        view.distribution = .fillProportionally
+        view.distribution = .fillEqually
         return view
     }()
     
@@ -82,6 +81,7 @@ class DetailedProgrammView: UIView {
             let label = UILabel()
             label.font = UIFont(name: "SF Pro Text", size: 16)
             label.text = item
+            label.textAlignment = .center
             arrayOfWeekdayLabels.append(label)
         }
     }
